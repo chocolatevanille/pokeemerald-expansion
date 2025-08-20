@@ -71,6 +71,12 @@
 #define P_FLAG_FORCE_SHINY               0  // If this flag is set, all wild and gift Pokémon will forced into being Shiny.
 #define P_FLAG_FORCE_NO_SHINY            0  // If this flag is set, all wild and gift Pokémon will forced into NOT being Shiny.
 
+// Wild Pokémon level scaling based on party member
+#define P_LEVEL_SCALING             TRUE    // If TRUE, wild Pokémon levels scale based on player's highest level Pokémon
+#define P_LEVEL_SCALING_MIN_LEVEL   3       // Minimum level for scaled wild Pokémon
+#define P_LEVEL_SCALING_MAX_LEVEL   100     // Maximum level for scaled wild Pokémon
+#define P_LEVEL_SCALING_OFFSET      40       // Wild Pokémon start this many levels lower than strongest party member
+
 // Go here if you want to disable specific families of Pokémon.
 #include "config/species_enabled.h"
 

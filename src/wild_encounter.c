@@ -18,6 +18,7 @@
 #include "battle_debug.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
+#include "battle_tower.h"
 #include "constants/abilities.h"
 #include "constants/game_stat.h"
 #include "constants/item.h"
@@ -299,51 +300,108 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
 
 static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, enum WildPokemonArea area)
 {
-    u8 min;
-    u8 max;
-    u8 range;
-    u8 rand;
-
-    if (LURE_STEP_COUNT == 0)
+    u8 min, max, range, rand, level;
+    
+    if (P_LEVEL_SCALING && GetHighestLevelInPlayerParty() > 0)
     {
-        // Make sure minimum level is less than maximum level
-        if (wildPokemon[wildMonIndex].maxLevel >= wildPokemon[wildMonIndex].minLevel)
+        u8 partyHighest = (u8)GetHighestLevelInPlayerParty();
+        
+        // Hardcoded levels for low-level parties
+        if (partyHighest <= 4)
         {
-            min = wildPokemon[wildMonIndex].minLevel;
-            max = wildPokemon[wildMonIndex].maxLevel;
+            level = (Random() % 2) + 2; // 2-3
+        }
+        else if (partyHighest == 5)
+        {
+            level = (Random() % 3) + 2; // 2-4
+        }
+        else if (partyHighest == 6)
+        {
+            level = (Random() % 3) + 3; // 3-5
+        }
+        else if (partyHighest == 7)
+        {
+            level = (Random() % 4) + 3; // 3-6
+        }
+        else if (partyHighest == 8)
+        {
+            level = (Random() % 4) + 4; // 4-7
+        }
+        else if (partyHighest == 9)
+        {
+            level = (Random() % 4) + 5; // 5-8
         }
         else
         {
-            min = wildPokemon[wildMonIndex].maxLevel;
-            max = wildPokemon[wildMonIndex].minLevel;
+            // Use formula for higher levels
+            u8 levelDifference = (partyHighest * P_LEVEL_SCALING_OFFSET) / 100;
+            u8 minLevel = max(2, partyHighest - levelDifference);
+            u8 maxLevel = partyHighest - 1;
+            
+            if (maxLevel > minLevel)
+            {
+                range = maxLevel - minLevel + 1;
+                level = minLevel + (Random() % range);
+            }
+            else
+            {
+                level = minLevel;
+            }
         }
-        range = max - min + 1;
-        rand = Random() % range;
-
-        // check ability for max level mon
+        
+        // Handle abilities that affect wild levels
         if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         {
             u16 ability = GetMonAbility(&gPlayerParty[0]);
             if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE)
             {
                 if (Random() % 2 == 0)
-                    return max;
-
-                if (rand != 0)
-                    rand--;
+                    level = partyHighest - 1; // Force max possible level
             }
         }
-        return min + rand;
     }
     else
     {
-        // Looks for the max level of all slots that share the same species as the selected slot.
-        max = GetMaxLevelOfSpeciesInWildTable(wildPokemon, wildPokemon[wildMonIndex].species, area);
-        if (max > 0)
-            return max + 1;
-        else // Failsafe
-            return wildPokemon[wildMonIndex].maxLevel + 1;
+        // Original level calculation (unchanged)
+        if (LURE_STEP_COUNT == 0)
+        {
+            if (wildPokemon[wildMonIndex].maxLevel >= wildPokemon[wildMonIndex].minLevel)
+            {
+                min = wildPokemon[wildMonIndex].minLevel;
+                max = wildPokemon[wildMonIndex].maxLevel;
+            }
+            else
+            {
+                min = wildPokemon[wildMonIndex].maxLevel;
+                max = wildPokemon[wildMonIndex].minLevel;
+            }
+            range = max - min + 1;
+            rand = Random() % range;
+
+            if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
+            {
+                u16 ability = GetMonAbility(&gPlayerParty[0]);
+                if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE)
+                {
+                    if (Random() % 2 == 0)
+                        return max;
+                    if (rand != 0)
+                        rand--;
+                }
+            }
+            level = min + rand;
+        }
+        else
+        {
+            max = GetMaxLevelOfSpeciesInWildTable(wildPokemon, wildPokemon[wildMonIndex].species, area);
+            if (max > 0)
+                level = max + 1;
+            else
+                level = wildPokemon[wildMonIndex].maxLevel + 1;
+        }
     }
+    
+    return level;
 }
 
 u16 GetCurrentMapWildMonHeaderId(void)
