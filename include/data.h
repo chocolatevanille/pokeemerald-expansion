@@ -54,8 +54,10 @@ struct TrainerBacksprite
 //                                                    hp,atk,def,spatk,spdef,speed
 #define TRAINER_PARTY_EVS_TIMID()                    ((const u8[6]){6,0,0,252,0,252})
 #define TRAINER_PARTY_EVS_MODEST()                   ((const u8[6]){6,0,0,252,0,252})
+#define TRAINER_PARTY_EVS_MODEST_WALL()              ((const u8[6]){252,0,0,252,6,0})
 #define TRAINER_PARTY_EVS_JOLLY()                    ((const u8[6]){6,252,0,0,0,252})
 #define TRAINER_PARTY_EVS_ADAMANT()                  ((const u8[6]){6,252,0,0,0,252})
+#define TRAINER_PARTY_EVS_ADAMANT_WALL()             ((const u8[6]){252,252,6,0,0,0})
 #define TRAINER_PARTY_EVS_BOLD()                     ((const u8[6]){252,0,252,6,0,0})
 #define TRAINER_PARTY_EVS_IMPISH()                   ((const u8[6]){252,6,252,0,0,0})
 #define TRAINER_PARTY_EVS_HASTY_OR_NAIVE_ATK()       ((const u8[6]){0,252,0,6,0,252})
