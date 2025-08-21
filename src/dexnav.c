@@ -2682,7 +2682,7 @@ u32 CalculateDexNavShinyRolls(void)
     u32 chainBonus, rndBonus;
     u8 chain = gSaveBlock3Ptr->dexNavChain;
 
-    chainBonus = (chain >= 100) ? 10 : (chain >= 50) ? 5 : 0;
+    chainBonus = (chain >= 100) ? 20 : (chain >= 75) ? 15 : (chain >= 50) ? 10 : (chain >= 25) ? 5 : 0;
     rndBonus = (Random() % 100 < 4) ? 4 : 0;
     return chainBonus + rndBonus;
 }

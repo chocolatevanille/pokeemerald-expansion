@@ -148,6 +148,13 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent::
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex
 	end
 
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveDexNav::
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedDexNav
+	waitfanfare
+	setflag FLAG_UNUSED_0x021
+	return
+
 LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForPokedex:
 	walk_up
 	walk_up
@@ -507,6 +514,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex, MSGBOX_DEFAULT
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex, MSGBOX_DEFAULT
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ExplainDexNav, MSGBOX_DEFAULT
+	call LittlerootTown_ProfessorBirchsLab_EventScript_GiveDexNav
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_WholeWorldAhead, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_BIRCHS_LAB_RIVAL, LittlerootTown_ProfessorBirchsLab_Movement_RivalApproachPlayer
 	waitmovement 0
@@ -752,6 +762,26 @@ LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
 	.string "and records its data in the POKéDEX,\l"
 	.string "why, {RIVAL} looks for me while I'm out\l"
 	.string "doing fieldwork, and shows me.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ExplainDexNav:
+	.string "PROF. BIRCH: There are passionate\n"
+	.string "collectors who try to catch every species\l"
+	.string "of POKéMON and complete the POKéDEX.\p"
+	.string "In recent years, scientists from the\n"
+	.string "Devon Corporation developed incredible\l"
+	.string "new technology to make this easier.\p"
+	.string "The POKéMON you find using this\n"
+	.string "tool can have special qualities if\l"
+	.string "you look for them long enough.\p"
+	.string "I heard they can even have unique\n"
+	.string "colors!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ReceivedDexNav:
+	.string "{PLAYER} received the DexNav!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_WholeWorldAhead:
+	.string "PROF. BIRCH: You have the whole world\n"
+	.string "ahead of you. Oh, to be young again!\p"
 
 LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
 	.string "PROF. BIRCH: Countless POKéMON\n"
