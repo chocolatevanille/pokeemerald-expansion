@@ -63,7 +63,10 @@ struct TrainerBacksprite
 #define TRAINER_PARTY_EVS_HASTY_OR_NAIVE_ATK()       ((const u8[6]){0,252,0,6,0,252})
 #define TRAINER_PARTY_EVS_HASTY_OR_NAIVE_SP_ATK()    ((const u8[6]){0,6,0,252,0,252})
 #define TRAINER_PARTY_EVS_MILD()                     ((const u8[6]){0,6,0,252,0,252})
+#define TRAINER_PARTY_EVS_BRAVE()                    ((const u8[6]){252,252,0,6,0,0})
 #define TRAINER_PARTY_EVS_QUIET()                    ((const u8[6]){252,6,0,252,0,0})
+#define TRAINER_PARTY_EVS_RELAXED()                  ((const u8[6]){252,0,252,0,6,0})
+#define TRAINER_PARTY_EVS_SASSY()                    ((const u8[6]){252,0,6,0,252,0})
 #define TRAINER_PARTY_EVS_CALM()                     ((const u8[6]){252,0,0,6,252,0})
 #define TRAINER_PARTY_EVS_CAREFUL()                  ((const u8[6]){252,6,0,0,252,0})
 
