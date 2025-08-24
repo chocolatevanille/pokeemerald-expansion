@@ -12616,5 +12616,2812 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .nature = NATURE_MODEST,
         .ability = ABILITY_WATER_ABSORB
+    },
+    [FRONTIER_MON_DECIDUEYE_1] = {
+        .species = SPECIES_DECIDUEYE,
+        .moves = {MOVE_SPIRIT_SHACKLE, MOVE_LEAF_BLADE, MOVE_U_TURN, MOVE_ROOST},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_TINTED_LENS
+    },
+    [FRONTIER_MON_DECIDUEYE_2] = {
+        .species = SPECIES_DECIDUEYE,
+        .moves = {MOVE_LEAF_STORM, MOVE_SHADOW_BALL, MOVE_NASTY_PLOT, MOVE_ROOST},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_TINTED_LENS
+    },
+    [FRONTIER_MON_DECIDUEYE_3] = {
+        .species = SPECIES_DECIDUEYE,
+        .moves = {MOVE_SPIRIT_SHACKLE, MOVE_LEAF_BLADE, MOVE_SHADOW_SNEAK, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_TINTED_LENS
+    },
+    [FRONTIER_MON_DECIDUEYE_4] = {
+        .species = SPECIES_DECIDUEYE,
+        .moves = {MOVE_LEAF_STORM, MOVE_SHADOW_BALL, MOVE_ENERGY_BALL, MOVE_FOCUS_BLAST},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_TINTED_LENS
+    },
+    [FRONTIER_MON_DECIDUEYE_5] = {
+        .species = SPECIES_DECIDUEYE,
+        .moves = {MOVE_SPIRIT_SHACKLE, MOVE_LEAF_BLADE, MOVE_ROOST, MOVE_DEFOG},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_TINTED_LENS
+    },
+    [FRONTIER_MON_DECIDUEYE_HISUI_1] = {
+        .species = SPECIES_DECIDUEYE_HISUI,
+        .moves = {MOVE_TRIPLE_ARROWS, MOVE_TROP_KICK, MOVE_BRAVE_BIRD, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRIKER
+    },
+    [FRONTIER_MON_DECIDUEYE_HISUI_2] = {
+        .species = SPECIES_DECIDUEYE_HISUI,
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_TROP_KICK, MOVE_SHADOW_SNEAK, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRIKER
+    },
+    [FRONTIER_MON_INCINEROAR_1] = {
+        .species = SPECIES_INCINEROAR,
+        .moves = {MOVE_FLARE_BLITZ, MOVE_DARKEST_LARIAT, MOVE_U_TURN, MOVE_DRAIN_PUNCH},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_INTIMIDATE
+    },
+    [FRONTIER_MON_INCINEROAR_2] = {
+        .species = SPECIES_INCINEROAR,
+        .moves = {MOVE_FLARE_BLITZ, MOVE_DARKEST_LARIAT, MOVE_EARTHQUAKE, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_INTIMIDATE
+    },
+    [FRONTIER_MON_INCINEROAR_3] = {
+        .species = SPECIES_INCINEROAR,
+        .moves = {MOVE_FLARE_BLITZ, MOVE_DARKEST_LARIAT, MOVE_EARTHQUAKE, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_INTIMIDATE
+    },
+    [FRONTIER_MON_INCINEROAR_4] = {
+        .species = SPECIES_INCINEROAR,
+        .moves = {MOVE_PARTING_SHOT, MOVE_WILL_O_WISP, MOVE_TAUNT, MOVE_FLARE_BLITZ},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_INTIMIDATE
+    },
+    [FRONTIER_MON_PRIMARINA_1] = {
+        .species = SPECIES_PRIMARINA,
+        .moves = {MOVE_HYPER_VOICE, MOVE_MOONBLAST, MOVE_ENERGY_BALL, MOVE_CALM_MIND},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_LIQUID_VOICE
+    },
+    [FRONTIER_MON_PRIMARINA_2] = {
+        .species = SPECIES_PRIMARINA,
+        .moves = {MOVE_HYPER_VOICE, MOVE_MOONBLAST, MOVE_SHADOW_BALL, MOVE_ENERGY_BALL},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_LIQUID_VOICE
+    },
+    [FRONTIER_MON_PRIMARINA_3] = {
+        .species = SPECIES_PRIMARINA,
+        .moves = {MOVE_HYPER_VOICE, MOVE_MOONBLAST, MOVE_FLIP_TURN, MOVE_ENERGY_BALL},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_LIQUID_VOICE
+    },
+    [FRONTIER_MON_PRIMARINA_4] = {
+        .species = SPECIES_PRIMARINA,
+        .moves = {MOVE_HYPER_VOICE, MOVE_MOONBLAST, MOVE_SUBSTITUTE, MOVE_CALM_MIND},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_LIQUID_VOICE
+    },
+    [FRONTIER_MON_PRIMARINA_5] = {
+        .species = SPECIES_PRIMARINA,
+        .moves = {MOVE_HYPER_VOICE, MOVE_MOONBLAST, MOVE_ENERGY_BALL, MOVE_SHADOW_BALL},
+        .heldItem = ITEM_THROAT_SPRAY,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_LIQUID_VOICE
+    },
+    [FRONTIER_MON_TOUCANNON_1] = {
+        .species = SPECIES_TOUCANNON,
+        .moves = {MOVE_BEAK_BLAST, MOVE_BULLET_SEED, MOVE_ROCK_BLAST, MOVE_U_TURN},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_SKILL_LINK
+    },
+    [FRONTIER_MON_TOUCANNON_2] = {
+        .species = SPECIES_TOUCANNON,
+        .moves = {MOVE_BEAK_BLAST, MOVE_BULLET_SEED, MOVE_ROCK_BLAST, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_SKILL_LINK
+    },
+    [FRONTIER_MON_TOUCANNON_3] = {
+        .species = SPECIES_TOUCANNON,
+        .moves = {MOVE_BOOMBURST, MOVE_BRAVE_BIRD, MOVE_BULLET_SEED, MOVE_OVERHEAT},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_SP_ATK(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_RASH,
+        .ability = ABILITY_SKILL_LINK
+    },
+    [FRONTIER_MON_GUMSHOOS_1] = {
+        .species = SPECIES_GUMSHOOS,
+        .moves = {MOVE_RETURN, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_ADAPTABILITY
+    },
+    [FRONTIER_MON_GUMSHOOS_2] = {
+        .species = SPECIES_GUMSHOOS,
+        .moves = {MOVE_RETURN, MOVE_CRUNCH, MOVE_FIRE_PUNCH, MOVE_YAWN},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_STAKEOUT
+    },
+    [FRONTIER_MON_GUMSHOOS_3] = {
+        .species = SPECIES_GUMSHOOS,
+        .moves = {MOVE_RETURN, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_THUNDER_PUNCH},
+        .heldItem = ITEM_SILK_SCARF,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_ADAPTABILITY
+    },
+    [FRONTIER_MON_GUMSHOOS_4] = {
+        .species = SPECIES_GUMSHOOS,
+        .moves = {MOVE_RETURN, MOVE_CRUNCH, MOVE_REST, MOVE_SLEEP_TALK},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_ADAPTABILITY
+    },
+    [FRONTIER_MON_GUMSHOOS_5] = {
+        .species = SPECIES_GUMSHOOS,
+        .moves = {MOVE_RETURN, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_ADAPTABILITY
+    },
+    [FRONTIER_MON_VIKAVOLT_1] = {
+        .species = SPECIES_VIKAVOLT,
+        .moves = {MOVE_THUNDERCLAP, MOVE_BUG_BUZZ, MOVE_ENERGY_BALL, MOVE_VOLT_SWITCH},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_LEVITATE
+    },
+    [FRONTIER_MON_VIKAVOLT_2] = {
+        .species = SPECIES_VIKAVOLT,
+        .moves = {MOVE_THUNDERCLAP, MOVE_BUG_BUZZ, MOVE_ENERGY_BALL, MOVE_ROOST},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_LEVITATE
+    },
+    [FRONTIER_MON_VIKAVOLT_3] = {
+        .species = SPECIES_VIKAVOLT,
+        .moves = {MOVE_STICKY_WEB, MOVE_THUNDERBOLT, MOVE_BUG_BUZZ, MOVE_VOLT_SWITCH},
+        .heldItem = ITEM_FOCUS_SASH,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_LEVITATE
+    },
+    [FRONTIER_MON_VIKAVOLT_4] = {
+        .species = SPECIES_VIKAVOLT,
+        .moves = {MOVE_AGILITY, MOVE_THUNDERBOLT, MOVE_BUG_BUZZ, MOVE_ENERGY_BALL},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_LEVITATE
+    },
+    [FRONTIER_MON_VIKAVOLT_5] = {
+        .species = SPECIES_VIKAVOLT,
+        .moves = {MOVE_THUNDER, MOVE_BUG_BUZZ, MOVE_ENERGY_BALL, MOVE_VOLT_SWITCH},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_LEVITATE
+    },
+    [FRONTIER_MON_CRABOMINABLE_1] = {
+        .species = SPECIES_CRABOMINABLE,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_ICE_HAMMER, MOVE_EARTHQUAKE, MOVE_STONE_EDGE},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_IRON_FIST
+    },
+    [FRONTIER_MON_CRABOMINABLE_2] = {
+        .species = SPECIES_CRABOMINABLE,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_ICE_HAMMER, MOVE_EARTHQUAKE, MOVE_THUNDER_PUNCH},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_IRON_FIST
+    },
+    [FRONTIER_MON_CRABOMINABLE_3] = {
+        .species = SPECIES_CRABOMINABLE,
+        .moves = {MOVE_DRAIN_PUNCH, MOVE_ICE_PUNCH, MOVE_BULK_UP, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_IRON_FIST
+    },
+    [FRONTIER_MON_CRABOMINABLE_4] = {
+        .species = SPECIES_CRABOMINABLE,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_ICE_HAMMER, MOVE_CRABHAMMER, MOVE_ROCK_SLIDE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_BRAVE(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_BRAVE,
+        .ability = ABILITY_ANGER_POINT
+    },
+    [FRONTIER_MON_CRABOMINABLE_5] = {
+        .species = SPECIES_CRABOMINABLE,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_ICE_HAMMER, MOVE_EARTHQUAKE, MOVE_PROTECT},
+        .heldItem = ITEM_FLAME_ORB,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_GUTS
+    },
+    [FRONTIER_MON_ORICORIO_1] = {
+        .species = SPECIES_ORICORIO_BAILE,
+        .moves = {MOVE_REVELATION_DANCE, MOVE_HURRICANE, MOVE_ROOST, MOVE_QUIVER_DANCE},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_DANCER
+    },
+    [FRONTIER_MON_ORICORIO_2] = {
+        .species = SPECIES_ORICORIO_POM_POM,
+        .moves = {MOVE_REVELATION_DANCE, MOVE_HURRICANE, MOVE_ROOST, MOVE_U_TURN},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_DANCER
+    },
+    [FRONTIER_MON_ORICORIO_3] = {
+        .species = SPECIES_ORICORIO_POM_POM,
+        .moves = {MOVE_REVELATION_DANCE, MOVE_HURRICANE, MOVE_ROOST, MOVE_QUIVER_DANCE},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_DANCER
+    },
+    [FRONTIER_MON_ORICORIO_4] = {
+        .species = SPECIES_ORICORIO_PAU,
+        .moves = {MOVE_REVELATION_DANCE, MOVE_HURRICANE, MOVE_QUIVER_DANCE, MOVE_ROOST},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_DANCER
+    },
+    [FRONTIER_MON_ORICORIO_5] = {
+        .species = SPECIES_ORICORIO_SENSU,
+        .moves = {MOVE_REVELATION_DANCE, MOVE_HURRICANE, MOVE_QUIVER_DANCE, MOVE_ROOST},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_DANCER
+    },
+    [FRONTIER_MON_ORICORIO_6] = {
+        .species = SPECIES_ORICORIO_BAILE,
+        .moves = {MOVE_REVELATION_DANCE, MOVE_HURRICANE, MOVE_DEFOG, MOVE_TAILWIND},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_DANCER
+    },
+    [FRONTIER_MON_RIBOMBEE_1] = {
+        .species = SPECIES_RIBOMBEE,
+        .moves = {MOVE_MOONBLAST, MOVE_BUG_BUZZ, MOVE_QUIVER_DANCE, MOVE_ROOST},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHIELD_DUST
+    },
+    [FRONTIER_MON_RIBOMBEE_2] = {
+        .species = SPECIES_RIBOMBEE,
+        .moves = {MOVE_MOONBLAST, MOVE_BUG_BUZZ, MOVE_PSYCHIC, MOVE_ENERGY_BALL},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHIELD_DUST
+    },
+    [FRONTIER_MON_RIBOMBEE_3] = {
+        .species = SPECIES_RIBOMBEE,
+        .moves = {MOVE_STICKY_WEB, MOVE_MOONBLAST, MOVE_U_TURN, MOVE_STUN_SPORE},
+        .heldItem = ITEM_FOCUS_SASH,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHIELD_DUST
+    },
+    [FRONTIER_MON_RIBOMBEE_4] = {
+        .species = SPECIES_RIBOMBEE,
+        .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_BUG_BUZZ, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHIELD_DUST
+    },
+    [FRONTIER_MON_RIBOMBEE_5] = {
+        .species = SPECIES_RIBOMBEE,
+        .moves = {MOVE_MOONBLAST, MOVE_BUG_BUZZ, MOVE_DRAINING_KISS, MOVE_QUIVER_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHIELD_DUST
+    },
+    [FRONTIER_MON_LYCANROC_MIDDAY_1] = {
+        .species = SPECIES_LYCANROC_MIDDAY,
+        .moves = {MOVE_STONE_EDGE, MOVE_ACCELEROCK, MOVE_CLOSE_COMBAT, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_SAND_RUSH
+    },
+    [FRONTIER_MON_LYCANROC_MIDDAY_2] = {
+        .species = SPECIES_LYCANROC_MIDDAY,
+        .moves = {MOVE_STONE_EDGE, MOVE_ACCELEROCK, MOVE_CLOSE_COMBAT, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STEADFAST
+    },
+    [FRONTIER_MON_LYCANROC_MIDDAY_3] = {
+        .species = SPECIES_LYCANROC_MIDDAY,
+        .moves = {MOVE_STEALTH_ROCK, MOVE_STONE_EDGE, MOVE_ACCELEROCK, MOVE_ROAR},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STEADFAST
+    },
+    [FRONTIER_MON_LYCANROC_MIDNIGHT_1] = {
+        .species = SPECIES_LYCANROC_MIDNIGHT,
+        .moves = {MOVE_STONE_EDGE, MOVE_SUCKER_PUNCH, MOVE_CLOSE_COMBAT, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_VITAL_SPIRIT
+    },
+    [FRONTIER_MON_LYCANROC_MIDNIGHT_2] = {
+        .species = SPECIES_LYCANROC_MIDNIGHT,
+        .moves = {MOVE_HEAD_SMASH, MOVE_SUCKER_PUNCH, MOVE_CLOSE_COMBAT, MOVE_EARTHQUAKE},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_NO_GUARD
+    },
+    [FRONTIER_MON_LYCANROC_DUSK_1] = {
+        .species = SPECIES_LYCANROC_DUSK,
+        .moves = {MOVE_MIGHTY_CLEAVE, MOVE_ACCELEROCK, MOVE_CLOSE_COMBAT, MOVE_CRUNCH},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_TOUGH_CLAWS
+    },
+    [FRONTIER_MON_LYCANROC_DUSK_2] = {
+        .species = SPECIES_LYCANROC_DUSK,
+        .moves = {MOVE_MIGHTY_CLEAVE, MOVE_ACCELEROCK, MOVE_CLOSE_COMBAT, MOVE_CRUNCH},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_TOUGH_CLAWS
+    },
+    [FRONTIER_MON_LYCANROC_DUSK_3] = {
+        .species = SPECIES_LYCANROC_DUSK,
+        .moves = {MOVE_MIGHTY_CLEAVE, MOVE_ACCELEROCK, MOVE_CLOSE_COMBAT, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_TOUGH_CLAWS
+    },
+    [FRONTIER_MON_WISHIWASHI_1] = {
+        .species = SPECIES_WISHIWASHI_SCHOOL,
+        .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_EARTHQUAKE, MOVE_U_TURN},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_SCHOOLING
+    },
+    [FRONTIER_MON_WISHIWASHI_2] = {
+        .species = SPECIES_WISHIWASHI_SCHOOL,
+        .moves = {MOVE_SCALD, MOVE_ICE_BEAM, MOVE_TOXIC, MOVE_PROTECT},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_SCHOOLING
+    },
+    [FRONTIER_MON_WISHIWASHI_3] = {
+        .species = SPECIES_WISHIWASHI_SCHOOL,
+        .moves = {MOVE_LIQUIDATION, MOVE_EARTHQUAKE, MOVE_ICE_BEAM, MOVE_AQUA_JET},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_SCHOOLING
+    },
+    [FRONTIER_MON_WISHIWASHI_4] = {
+        .species = SPECIES_WISHIWASHI_SCHOOL,
+        .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_ENDEAVOR, MOVE_AQUA_JET},
+        .heldItem = ITEM_FOCUS_SASH,
+        .ev = TRAINER_PARTY_EVS_MILD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MILD,
+        .ability = ABILITY_SCHOOLING
+    },
+    [FRONTIER_MON_WISHIWASHI_5] = {
+        .species = SPECIES_WISHIWASHI_SCHOOL,
+        .moves = {MOVE_SCALD, MOVE_ICE_BEAM, MOVE_REST, MOVE_SLEEP_TALK},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CALM(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CALM,
+        .ability = ABILITY_SCHOOLING
+    },
+    [FRONTIER_MON_TOXAPEX_1] = {
+        .species = SPECIES_TOXAPEX,
+        .moves = {MOVE_SCALD, MOVE_RECOVER, MOVE_TOXIC, MOVE_HAZE},
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_REGENERATOR
+    },
+    [FRONTIER_MON_TOXAPEX_2] = {
+        .species = SPECIES_TOXAPEX,
+        .moves = {MOVE_SCALD, MOVE_RECOVER, MOVE_TOXIC_SPIKES, MOVE_KNOCK_OFF},
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_REGENERATOR
+    },
+    [FRONTIER_MON_TOXAPEX_3] = {
+        .species = SPECIES_TOXAPEX,
+        .moves = {MOVE_BANEFUL_BUNKER, MOVE_SCALD, MOVE_RECOVER, MOVE_TOXIC},
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_MERCILESS
+    },
+    [FRONTIER_MON_TOXAPEX_4] = {
+        .species = SPECIES_TOXAPEX,
+        .moves = {MOVE_LIQUIDATION, MOVE_POISON_JAB, MOVE_RECOVER, MOVE_TOXIC_SPIKES},
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ev = TRAINER_PARTY_EVS_IMPISH(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_IMPISH,
+        .ability = ABILITY_LIMBER
+    },
+    [FRONTIER_MON_MUDSDALE_1] = {
+        .species = SPECIES_MUDSDALE,
+        .moves = {MOVE_EARTHQUAKE, MOVE_SLACK_OFF, MOVE_STONE_EDGE, MOVE_STEALTH_ROCK},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_STAMINA
+    },
+    [FRONTIER_MON_MUDSDALE_2] = {
+        .species = SPECIES_MUDSDALE,
+        .moves = {MOVE_EARTHQUAKE, MOVE_CLOSE_COMBAT, MOVE_STONE_EDGE, MOVE_HEAVY_SLAM},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_STAMINA
+    },
+    [FRONTIER_MON_MUDSDALE_3] = {
+        .species = SPECIES_MUDSDALE,
+        .moves = {MOVE_EARTHQUAKE, MOVE_SLACK_OFF, MOVE_ROCK_SLIDE, MOVE_CURSE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_STAMINA
+    },
+    [FRONTIER_MON_ARAQUANID_1] = {
+        .species = SPECIES_ARAQUANID,
+        .moves = {MOVE_WAVE_CRASH, MOVE_LEECH_LIFE, MOVE_STICKY_WEB, MOVE_MIRROR_COAT},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_WATER_BUBBLE
+    },
+    [FRONTIER_MON_ARAQUANID_2] = {
+        .species = SPECIES_ARAQUANID,
+        .moves = {MOVE_WAVE_CRASH, MOVE_LEECH_LIFE, MOVE_POISON_JAB, MOVE_CRUNCH},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_WATER_BUBBLE
+    },
+    [FRONTIER_MON_ARAQUANID_3] = {
+        .species = SPECIES_ARAQUANID,
+        .moves = {MOVE_SCALD, MOVE_STICKY_WEB, MOVE_TOXIC, MOVE_GIGA_DRAIN},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_CALM(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CALM,
+        .ability = ABILITY_WATER_ABSORB
+    },
+    [FRONTIER_MON_ARAQUANID_4] = {
+        .species = SPECIES_ARAQUANID,
+        .moves = {MOVE_WAVE_CRASH, MOVE_LEECH_LIFE, MOVE_POISON_JAB, MOVE_CRUNCH},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_WATER_BUBBLE
+    },
+    [FRONTIER_MON_ARAQUANID_5] = {
+        .species = SPECIES_ARAQUANID,
+        .moves = {MOVE_SURF, MOVE_BUG_BUZZ, MOVE_ICE_BEAM, MOVE_GIGA_DRAIN},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_WATER_BUBBLE
+    },
+    [FRONTIER_MON_LURANTIS_1] = {
+        .species = SPECIES_LURANTIS,
+        .moves = {MOVE_LEAF_BLADE, MOVE_SUPERPOWER, MOVE_KNOCK_OFF, MOVE_SYNTHESIS},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_CONTRARY
+    },
+    [FRONTIER_MON_LURANTIS_2] = {
+        .species = SPECIES_LURANTIS,
+        .moves = {MOVE_LEAF_STORM, MOVE_FOCUS_BLAST, MOVE_WEATHER_BALL, MOVE_SUNNY_DAY},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_CONTRARY
+    },
+    [FRONTIER_MON_LURANTIS_3] = {
+        .species = SPECIES_LURANTIS,
+        .moves = {MOVE_LEAF_BLADE, MOVE_SUPERPOWER, MOVE_X_SCISSOR, MOVE_DEFOG},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_CONTRARY
+    },
+    [FRONTIER_MON_SHIINOTIC_1] = {
+        .species = SPECIES_SHIINOTIC,
+        .moves = {MOVE_SPARKLY_SWIRL, MOVE_GIGA_DRAIN, MOVE_SPORE, MOVE_STRENGTH_SAP},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_EFFECT_SPORE
+    },
+    [FRONTIER_MON_SHIINOTIC_2] = {
+        .species = SPECIES_SHIINOTIC,
+        .moves = {MOVE_SPARKLY_SWIRL, MOVE_GIGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_ENERGY_BALL},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_EFFECT_SPORE
+    },
+    [FRONTIER_MON_SHIINOTIC_3] = {
+        .species = SPECIES_SHIINOTIC,
+        .moves = {MOVE_SPORE, MOVE_SPARKLY_SWIRL, MOVE_SUBSTITUTE, MOVE_LEECH_SEED},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_EFFECT_SPORE
+    },
+    [FRONTIER_MON_SHIINOTIC_4] = {
+        .species = SPECIES_SHIINOTIC,
+        .moves = {MOVE_SPARKLY_SWIRL, MOVE_GIGA_DRAIN, MOVE_CALM_MIND, MOVE_MOONLIGHT},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_EFFECT_SPORE
+    },
+    [FRONTIER_MON_SALAZZLE_1] = {
+        .species = SPECIES_SALAZZLE,
+        .moves = {MOVE_FIRE_BLAST, MOVE_SLUDGE_WAVE, MOVE_SCORCHING_SANDS, MOVE_NASTY_PLOT},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_CORROSION
+    },
+    [FRONTIER_MON_SALAZZLE_2] = {
+        .species = SPECIES_SALAZZLE,
+        .moves = {MOVE_FLAMETHROWER, MOVE_SLUDGE_WAVE, MOVE_SCORCHING_SANDS, MOVE_OVERHEAT},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_CORROSION
+    },
+    [FRONTIER_MON_SALAZZLE_3] = {
+        .species = SPECIES_SALAZZLE,
+        .moves = {MOVE_SCORCHING_SANDS, MOVE_FIRE_BLAST, MOVE_SLUDGE_WAVE, MOVE_ENCORE},
+        .heldItem = ITEM_FOCUS_SASH,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_CORROSION
+    },
+    [FRONTIER_MON_SALAZZLE_4] = {
+        .species = SPECIES_SALAZZLE,
+        .moves = {MOVE_FIRE_BLAST, MOVE_SLUDGE_WAVE, MOVE_SUBSTITUTE, MOVE_DISABLE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_CORROSION
+    },
+    [FRONTIER_MON_SALAZZLE_5] = {
+        .species = SPECIES_SALAZZLE,
+        .moves = {MOVE_OVERHEAT, MOVE_SLUDGE_WAVE, MOVE_SCORCHING_SANDS, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_CORROSION
+    },
+    [FRONTIER_MON_BEWEAR_1] = {
+        .species = SPECIES_BEWEAR,
+        .moves = {MOVE_RETURN, MOVE_HAMMER_ARM, MOVE_ICE_PUNCH, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_FLUFFY
+    },
+    [FRONTIER_MON_BEWEAR_2] = {
+        .species = SPECIES_BEWEAR,
+        .moves = {MOVE_RETURN, MOVE_HAMMER_ARM, MOVE_ICE_PUNCH, MOVE_SHADOW_CLAW},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_FLUFFY
+    },
+    [FRONTIER_MON_BEWEAR_3] = {
+        .species = SPECIES_BEWEAR,
+        .moves = {MOVE_DOUBLE_EDGE, MOVE_CLOSE_COMBAT, MOVE_ICE_PUNCH, MOVE_THUNDER_PUNCH},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_FLUFFY
+    },
+    [FRONTIER_MON_BEWEAR_4] = {
+        .species = SPECIES_BEWEAR,
+        .moves = {MOVE_RETURN, MOVE_DRAIN_PUNCH, MOVE_BULK_UP, MOVE_REST},
+        .heldItem = ITEM_CHESTO_BERRY,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_FLUFFY
+    },
+    [FRONTIER_MON_TSAREENA_1] = {
+        .species = SPECIES_TSAREENA,
+        .moves = {MOVE_TROP_KICK, MOVE_HIGH_JUMP_KICK, MOVE_RAPID_SPIN, MOVE_TRIPLE_AXEL},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRIKER
+    },
+    [FRONTIER_MON_TSAREENA_2] = {
+        .species = SPECIES_TSAREENA,
+        .moves = {MOVE_TROP_KICK, MOVE_HIGH_JUMP_KICK, MOVE_RAPID_SPIN, MOVE_TRIPLE_AXEL},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_STRIKER
+    },
+    [FRONTIER_MON_TSAREENA_3] = {
+        .species = SPECIES_TSAREENA,
+        .moves = {MOVE_TROP_KICK, MOVE_HIGH_JUMP_KICK, MOVE_RAPID_SPIN, MOVE_TRIPLE_AXEL},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRIKER
+    },
+    [FRONTIER_MON_TSAREENA_4] = {
+        .species = SPECIES_TSAREENA,
+        .moves = {MOVE_TROP_KICK, MOVE_HIGH_JUMP_KICK, MOVE_RAPID_SPIN, MOVE_TRIPLE_AXEL},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_ADAMANT_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_STRIKER
+    },
+    [FRONTIER_MON_COMFEY_1] = {
+        .species = SPECIES_COMFEY,
+        .moves = {MOVE_DRAINING_KISS, MOVE_GIGA_DRAIN, MOVE_CALM_MIND, MOVE_SYNTHESIS},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_TRIAGE
+    },
+    [FRONTIER_MON_COMFEY_2] = {
+        .species = SPECIES_COMFEY,
+        .moves = {MOVE_DRAINING_KISS, MOVE_GIGA_DRAIN, MOVE_U_TURN, MOVE_TRICK_ROOM},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_QUIET(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_QUIET,
+        .ability = ABILITY_TRIAGE
+    },
+    [FRONTIER_MON_COMFEY_3] = {
+        .species = SPECIES_COMFEY,
+        .moves = {MOVE_DRAINING_KISS, MOVE_GIGA_DRAIN, MOVE_DEFOG, MOVE_LEECH_SEED},
+        .heldItem = ITEM_BIG_ROOT,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_TRIAGE
+    },
+    [FRONTIER_MON_COMFEY_4] = {
+        .species = SPECIES_COMFEY,
+        .moves = {MOVE_DRAINING_KISS, MOVE_GIGA_DRAIN, MOVE_DAZZLING_GLEAM, MOVE_PSYCHIC},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_FLOWER_VEIL
+    },
+    [FRONTIER_MON_ORANGURU_1] = {
+        .species = SPECIES_ORANGURU,
+        .moves = {MOVE_PSYCHIC, MOVE_FOCUS_BLAST, MOVE_FOUL_PLAY, MOVE_TRICK_ROOM},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_QUIET(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_QUIET,
+        .ability = ABILITY_INNER_FOCUS
+    },
+    [FRONTIER_MON_ORANGURU_2] = {
+        .species = SPECIES_ORANGURU,
+        .moves = {MOVE_PSYCHIC, MOVE_FOCUS_BLAST, MOVE_THUNDERBOLT, MOVE_NASTY_PLOT},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_INNER_FOCUS
+    },
+    [FRONTIER_MON_ORANGURU_3] = {
+        .species = SPECIES_ORANGURU,
+        .moves = {MOVE_PSYCHIC, MOVE_FOCUS_BLAST, MOVE_THUNDERBOLT, MOVE_SHADOW_BALL},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_SAGE_POWER
+    },
+    [FRONTIER_MON_ORANGURU_4] = {
+        .species = SPECIES_ORANGURU,
+        .moves = {MOVE_PSYCHIC, MOVE_FOCUS_BLAST, MOVE_THUNDERBOLT, MOVE_SHADOW_BALL},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_SAGE_POWER
+    },
+    [FRONTIER_MON_PASSIMIAN_1] = {
+        .species = SPECIES_PASSIMIAN,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_U_TURN, MOVE_GUNK_SHOT},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_DEFIANT
+    },
+    [FRONTIER_MON_PASSIMIAN_2] = {
+        .species = SPECIES_PASSIMIAN,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_U_TURN, MACH_PUNCH},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_DEFIANT
+    },
+    [FRONTIER_MON_PASSIMIAN_3] = {
+        .species = SPECIES_PASSIMIAN,
+        .moves = {MOVE_DRAIN_PUNCH, MOVE_KNOCK_OFF, MOVE_BULK_UP, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_DEFIANT
+    },
+    [FRONTIER_MON_GOLISOPOD_1] = {
+        .species = SPECIES_GOLISOPOD,
+        .moves = {MOVE_FIRST_IMPRESSION, MOVE_LIQUIDATION, MOVE_LEECH_LIFE, MOVE_AQUA_JET},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_EMERGENCY_EXIT
+    },
+    [FRONTIER_MON_GOLISOPOD_2] = {
+        .species = SPECIES_GOLISOPOD,
+        .moves = {MOVE_FIRST_IMPRESSION, MOVE_LIQUIDATION, MOVE_LEECH_LIFE, MOVE_SPIKES},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_EMERGENCY_EXIT
+    },
+    [FRONTIER_MON_GOLISOPOD_3] = {
+        .species = SPECIES_GOLISOPOD,
+        .moves = {MOVE_LIQUIDATION, MOVE_LEECH_LIFE, MOVE_CLOSE_COMBAT, MOVE_AQUA_JET},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_EMERGENCY_EXIT
+    },
+    [FRONTIER_MON_GOLISOPOD_4] = {
+        .species = SPECIES_GOLISOPOD,
+        .moves = {MOVE_FIRST_IMPRESSION, MOVE_LIQUIDATION, MOVE_POISON_JAB, MOVE_SUCKER_PUNCH},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_EMERGENCY_EXIT
+    },
+    [FRONTIER_MON_GOLISOPOD_5] = {
+        .species = SPECIES_GOLISOPOD,
+        .moves = {MOVE_SWORDS_DANCE, MOVE_LIQUIDATION, MOVE_LEECH_LIFE, MOVE_AQUA_JET},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_EMERGENCY_EXIT
+    },
+    [FRONTIER_MON_PALOSSAND_1] = {
+        .species = SPECIES_PALOSSAND,
+        .moves = {MOVE_EARTH_POWER, MOVE_SHADOW_BALL, MOVE_GIGA_DRAIN, MOVE_SHORE_UP},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_WATER_COMPACTION
+    },
+    [FRONTIER_MON_PALOSSAND_2] = {
+        .species = SPECIES_PALOSSAND,
+        .moves = {MOVE_EARTH_POWER, MOVE_SHADOW_BALL, MOVE_GIGA_DRAIN, MOVE_SLUDGE_BOMB},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_WATER_COMPACTION
+    },
+    [FRONTIER_MON_PYUKUMUKU_1] = {
+        .species = SPECIES_PYUKUMUKU,
+        .moves = {MOVE_RECOVER, MOVE_TOXIC, MOVE_COUNTER, MOVE_MIRROR_COAT},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_UNAWARE
+    },
+    [FRONTIER_MON_PYUKUMUKU_2] = {
+        .species = SPECIES_PYUKUMUKU,
+        .moves = {MOVE_RECOVER, MOVE_TOXIC, MOVE_SOAK, MOVE_SPITE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_UNAWARE
+    },
+    [FRONTIER_MON_SILVALLY_1] = {
+        .species = SPECIES_SILVALLY,
+        .moves = {MOVE_MULTI_ATTACK, MOVE_FLAMETHROWER, MOVE_THUNDERBOLT, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_RKS_SYSTEM
+    },
+    [FRONTIER_MON_SILVALLY_2] = {
+        .species = SPECIES_SILVALLY_FIGHTING,
+        .moves = {MOVE_MULTI_ATTACK, MOVE_CRUNCH, MOVE_U_TURN, MOVE_FLAME_CHARGE},
+        .heldItem = ITEM_FIGHTING_MEMORY,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_RKS_SYSTEM
+    },
+    [FRONTIER_MON_SILVALLY_3] = {
+        .species = SPECIES_SILVALLY_FIRE,
+        .moves = {MOVE_MULTI_ATTACK, MOVE_CRUNCH, MOVE_U_TURN, MOVE_THUNDERBOLT},
+        .heldItem = ITEM_FIRE_MEMORY,
+        .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_ATK(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_NAIVE,
+        .ability = ABILITY_RKS_SYSTEM
+    },
+    [FRONTIER_MON_SILVALLY_4] = {
+        .species = SPECIES_SILVALLY_STEEL,
+        .moves = {MOVE_MULTI_ATTACK, MOVE_FLAMETHROWER, MOVE_THUNDERBOLT, MOVE_DEFOG},
+        .heldItem = ITEM_STEEL_MEMORY,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_RKS_SYSTEM
+    },
+    [FRONTIER_MON_SILVALLY_5] = {
+        .species = SPECIES_SILVALLY_GHOST,
+        .moves = {MOVE_MULTI_ATTACK, MOVE_FLAMETHROWER, MOVE_THUNDERBOLT, MOVE_PARTING_SHOT},
+        .heldItem = ITEM_GHOST_MEMORY,
+        .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_SP_ATK(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_NAIVE,
+        .ability = ABILITY_RKS_SYSTEM
+    },
+    [FRONTIER_MON_MINIOR_1] = {
+        .species = SPECIES_MINIOR_METEOR_ORANGE,
+        .moves = {MOVE_ACROBATICS, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_SHELL_SMASH},
+        .heldItem = ITEM_WHITE_HERB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_SHIELDS_DOWN
+    },
+    [FRONTIER_MON_MINIOR_2] = {
+        .species = SPECIES_MINIOR_METEOR_ORANGE,
+        .moves = {MOVE_ACROBATICS, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_U_TURN},
+        .heldItem = ITEM_NONE,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_SHIELDS_DOWN
+    },
+    [FRONTIER_MON_MINIOR_3] = {
+        .species = SPECIES_MINIOR_METEOR_ORANGE,
+        .moves = {MOVE_POWER_GEM, MOVE_DAZZLING_GLEAM, MOVE_PSYCHIC, MOVE_SHELL_SMASH},
+        .heldItem = ITEM_WHITE_HERB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHIELDS_DOWN
+    },
+    [FRONTIER_MON_MINIOR_4] = {
+        .species = SPECIES_MINIOR_METEOR_ORANGE,
+        .moves = {MOVE_STEALTH_ROCK, MOVE_EXPLOSION, MOVE_EARTHQUAKE, MOVE_STONE_EDGE},
+        .heldItem = ITEM_FOCUS_SASH,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_SHIELDS_DOWN
+    },
+    [FRONTIER_MON_KOMALA_1] = {
+        .species = SPECIES_KOMALA,
+        .moves = {MOVE_RETURN, MOVE_EARTHQUAKE, MOVE_SUCKER_PUNCH, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_COMATOSE
+    },
+    [FRONTIER_MON_KOMALA_2] = {
+        .species = SPECIES_KOMALA,
+        .moves = {MOVE_RETURN, MOVE_EARTHQUAKE, MOVE_WOOD_HAMMER, MOVE_RAPID_SPIN},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_COMATOSE
+    },
+    [FRONTIER_MON_KOMALA_3] = {
+        .species = SPECIES_KOMALA,
+        .moves = {MOVE_RETURN, MOVE_EARTHQUAKE, MOVE_SUCKER_PUNCH, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_COMATOSE
+    },
+    [FRONTIER_MON_TURTONATOR_1] = {
+        .species = SPECIES_TURTONATOR,
+        .moves = {MOVE_FIRE_BLAST, MOVE_DRACO_METEOR, MOVE_FLASH_CANNON, MOVE_SHELL_TRAP},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_DAUNTLESS_SHIELD
+    },
+    [FRONTIER_MON_TURTONATOR_2] = {
+        .species = SPECIES_TURTONATOR,
+        .moves = {MOVE_FIRE_BLAST, MOVE_DRAGON_PULSE, MOVE_FLASH_CANNON, MOVE_RAPID_SPIN},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_DAUNTLESS_SHIELD
+    },
+    [FRONTIER_MON_TURTONATOR_3] = {
+        .species = SPECIES_TURTONATOR,
+        .moves = {MOVE_FIRE_BLAST, MOVE_DRACO_METEOR, MOVE_FOCUS_BLAST, MOVE_SHELL_SMASH},
+        .heldItem = ITEM_WHITE_HERB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_DAUNTLESS_SHIELD
+    },
+    [FRONTIER_MON_TURTONATOR_4] = {
+        .species = SPECIES_TURTONATOR,
+        .moves = {MOVE_FIRE_BLAST, MOVE_DRAGON_PULSE, MOVE_CHARGE_BEAM, MOVE_BODY_PRESS},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_DAUNTLESS_SHIELD
+    },
+    [FRONTIER_MON_TOGEDEMARU_1] = {
+        .species = SPECIES_TOGEDEMARU,
+        .moves = {MOVE_ZING_ZAP, MOVE_IRON_HEAD, MOVE_U_TURN, MOVE_SPIKY_SHIELD},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_IRON_BARBS
+    },
+    [FRONTIER_MON_TOGEDEMARU_2] = {
+        .species = SPECIES_TOGEDEMARU,
+        .moves = {MOVE_ZING_ZAP, MOVE_IRON_HEAD, MOVE_FAKE_OUT, MOVE_ENCORE},
+        .heldItem = ITEM_FOCUS_SASH,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STURDY
+    },
+    [FRONTIER_MON_TOGEDEMARU_3] = {
+        .species = SPECIES_TOGEDEMARU,
+        .moves = {MOVE_ZING_ZAP, MOVE_IRON_HEAD, MOVE_U_TURN, MOVE_ZEN_HEADBUTT},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_IRON_BARBS
+    },
+    [FRONTIER_MON_MIMIKYU_1] = {
+        .species = SPECIES_MIMIKYU,
+        .moves = {MOVE_SHADOW_SNEAK, MOVE_PLAY_ROUGH, MOVE_SWORDS_DANCE, MOVE_SHADOW_CLAW},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_DISGUISE
+    },
+    [FRONTIER_MON_MIMIKYU_2] = {
+        .species = SPECIES_MIMIKYU,
+        .moves = {MOVE_SHADOW_SNEAK, MOVE_PLAY_ROUGH, MOVE_WOOD_HAMMER, MOVE_DRAIN_PUNCH},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_DISGUISE
+    },
+    [FRONTIER_MON_MIMIKYU_3] = {
+        .species = SPECIES_MIMIKYU,
+        .moves = {MOVE_SHADOW_SNEAK, MOVE_PLAY_ROUGH, MOVE_SUBSTITUTE, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_DISGUISE
+    },
+    [FRONTIER_MON_MIMIKYU_4] = {
+        .species = SPECIES_MIMIKYU,
+        .moves = {MOVE_SHADOW_SNEAK, MOVE_PLAY_ROUGH, MOVE_TRICK_ROOM, MOVE_DESTINY_BOND},
+        .heldItem = ITEM_FOCUS_SASH,
+        .ev = TRAINER_PARTY_EVS(252, 252, 6, 0, 0, 0),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_BRAVE,
+        .ability = ABILITY_DISGUISE
+    },
+    [FRONTIER_MON_BRUXISH_1] = {
+        .species = SPECIES_BRUXISH,
+        .moves = {MOVE_PSYCHIC_FANGS, MOVE_LIQUIDATION, MOVE_CRUNCH, MOVE_AQUA_JET},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRONG_JAW
+    },
+    [FRONTIER_MON_BRUXISH_2] = {
+        .species = SPECIES_BRUXISH,
+        .moves = {MOVE_PSYCHIC_FANGS, MOVE_LIQUIDATION, MOVE_ICE_FANG, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRONG_JAW
+    },
+    [FRONTIER_MON_BRUXISH_3] = {
+        .species = SPECIES_BRUXISH,
+        .moves = {MOVE_PSYCHIC_FANGS, MOVE_LIQUIDATION, MOVE_DISABLE, MOVE_ROOST},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_DAZZLING
+    },
+    [FRONTIER_MON_BRUXISH_4] = {
+        .species = SPECIES_BRUXISH,
+        .moves = {MOVE_PSYCHIC_FANGS, MOVE_LIQUIDATION, MOVE_POISON_FANG, MOVE_FLIP_TURN},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRONG_JAW
+    },
+    [FRONTIER_MON_DRAMPA_1] = {
+        .species = SPECIES_DRAMPA,
+        .moves = {MOVE_DRACO_METEOR, MOVE_HYPER_VOICE, MOVE_FLAMETHROWER, MOVE_ICE_BEAM},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_SAP_SIPPER
+    },
+    [FRONTIER_MON_DRAMPA_2] = {
+        .species = SPECIES_DRAMPA,
+        .moves = {MOVE_DRAGON_PULSE, MOVE_HYPER_VOICE, MOVE_FLAMETHROWER, MOVE_GLARE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_SAP_SIPPER
+    },
+    [FRONTIER_MON_DRAMPA_3] = {
+        .species = SPECIES_DRAMPA,
+        .moves = {MOVE_DRAGON_PULSE, MOVE_HYPER_VOICE, MOVE_THUNDERBOLT, MOVE_ICE_BEAM},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_FATAL_PRECISION
+    },
+    [FRONTIER_MON_DRAMPA_4] = {
+        .species = SPECIES_DRAMPA,
+        .moves = {MOVE_DRAGON_PULSE, MOVE_HYPER_VOICE, MOVE_ROOST, MOVE_CALM_MIND},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_BERSERK
+    },
+    [FRONTIER_MON_DRAMPA_5] = {
+        .species = SPECIES_DRAMPA,
+        .moves = {MOVE_DRAGON_PULSE, MOVE_HYPER_VOICE, MOVE_LIGHT_SCREEN, MOVE_REFLECT},
+        .heldItem = ITEM_LIGHT_CLAY,
+        .ev = TRAINER_PARTY_EVS_CALM(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CALM,
+        .ability = ABILITY_SAP_SIPPER
+    },
+    [FRONTIER_MON_DHELMISE_1] = {
+        .species = SPECIES_DHELMISE,
+        .moves = {MOVE_POWER_WHIP, MOVE_POLTERGEIST, MOVE_ANCHOR_SHOT, MOVE_SYNTHESIS},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_STEELY_SPIRIT
+    },
+    [FRONTIER_MON_DHELMISE_2] = {
+        .species = SPECIES_DHELMISE,
+        .moves = {MOVE_POWER_WHIP, MOVE_POLTERGEIST, MOVE_ANCHOR_SHOT, MOVE_RAPID_SPIN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_STEELY_SPIRIT
+    },
+    [FRONTIER_MON_DHELMISE_3] = {
+        .species = SPECIES_DHELMISE,
+        .moves = {MOVE_POWER_WHIP, MOVE_SHADOW_BALL, MOVE_FLASH_CANNON, MOVE_ENERGY_BALL},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 6, 0),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_QUIET,
+        .ability = ABILITY_STEELY_SPIRIT
+    },
+    [FRONTIER_MON_DHELMISE_4] = {
+        .species = SPECIES_DHELMISE,
+        .moves = {MOVE_POWER_WHIP, MOVE_POLTERGEIST, MOVE_EARTHQUAKE, MOVE_ANCHOR_SHOT},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_ADAMANT_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_STEELWORKER
+    },
+    [FRONTIER_MON_KOMMO_O_1] = {
+        .species = SPECIES_KOMMO_O,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_DRAGON_CLAW, MOVE_POISON_JAB, MOVE_DRAGON_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_BULLETPROOF
+    },
+    [FRONTIER_MON_KOMMO_O_2] = {
+        .species = SPECIES_KOMMO_O,
+        .moves = {MOVE_CLANGING_SCALES, MOVE_AURA_SPHERE, MOVE_FLAMETHROWER, MOVE_CLANGOROUS_SOUL},
+        .heldItem = ITEM_THROAT_SPRAY,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SOUNDPROOF
+    },
+    [FRONTIER_MON_KOMMO_O_3] = {
+        .species = SPECIES_KOMMO_O,
+        .moves = {MOVE_CLANGING_SCALES, MOVE_AURA_SPHERE, MOVE_FLASH_CANNON, MOVE_VACUUM_WAVE},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_SOUNDPROOF
+    },
+    [FRONTIER_MON_KOMMO_O_4] = {
+        .species = SPECIES_KOMMO_O,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_DRAGON_CLAW, MOVE_EARTHQUAKE, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_BULLETPROOF
+    },
+    [FRONTIER_MON_KOMMO_O_5] = {
+        .species = SPECIES_KOMMO_O,
+        .moves = {MOVE_BODY_PRESS, MOVE_DRAGON_TAIL, MOVE_STEALTH_ROCK, MOVE_IRON_DEFENSE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_OVERCOAT
+    },
+    [FRONTIER_MON_TAPU_KOKO_1] = {
+        .species = SPECIES_TAPU_KOKO,
+        .moves = {MOVE_THUNDERBOLT, MOVE_DAZZLING_GLEAM, MOVE_VOLT_SWITCH, MOVE_ROOST},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_ELECTRIC_SURGE
+    },
+    [FRONTIER_MON_TAPU_KOKO_2] = {
+        .species = SPECIES_TAPU_KOKO,
+        .moves = {MOVE_THUNDERBOLT, MOVE_DAZZLING_GLEAM, MOVE_GRASS_KNOT, MOVE_VOLT_SWITCH},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_ELECTRIC_SURGE
+    },
+    [FRONTIER_MON_TAPU_KOKO_3] = {
+        .species = SPECIES_TAPU_KOKO,
+        .moves = {MOVE_SUPERCELL_SLAM, MOVE_PLAY_ROUGH, MOVE_U_TURN, MOVE_ROOST},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_ELECTRIC_SURGE
+    },
+    [FRONTIER_MON_TAPU_LELE_1] = {
+        .species = SPECIES_TAPU_LELE,
+        .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_FOCUS_BLAST, MOVE_CALM_MIND},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_PSYCHIC_SURGE
+    },
+    [FRONTIER_MON_TAPU_LELE_2] = {
+        .species = SPECIES_TAPU_LELE,
+        .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_SHADOW_BALL, MOVE_THUNDERBOLT},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_PSYCHIC_SURGE
+    },
+    [FRONTIER_MON_TAPU_LELE_3] = {
+        .species = SPECIES_TAPU_LELE,
+        .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_FOCUS_BLAST, MOVE_PSYSHOCK},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_PSYCHIC_SURGE
+    },
+    [FRONTIER_MON_TAPU_BULU_1] = {
+        .species = SPECIES_TAPU_BULU,
+        .moves = {MOVE_WOOD_HAMMER, MOVE_SUPERPOWER, MOVE_PLAY_ROUGH, MOVE_SYNTHESIS},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_GRASSY_SURGE
+    },
+    [FRONTIER_MON_TAPU_BULU_2] = {
+        .species = SPECIES_TAPU_BULU,
+        .moves = {MOVE_WOOD_HAMMER, MOVE_SUPERPOWER, MOVE_PLAY_ROUGH, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_GRASSY_SURGE
+    },
+    [FRONTIER_MON_TAPU_BULU_3] = {
+        .species = SPECIES_TAPU_BULU,
+        .moves = {MOVE_HORN_LEECH, MOVE_SUPERPOWER, MOVE_PLAY_ROUGH, MOVE_BULK_UP},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_GRASSY_SURGE
+    },
+    [FRONTIER_MON_TAPU_BULU_4] = {
+        .species = SPECIES_TAPU_BULU,
+        .moves = {MOVE_WOOD_HAMMER, MOVE_SUPERPOWER, MOVE_DARKEST_LARIAT, MOVE_PLAY_ROUGH},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_GRASSY_SURGE
+    },
+    [FRONTIER_MON_TAPU_BULU_5] = {
+        .species = SPECIES_TAPU_BULU,
+        .moves = {MOVE_WOOD_HAMMER, MOVE_PLAY_ROUGH, MOVE_HORN_LEECH, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_IMPISH(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_IMPISH,
+        .ability = ABILITY_GRASSY_SURGE
+    },
+    [FRONTIER_MON_TAPU_FINI_1] = {
+        .species = SPECIES_TAPU_FINI,
+        .moves = {MOVE_SCALD, MOVE_MOONBLAST, MOVE_DEFOG, MOVE_NATURES_MADNESS},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CALM(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CALM,
+        .ability = ABILITY_MISTY_SURGE
+    },
+    [FRONTIER_MON_TAPU_FINI_2] = {
+        .species = SPECIES_TAPU_FINI,
+        .moves = {MOVE_SURF, MOVE_MOONBLAST, MOVE_ICE_BEAM, MOVE_CALM_MIND},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_MISTY_SURGE
+    },
+    [FRONTIER_MON_TAPU_FINI_3] = {
+        .species = SPECIES_TAPU_FINI,
+        .moves = {MOVE_HYDRO_PUMP, MOVE_MOONBLAST, MOVE_ICE_BEAM, MOVE_GRASS_KNOT},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_MISTY_SURGE
+    },
+    [FRONTIER_MON_SOLGALEO_1] = {
+        .species = SPECIES_SOLGALEO,
+        .moves = {MOVE_SUNSTEEL_STRIKE, MOVE_FLARE_BLITZ, MOVE_EARTHQUAKE, MOVE_MORNING_SUN},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_FULL_METAL_BODY
+    },
+    [FRONTIER_MON_SOLGALEO_2] = {
+        .species = SPECIES_SOLGALEO,
+        .moves = {MOVE_SUNSTEEL_STRIKE, MOVE_ZEN_HEADBUTT, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_FULL_METAL_BODY
+    },
+    [FRONTIER_MON_SOLGALEO_3] = {
+        .species = SPECIES_SOLGALEO,
+        .moves = {MOVE_SUNSTEEL_STRIKE, MOVE_FLARE_BLITZ, MOVE_KNOCK_OFF, MOVE_EARTHQUAKE},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_FULL_METAL_BODY
+    },
+    [FRONTIER_MON_SOLGALEO_4] = {
+        .species = SPECIES_SOLGALEO,
+        .moves = {MOVE_SUNSTEEL_STRIKE, MOVE_PSYCHIC, MOVE_MORNING_SUN, MOVE_CALM_MIND},
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ev = TRAINER_PARTY_EVS_IMPISH(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_IMPISH,
+        .ability = ABILITY_FULL_METAL_BODY
+    },
+    [FRONTIER_MON_LUNALA_1] = {
+        .species = SPECIES_LUNALA,
+        .moves = {MOVE_MOONGEIST_BEAM, MOVE_PSYSHOCK, MOVE_MOONBLAST, MOVE_ROOST},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHADOW_SHIELD
+    },
+    [FRONTIER_MON_LUNALA_2] = {
+        .species = SPECIES_LUNALA,
+        .moves = {MOVE_MOONGEIST_BEAM, MOVE_PSYSHOCK, MOVE_ICE_BEAM, MOVE_CALM_MIND},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHADOW_SHIELD
+    },
+    [FRONTIER_MON_LUNALA_3] = {
+        .species = SPECIES_LUNALA,
+        .moves = {MOVE_MOONGEIST_BEAM, MOVE_PSYSHOCK, MOVE_MOONBLAST, MOVE_FOCUS_BLAST},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHADOW_SHIELD
+    },
+    [FRONTIER_MON_LUNALA_4] = {
+        .species = SPECIES_LUNALA,
+        .moves = {MOVE_MOONGEIST_BEAM, MOVE_PSYSHOCK, MOVE_MOONBLAST, MOVE_ICE_BEAM},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHADOW_SHIELD
+    },
+    [FRONTIER_MON_LUNALA_5] = {
+        .species = SPECIES_LUNALA,
+        .moves = {MOVE_MOONGEIST_BEAM, MOVE_PSYSHOCK, MOVE_TAILWIND, MOVE_DEFOG},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SHADOW_SHIELD
+    },
+    [FRONTIER_MON_NIHILEGO_1] = {
+        .species = SPECIES_NIHILEGO,
+        .moves = {MOVE_POWER_GEM, MOVE_SLUDGE_WAVE, MOVE_GRASS_KNOT, MOVE_STEALTH_ROCK},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_NIHILEGO_2] = {
+        .species = SPECIES_NIHILEGO,
+        .moves = {MOVE_POWER_GEM, MOVE_SLUDGE_WAVE, MOVE_GRASS_KNOT, MOVE_THUNDERBOLT},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_NIHILEGO_3] = {
+        .species = SPECIES_NIHILEGO,
+        .moves = {MOVE_POWER_GEM, MOVE_SLUDGE_WAVE, MOVE_GRASS_KNOT, MOVE_THUNDERBOLT},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_NIHILEGO_4] = {
+        .species = SPECIES_NIHILEGO,
+        .moves = {MOVE_POWER_GEM, MOVE_SLUDGE_WAVE, MOVE_GRASS_KNOT, MOVE_METEOR_BEAM},
+        .heldItem = ITEM_POWER_HERB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_NIHILEGO_5] = {
+        .species = SPECIES_NIHILEGO,
+        .moves = {MOVE_POWER_GEM, MOVE_SLUDGE_WAVE, MOVE_GRASS_KNOT, MOVE_TOXIC_SPIKES},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_BUZZWOLE_1] = {
+        .species = SPECIES_BUZZWOLE,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_LEECH_LIFE, MOVE_ICE_PUNCH, MOVE_BULK_UP},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_BUZZWOLE_2] = {
+        .species = SPECIES_BUZZWOLE,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_LEECH_LIFE, MOVE_ICE_PUNCH, MOVE_EARTHQUAKE},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_BUZZWOLE_3] = {
+        .species = SPECIES_BUZZWOLE,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_LEECH_LIFE, MOVE_POISON_JAB, MOVE_ROOST},
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ev = TRAINER_PARTY_EVS_IMPISH(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_IMPISH,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_BUZZWOLE_4] = {
+        .species = SPECIES_BUZZWOLE,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_LEECH_LIFE, MOVE_THUNDER_PUNCH, MOVE_BULK_UP},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_BUZZWOLE_5] = {
+        .species = SPECIES_BUZZWOLE,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_LEECH_LIFE, MOVE_STONE_EDGE, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_PHEROMOSA_1] = {
+        .species = SPECIES_PHEROMOSA,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_U_TURN, MOVE_TRIPLE_AXEL, MOVE_POISON_JAB},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_PHEROMOSA_2] = {
+        .species = SPECIES_PHEROMOSA,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_U_TURN, MOVE_TRIPLE_AXEL, MOVE_POISON_JAB},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_PHEROMOSA_3] = {
+        .species = SPECIES_PHEROMOSA,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_U_TURN, MOVE_TRIPLE_AXEL, MOVE_POISON_JAB},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_PHEROMOSA_4] = {
+        .species = SPECIES_PHEROMOSA,
+        .moves = {MOVE_BUG_BUZZ, MOVE_FOCUS_BLAST, MOVE_ICE_BEAM, MOVE_QUIVER_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_PHEROMOSA_5] = {
+        .species = SPECIES_PHEROMOSA,
+        .moves = {MOVE_BUG_BUZZ, MOVE_FOCUS_BLAST, MOVE_ICE_BEAM, MOVE_RAPID_SPIN},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_XURKITREE_1] = {
+        .species = SPECIES_XURKITREE,
+        .moves = {MOVE_THUNDERBOLT, MOVE_ENERGY_BALL, MOVE_DAZZLING_GLEAM, MOVE_TAIL_GLOW},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_XURKITREE_2] = {
+        .species = SPECIES_XURKITREE,
+        .moves = {MOVE_THUNDERBOLT, MOVE_ENERGY_BALL, MOVE_DAZZLING_GLEAM, MOVE_VOLT_SWITCH},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_XURKITREE_3] = {
+        .species = SPECIES_XURKITREE,
+        .moves = {MOVE_THUNDERBOLT, MOVE_ENERGY_BALL, MOVE_DAZZLING_GLEAM, MOVE_VOLT_SWITCH},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_XURKITREE_4] = {
+        .species = SPECIES_XURKITREE,
+        .moves = {MOVE_THUNDERBOLT, MOVE_ENERGY_BALL, MOVE_DAZZLING_GLEAM, MOVE_TAIL_GLOW},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_XURKITREE_5] = {
+        .species = SPECIES_XURKITREE,
+        .moves = {MOVE_THUNDER, MOVE_ENERGY_BALL, MOVE_DAZZLING_GLEAM, MOVE_VOLT_SWITCH},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_CELESTEELA_1] = {
+        .species = SPECIES_CELESTEELA,
+        .moves = {MOVE_HEAVY_SLAM, MOVE_FLAMETHROWER, MOVE_LEECH_SEED, MOVE_PROTECT},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_SASSY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_SASSY,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_CELESTEELA_2] = {
+        .species = SPECIES_CELESTEELA,
+        .moves = {MOVE_HEAVY_SLAM, MOVE_FLAMETHROWER, MOVE_EARTHQUAKE, MOVE_AUTOTOMIZE},
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_KARTANA_1] = {
+        .species = SPECIES_KARTANA,
+        .moves = {MOVE_LEAF_BLADE, MOVE_SACRED_SWORD, MOVE_KNOCK_OFF, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_KARTANA_2] = {
+        .species = SPECIES_KARTANA,
+        .moves = {MOVE_LEAF_BLADE, MOVE_SACRED_SWORD, MOVE_KNOCK_OFF, MOVE_AERIAL_ACE},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_KARTANA_3] = {
+        .species = SPECIES_KARTANA,
+        .moves = {MOVE_LEAF_BLADE, MOVE_SACRED_SWORD, MOVE_KNOCK_OFF, MOVE_AERIAL_ACE},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_GUZZLORD_1] = {
+        .species = SPECIES_GUZZLORD,
+        .moves = {MOVE_DRACO_METEOR, MOVE_DARK_PULSE, MOVE_FIRE_BLAST, MOVE_SLUDGE_WAVE},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_GUZZLORD_2] = {
+        .species = SPECIES_GUZZLORD,
+        .moves = {MOVE_DRACO_METEOR, MOVE_DARK_PULSE, MOVE_FIRE_BLAST, MOVE_HEAVY_SLAM},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_GUZZLORD_3] = {
+        .species = SPECIES_GUZZLORD,
+        .moves = {MOVE_DRAGON_PULSE, MOVE_DARK_PULSE, MOVE_FIRE_BLAST, MOVE_SLUDGE_WAVE},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_NECROZMA_1] = {
+        .species = SPECIES_NECROZMA,
+        .moves = {MOVE_PHOTON_GEYSER, MOVE_HEAT_WAVE, MOVE_EARTH_POWER, MOVE_CALM_MIND},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_PRISM_ARMOR
+    },
+    [FRONTIER_MON_NECROZMA_2] = {
+        .species = SPECIES_NECROZMA,
+        .moves = {MOVE_PHOTON_GEYSER, MOVE_HEAT_WAVE, MOVE_POWER_GEM, MOVE_STEALTH_ROCK},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_PRISM_ARMOR
+    },
+    [FRONTIER_MON_NECROZMA_3] = {
+        .species = SPECIES_NECROZMA,
+        .moves = {MOVE_PRISMATIC_LASER, MOVE_HEAT_WAVE, MOVE_PHOTON_GEYSER, MOVE_AUTOTOMIZE},
+        .heldItem = ITEM_POWER_HERB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_PRISM_ARMOR
+    },
+    [FRONTIER_MON_NECROZMA_4] = {
+        .species = SPECIES_NECROZMA,
+        .moves = {MOVE_PHOTON_GEYSER, MOVE_STORED_POWER, MOVE_CALM_MIND, MOVE_MOONLIGHT},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_PRISM_ARMOR
+    },
+    [FRONTIER_MON_MAGEARNA_1] = {
+        .species = SPECIES_MAGEARNA,
+        .moves = {MOVE_FLEUR_CANNON, MOVE_FLASH_CANNON, MOVE_VOLT_SWITCH, MOVE_ICE_BEAM},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_SOUL_HEART
+    },
+    [FRONTIER_MON_MAGEARNA_2] = {
+        .species = SPECIES_MAGEARNA,
+        .moves = {MOVE_FLEUR_CANNON, MOVE_FLASH_CANNON, MOVE_FOCUS_BLAST, MOVE_THUNDERBOLT},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_SOUL_HEART
+    },
+    [FRONTIER_MON_MAGEARNA_4] = {
+        .species = SPECIES_MAGEARNA,
+        .moves = {MOVE_FLEUR_CANNON, MOVE_FLASH_CANNON, MOVE_TRICK_ROOM, MOVE_AURA_SPHERE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_QUIET(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_QUIET,
+        .ability = ABILITY_SOUL_HEART
+    },
+    [FRONTIER_MON_MAGEARNA_5] = {
+        .species = SPECIES_MAGEARNA,
+        .moves = {MOVE_DAZZLING_GLEAM, MOVE_FLASH_CANNON, MOVE_ICE_BEAM, MOVE_THUNDERBOLT},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_CALM(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CALM,
+        .ability = ABILITY_SOUL_HEART
+    },
+    [FRONTIER_MON_MARSHADOW_1] = {
+        .species = SPECIES_MARSHADOW,
+        .moves = {MOVE_SPECTRAL_THIEF, MOVE_CLOSE_COMBAT, MOVE_SHADOW_SNEAK, MOVE_BULK_UP},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_TECHNICIAN
+    },
+    [FRONTIER_MON_MARSHADOW_2] = {
+        .species = SPECIES_MARSHADOW,
+        .moves = {MOVE_SPECTRAL_THIEF, MOVE_CLOSE_COMBAT, MOVE_ROCK_TOMB, MOVE_SHADOW_SNEAK},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_TECHNICIAN
+    },
+    [FRONTIER_MON_MARSHADOW_3] = {
+        .species = SPECIES_MARSHADOW,
+        .moves = {MOVE_SPECTRAL_THIEF, MOVE_CLOSE_COMBAT, MOVE_ROCK_TOMB, MOVE_POISON_JAB},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_TECHNICIAN
+    },
+    [FRONTIER_MON_MARSHADOW_4] = {
+        .species = SPECIES_MARSHADOW,
+        .moves = {MOVE_SPECTRAL_THIEF, MOVE_CLOSE_COMBAT, MOVE_SUBSTITUTE, MOVE_WILL_O_WISP},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_TECHNICIAN
+    },
+    [FRONTIER_MON_MARSHADOW_5] = {
+        .species = SPECIES_MARSHADOW,
+        .moves = {MOVE_SPECTRAL_THIEF, MOVE_CLOSE_COMBAT, MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH},
+        .heldItem = ITEM_EXPERT_BELT,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_TECHNICIAN
+    },
+    [FRONTIER_MON_NAGANADEL_1] = {
+        .species = SPECIES_NAGANADEL,
+        .moves = {MOVE_DRAGON_PULSE, MOVE_SLUDGE_WAVE, MOVE_FLAMETHROWER, MOVE_NASTY_PLOT},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_NAGANADEL_2] = {
+        .species = SPECIES_NAGANADEL,
+        .moves = {MOVE_DRACO_METEOR, MOVE_SLUDGE_WAVE, MOVE_FLAMETHROWER, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_NAGANADEL_3] = {
+        .species = SPECIES_NAGANADEL,
+        .moves = {MOVE_DRACO_METEOR, MOVE_SLUDGE_WAVE, MOVE_FLAMETHROWER, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_STAKATAKA_1] = {
+        .species = SPECIES_STAKATAKA,
+        .moves = {MOVE_GYRO_BALL, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_TRICK_ROOM},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BRAVE(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_BRAVE,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_STAKATAKA_2] = {
+        .species = SPECIES_STAKATAKA,
+        .moves = {MOVE_GYRO_BALL, MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_SUPERPOWER},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_BRAVE(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_BRAVE,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_STAKATAKA_3] = {
+        .species = SPECIES_STAKATAKA,
+        .moves = {MOVE_GYRO_BALL, MOVE_STONE_EDGE, MOVE_STEALTH_ROCK, MOVE_TOXIC},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_IMPISH(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_RELAXED,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_STAKATAKA_4] = {
+        .species = SPECIES_STAKATAKA,
+        .moves = {MOVE_GYRO_BALL, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_BODY_PRESS},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_BRAVE(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_BRAVE,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_BLACEPHALON_1] = {
+        .species = SPECIES_BLACEPHALON,
+        .moves = {MOVE_SHADOW_BALL, MOVE_FLAMETHROWER, MOVE_PSYSHOCK, MOVE_TRICK},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_BLACEPHALON_2] = {
+        .species = SPECIES_BLACEPHALON,
+        .moves = {MOVE_SHADOW_BALL, MOVE_FIRE_BLAST, MOVE_PSYSHOCK, MOVE_SCORCHING_SANDS},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_BLACEPHALON_3] = {
+        .species = SPECIES_BLACEPHALON,
+        .moves = {MOVE_SHADOW_BALL, MOVE_FLAMETHROWER, MOVE_PSYSHOCK, MOVE_CALM_MIND},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_BLACEPHALON_4] = {
+        .species = SPECIES_BLACEPHALON,
+        .moves = {MOVE_SHADOW_BALL, MOVE_FLAMETHROWER, MOVE_PSYSHOCK, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_BLACEPHALON_5] = {
+        .species = SPECIES_BLACEPHALON,
+        .moves = {MOVE_SHADOW_BALL, MOVE_FLAMETHROWER, MOVE_PSYSHOCK, MOVE_MIND_BLOWN},
+        .heldItem = ITEM_FOCUS_SASH,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_BEAST_BOOST
+    },
+    [FRONTIER_MON_ZERAORA_1] = {
+        .species = SPECIES_ZERAORA,
+        .moves = {MOVE_PLASMA_FISTS, MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_BULK_UP},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_VOLT_ABSORB
+    },
+    [FRONTIER_MON_ZERAORA_2] = {
+        .species = SPECIES_ZERAORA,
+        .moves = {MOVE_PLASMA_FISTS, MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_VOLT_ABSORB
+    },
+    [FRONTIER_MON_ZERAORA_3] = {
+        .species = SPECIES_ZERAORA,
+        .moves = {MOVE_PLASMA_FISTS, MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_VOLT_SWITCH},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_ATK(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_HASTY,
+        .ability = ABILITY_VOLT_ABSORB
+    },
+    [FRONTIER_MON_ZERAORA_4] = {
+        .species = SPECIES_ZERAORA,
+        .moves = {MOVE_PLASMA_FISTS, MOVE_CLOSE_COMBAT, MOVE_GRASS_KNOT, MOVE_WORK_UP},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_ATK(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_NAIVE,
+        .ability = ABILITY_VOLT_ABSORB
+    },
+    [FRONTIER_MON_ZERAORA_5] = {
+        .species = SPECIES_ZERAORA,
+        .moves = {MOVE_PLASMA_FISTS, MOVE_CLOSE_COMBAT, MOVE_BLAZE_KICK, MOVE_KNOCK_OFF},
+        .heldItem = ITEM_EXPERT_BELT,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_VOLT_ABSORB
+    },
+    [FRONTIER_MON_MELMETAL_1] = {
+        .species = SPECIES_MELMETAL,
+        .moves = {MOVE_DOUBLE_IRON_BASH, MOVE_EARTHQUAKE, MOVE_THUNDER_PUNCH, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_IRON_FIST
+    },
+    [FRONTIER_MON_MELMETAL_2] = {
+        .species = SPECIES_MELMETAL,
+        .moves = {MOVE_DOUBLE_IRON_BASH, MOVE_EARTHQUAKE, MOVE_THUNDER_PUNCH, MOVE_ICE_PUNCH},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_IRON_FIST
+    },
+    [FRONTIER_MON_MELMETAL_3] = {
+        .species = SPECIES_MELMETAL,
+        .moves = {MOVE_DOUBLE_IRON_BASH, MOVE_EARTHQUAKE, MOVE_TOXIC, MOVE_PROTECT},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_IRON_FIST
+    },
+    [FRONTIER_MON_RILLABOOM_1] = {
+        .species = SPECIES_RILLABOOM,
+        .moves = {MOVE_GRASSY_GLIDE, MOVE_WOOD_HAMMER, MOVE_U_TURN, MOVE_KNOCK_OFF},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_GRASSY_SURGE
+    },
+    [FRONTIER_MON_RILLABOOM_2] = {
+        .species = SPECIES_RILLABOOM,
+        .moves = {MOVE_GRASSY_GLIDE, MOVE_KNOCK_OFF, MOVE_SWORDS_DANCE, MOVE_DRAIN_PUNCH},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT_WALL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_GRASSY_SURGE
+    },
+    [FRONTIER_MON_RILLABOOM_3] = {
+        .species = SPECIES_RILLABOOM,
+        .moves = {MOVE_GRASSY_GLIDE, MOVE_KNOCK_OFF, MOVE_SWORDS_DANCE, MOVE_SUPERPOWER},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_GRASSY_SURGE
+    },
+    [FRONTIER_MON_CINDERACE_1] = {
+        .species = SPECIES_CINDERACE,
+        .moves = {MOVE_PYRO_BALL, MOVE_U_TURN, MOVE_HIGH_JUMP_KICK, MOVE_SUCKER_PUNCH},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_LIBERO
+    },
+    [FRONTIER_MON_CINDERACE_2] = {
+        .species = SPECIES_CINDERACE,
+        .moves = {MOVE_PYRO_BALL, MOVE_GUNK_SHOT, MOVE_HIGH_JUMP_KICK, MOVE_COURT_CHANGE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_LIBERO
+    },
+    [FRONTIER_MON_INTELEON_1] = {
+        .species = SPECIES_INTELEON,
+        .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_DARK_PULSE, MOVE_FOCUS_ENERGY},
+        .heldItem = ITEM_SCOPE_LENS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_SNIPER
+    },
+    [FRONTIER_MON_INTELEON_2] = {
+        .species = SPECIES_INTELEON,
+        .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_SHADOW_BALL, MOVE_VACUUM_WAVE},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_TORRENT
     }
-};
+    [FRONTIER_MON_CORVIKNIGHT_1] = {
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {MOVE_BRAVE_BIRD, MOVE_ROOST, MOVE_DEFOG, MOVE_U_TURN},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_IMPISH(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_IMPISH,
+        .ability = ABILITY_PRESSURE
+    },
+    [FRONTIER_MON_CORVIKNIGHT_2] = {
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {MOVE_BRAVE_BIRD, MOVE_ROOST, MOVE_BULK_UP, MOVE_IRON_HEAD},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_IMPISH(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_IMPISH,
+        .ability = ABILITY_PRESSURE
+    },
+    [FRONTIER_MON_CORVIKNIGHT_3] = {
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {MOVE_BRAVE_BIRD, MOVE_IRON_HEAD, MOVE_CLOSE_COMBAT, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_PRESSURE
+    },
+    [FRONTIER_MON_CORVIKNIGHT_4] = {
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {MOVE_BRAVE_BIRD, MOVE_IRON_HEAD, MOVE_CLOSE_COMBAT, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_PRESSURE
+    },
+    [FRONTIER_MON_CORVIKNIGHT_5] = {
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {MOVE_BRAVE_BIRD, MOVE_ROOST, MOVE_STEALTH_ROCK, MOVE_IRON_HEAD},
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ev = TRAINER_PARTY_EVS_IMPISH(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_IMPISH,
+        .ability = ABILITY_PRESSURE
+    },
+    [FRONTIER_MON_ORBEETLE_1] = {
+        .species = SPECIES_ORBEETLE,
+        .moves = {MOVE_PSYCHIC, MOVE_BUG_BUZZ, MOVE_RECOVER, MOVE_CALM_MIND},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_FRISK
+    },
+    [FRONTIER_MON_ORBEETLE_2] = {
+        .species = SPECIES_ORBEETLE,
+        .moves = {MOVE_PSYCHIC, MOVE_BUG_BUZZ, MOVE_ENERGY_BALL, MOVE_SHADOW_BALL},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_FRISK
+    },
+    [FRONTIER_MON_DREDNAW_1] = {
+        .species = SPECIES_DREDNAW,
+        .moves = {MOVE_LIQUIDATION, MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRONG_JAW
+    },
+    [FRONTIER_MON_DREDNAW_2] = {
+        .species = SPECIES_DREDNAW,
+        .moves = {MOVE_LIQUIDATION, MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_SUPERPOWER},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_STRONG_JAW
+    },
+    [FRONTIER_MON_COALOSSAL_1] = {
+        .species = SPECIES_COALOSSAL,
+        .moves = {MOVE_ERUPTION, MOVE_SOLAR_BEAM, MOVE_EARTH_POWER, MOVE_FLAME_CHARGE},
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_STEAM_ENGINE
+    },
+    [FRONTIER_MON_COALOSSAL_2] = {
+        .species = SPECIES_COALOSSAL,
+        .moves = {MOVE_HEAT_CRASH, MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_STEALTH_ROCK},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_FLAME_BODY
+    },
+    [FRONTIER_MON_FLAPPLE_1] = {
+        .species = SPECIES_FLAPPLE,
+        .moves = {MOVE_GRAV_APPLE, MOVE_DRAGON_RUSH, MOVE_U_TURN, MOVE_SUCKER_PUNCH},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_HUSTLE
+    },
+    [FRONTIER_MON_FLAPPLE_2] = {
+        .species = SPECIES_FLAPPLE,
+        .moves = {MOVE_GRAV_APPLE, MOVE_DRAGON_RUSH, MOVE_DRAGON_DANCE, MOVE_ACROBATICS},
+        .heldItem = ITEM_NONE,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_RIPEN
+    },
+    [FRONTIER_MON_APPLETUN_1] = {
+        .species = SPECIES_APPLETUN,
+        .moves = {MOVE_APPLE_ACID, MOVE_DRAGON_PULSE, MOVE_RECOVER, MOVE_LEECH_SEED},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_THICK_FAT
+    },
+    [FRONTIER_MON_APPLETUN_2] = {
+        .species = SPECIES_APPLETUN,
+        .moves = {MOVE_APPLE_ACID, MOVE_DRAGON_PULSE, MOVE_EARTH_POWER, MOVE_ENERGY_BALL},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_RIPEN
+    },
+    [FRONTIER_MON_SANDACONDA_1] = {
+        .species = SPECIES_SANDACONDA,
+        .moves = {MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_GLARE, MOVE_COIL},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_INTIMIDATE
+    },
+    [FRONTIER_MON_SANDACONDA_2] = {
+        .species = SPECIES_SANDACONDA,
+        .moves = {MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_FIRE_FANG, MOVE_THUNDER_FANG},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_INTIMIDATE
+    },
+    [FRONTIER_MON_CRAMORANT_1] = {
+        .species = SPECIES_CRAMORANT,
+        .moves = {MOVE_SURF, MOVE_AIR_SLASH, MOVE_ICE_BEAM, MOVE_ROOST},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_GULP_MISSILE
+    },
+    [FRONTIER_MON_CRAMORANT_2] = {
+        .species = SPECIES_CRAMORANT,
+        .moves = {MOVE_HYDRO_PUMP, MOVE_HURRICANE, MOVE_ICE_BEAM, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_GULP_MISSILE
+    },
+    [FRONTIER_MON_BARRASKEWDA_1] = {
+        .species = SPECIES_BARRASKEWDA,
+        .moves = {MOVE_LIQUIDATION, MOVE_CLOSE_COMBAT, MOVE_PSYCHIC_FANGS, MOVE_FLIP_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_SWIFT_SWIM
+    },
+    [FRONTIER_MON_BARRASKEWDA_2] = {
+        .species = SPECIES_BARRASKEWDA,
+        .moves = {MOVE_LIQUIDATION, MOVE_CLOSE_COMBAT, MOVE_PSYCHIC_FANGS, MOVE_FLIP_TURN},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_SWIFT_SWIM
+    },
+    [FRONTIER_MON_TOXAPEX_1] = {
+        .species = SPECIES_TOXAPEX,
+        .moves = {MOVE_SCALD, MOVE_RECOVER, MOVE_TOXIC_SPIKES, MOVE_HAZE},
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_REGENERATOR
+    },
+    [FRONTIER_MON_TOXAPEX_2] = {
+        .species = SPECIES_TOXAPEX,
+        .moves = {MOVE_SCALD, MOVE_RECOVER, MOVE_TOXIC, MOVE_BANEFUL_BUNKER},
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_REGENERATOR
+    },
+    [FRONTIER_MON_CENTISKORCH_1] = {
+        .species = SPECIES_CENTISKORCH,
+        .moves = {MOVE_FIRE_LASH, MOVE_LEECH_LIFE, MOVE_THUNDER_FANG, MOVE_COIL},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_FLASH_FIRE
+    },
+    [FRONTIER_MON_CENTISKORCH_2] = {
+        .species = SPECIES_CENTISKORCH,
+        .moves = {MOVE_FIRE_LASH, MOVE_LEECH_LIFE, MOVE_THUNDER_FANG, MOVE_KNOCK_OFF},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_FLASH_FIRE
+    },
+    [FRONTIER_MON_HATTERENE_1] = {
+        .species = SPECIES_HATTERENE,
+        .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_CALM_MIND},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_MAGIC_BOUNCE
+    },
+    [FRONTIER_MON_HATTERENE_2] = {
+        .species = SPECIES_HATTERENE,
+        .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_TRICK_ROOM},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_QUIET(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
+        .nature = NATURE_QUIET,
+        .ability = ABILITY_MAGIC_BOUNCE
+    },
+    [FRONTIER_MON_HATTERENE_3] = {
+        .species = SPECIES_HATTERENE,
+        .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_SHADOW_BALL},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_MAGIC_BOUNCE
+    },
+    [FRONTIER_MON_HATTERENE_4] = {
+        .species = SPECIES_HATTERENE,
+        .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_HEALING_WISH},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_MAGIC_BOUNCE
+    },
+    [FRONTIER_MON_HATTERENE_5] = {
+        .species = SPECIES_HATTERENE,
+        .moves = {MOVE_EXPANDING_FORCE, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_PSYCHIC_TERRAIN},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_MAGIC_BOUNCE
+    },
+    [FRONTIER_MON_GRIMMSNARL_1] = {
+        .species = SPECIES_GRIMMSNARL,
+        .moves = {MOVE_SPIRIT_BREAK, MOVE_DARKEST_LARIAT, MOVE_THUNDER_WAVE, MOVE_LIGHT_SCREEN},
+        .heldItem = ITEM_LIGHT_CLAY,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_PRANKSTER
+    },
+    [FRONTIER_MON_GRIMMSNARL_2] = {
+        .species = SPECIES_GRIMMSNARL,
+        .moves = {MOVE_SPIRIT_BREAK, MOVE_DARKEST_LARIAT, MOVE_BULK_UP, MOVE_DRAIN_PUNCH},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_CAREFUL(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_CAREFUL,
+        .ability = ABILITY_PRANKSTER
+    },
+    [FRONTIER_MON_ALCREMIE_1] = {
+        .species = SPECIES_ALCREMIE,
+        .moves = {MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_RECOVER, MOVE_CALM_MIND},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_BOLD(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_BOLD,
+        .ability = ABILITY_AROMA_VEIL
+    },
+    [FRONTIER_MON_ALCREMIE_2] = {
+        .species = SPECIES_ALCREMIE,
+        .moves = {MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_PSYCHIC, MOVE_ENERGY_BALL},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_AROMA_VEIL
+    },
+    [FRONTIER_MON_COPPERAJAH_1] = {
+        .species = SPECIES_COPPERAJAH,
+        .moves = {MOVE_IRON_HEAD, MOVE_EARTHQUAKE, MOVE_PLAY_ROUGH, MOVE_STEALTH_ROCK},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_SHEER_FORCE
+    },
+    [FRONTIER_MON_COPPERAJAH_2] = {
+        .species = SPECIES_COPPERAJAH,
+        .moves = {MOVE_IRON_HEAD, MOVE_EARTHQUAKE, MOVE_PLAY_ROUGH, MOVE_SUPERPOWER},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_SHEER_FORCE
+    },
+    [FRONTIER_MON_DRACOVISH_1] = {
+        .species = SPECIES_DRACOVISH,
+        .moves = {MOVE_FISHIOUS_REND, MOVE_PSYCHIC_FANGS, MOVE_EARTHQUAKE, MOVE_ICE_FANG},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRONG_JAW
+    },
+    [FRONTIER_MON_DRACOVISH_2] = {
+        .species = SPECIES_DRACOVISH,
+        .moves = {MOVE_FISHIOUS_REND, MOVE_PSYCHIC_FANGS, MOVE_EARTHQUAKE, MOVE_ICE_FANG},
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRONG_JAW
+    },
+    [FRONTIER_MON_DRACOZOLT_1] = {
+        .species = SPECIES_DRACOZOLT,
+        .moves = {MOVE_BOLT_BEAK, MOVE_DRAGON_CLAW, MOVE_EARTHQUAKE, MOVE_FIRE_PUNCH},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_HUSTLE
+    },
+    [FRONTIER_MON_DRACOZOLT_2] = {
+        .species = SPECIES_DRACOZOLT,
+        .moves = {MOVE_BOLT_BEAK, MOVE_DRAGON_CLAW, MOVE_EARTHQUAKE, MOVE_FIRE_PUNCH},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_HUSTLE
+    },
+    [FRONTIER_MON_ARCTOZOLT_1] = {
+        .species = SPECIES_ARCTOZOLT,
+        .moves = {MOVE_BOLT_BEAK, MOVE_BLIZZARD, MOVE_FREEZE_DRY, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_SP_ATK(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_NAIVE,
+        .ability = ABILITY_VOLT_ABSORB
+    },
+    [FRONTIER_MON_ARCTOZOLT_2] = {
+        .species = SPECIES_ARCTOZOLT,
+        .moves = {MOVE_BOLT_BEAK, MOVE_BLIZZARD, MOVE_FREEZE_DRY, MOVE_LOW_KICK},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_SP_ATK(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_NAIVE,
+        .ability = ABILITY_SLUSH_RUSH
+    },
+    [FRONTIER_MON_DRACOVISH_3] = {
+        .species = SPECIES_DRACOVISH,
+        .moves = {MOVE_FISHIOUS_REND, MOVE_PSYCHIC_FANGS, MOVE_EARTHQUAKE, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_STRONG_JAW
+    },
+    [FRONTIER_MON_DURALUDON_1] = {
+        .species = SPECIES_DURALUDON,
+        .moves = {MOVE_DRACO_METEOR, MOVE_FLASH_CANNON, MOVE_THUNDERBOLT, MOVE_STEALTH_ROCK},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_STALWART
+    },
+    [FRONTIER_MON_DURALUDON_2] = {
+        .species = SPECIES_DURALUDON,
+        .moves = {MOVE_DRACO_METEOR, MOVE_FLASH_CANNON, MOVE_THUNDERBOLT, MOVE_BODY_PRESS},
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_STALWART
+    },
+    [FRONTIER_MON_DRAGAPULT_1] = {
+        .species = SPECIES_DRAGAPULT,
+        .moves = {MOVE_DRAGON_DARTS, MOVE_PHANTOM_FORCE, MOVE_U_TURN, MOVE_DRAGON_DANCE},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_CLEAR_BODY
+    },
+    [FRONTIER_MON_DRAGAPULT_2] = {
+        .species = SPECIES_DRAGAPULT,
+        .moves = {MOVE_DRAGON_DARTS, MOVE_PHANTOM_FORCE, MOVE_U_TURN, MOVE_SUCKER_PUNCH},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_CLEAR_BODY
+    },
+    [FRONTIER_MON_DRAGAPULT_3] = {
+        .species = SPECIES_DRAGAPULT,
+        .moves = {MOVE_SHADOW_BALL, MOVE_DRACO_METEOR, MOVE_FLAMETHROWER, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_INFILTRATOR
+    },
+    [FRONTIER_MON_DRAGAPULT_4] = {
+        .species = SPECIES_DRAGAPULT,
+        .moves = {MOVE_DRAGON_DARTS, MOVE_PHANTOM_FORCE, MOVE_WILL_O_WISP, MOVE_ROOST},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_CLEAR_BODY
+    },
+    [FRONTIER_MON_DRAGAPULT_5] = {
+        .species = SPECIES_DRAGAPULT,
+        .moves = {MOVE_HEX, MOVE_WILL_O_WISP, MOVE_THUNDER_WAVE, MOVE_ROOST},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_INFILTRATOR
+    },
+    [FRONTIER_MON_ZACIAN_1] = {
+        .species = SPECIES_ZACIAN,
+        .moves = {MOVE_BEHEMOTH_BLADE, MOVE_PLAY_ROUGH, MOVE_CLOSE_COMBAT, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_RUSTED_SWORD,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_INTREPID_SWORD
+    },
+    [FRONTIER_MON_ZACIAN_2] = {
+        .species = SPECIES_ZACIAN,
+        .moves = {MOVE_BEHEMOTH_BLADE, MOVE_PLAY_ROUGH, MOVE_CLOSE_COMBAT, MOVE_CRUNCH},
+        .heldItem = ITEM_RUSTED_SWORD,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_INTREPID_SWORD
+    },
+    [FRONTIER_MON_ZAMAZENTA_1] = {
+        .species = SPECIES_ZAMAZENTA,
+        .moves = {MOVE_BEHEMOTH_BASH, MOVE_CLOSE_COMBAT, MOVE_CRUNCH, MOVE_HOWL},
+        .heldItem = ITEM_RUSTED_SHIELD,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_DAUNTLESS_SHIELD
+    },
+    [FRONTIER_MON_ZAMAZENTA_2] = {
+        .species = SPECIES_ZAMAZENTA,
+        .moves = {MOVE_BEHEMOTH_BASH, MOVE_CLOSE_COMBAT, MOVE_CRUNCH, MOVE_STONE_EDGE},
+        .heldItem = ITEM_RUSTED_SHIELD,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_DAUNTLESS_SHIELD
+    },
+    [FRONTIER_MON_ETERNATUS_1] = {
+        .species = SPECIES_ETERNATUS,
+        .moves = {MOVE_DYNAMAX_CANNON, MOVE_FLAMETHROWER, MOVE_SLUDGE_BOMB, MOVE_RECOVER},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_PRESSURE
+    },
+    [FRONTIER_MON_ETERNATUS_2] = {
+        .species = SPECIES_ETERNATUS,
+        .moves = {MOVE_DYNAMAX_CANNON, MOVE_FLAMETHROWER, MOVE_SLUDGE_BOMB, MOVE_TOXIC_SPIKES},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_PRESSURE
+    },
+    [FRONTIER_MON_URSHIFU_SINGLE_STRIKE_1] = {
+        .species = SPECIES_URSHIFU_SINGLE_STRIKE,
+        .moves = {MOVE_WICKED_BLOW, MOVE_CLOSE_COMBAT, MOVE_SUCKER_PUNCH, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_UNSEEN_FIST
+    },
+    [FRONTIER_MON_URSHIFU_SINGLE_STRIKE_2] = {
+        .species = SPECIES_URSHIFU_SINGLE_STRIKE,
+        .moves = {MOVE_WICKED_BLOW, MOVE_CLOSE_COMBAT, MOVE_SUCKER_PUNCH, MOVE_BULK_UP},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_UNSEEN_FIST
+    },
+    [FRONTIER_MON_URSHIFU_RAPID_STRIKE_1] = {
+        .species = SPECIES_URSHIFU_RAPID_STRIKE,
+        .moves = {MOVE_SURGING_STRIKES, MOVE_CLOSE_COMBAT, MOVE_AQUA_JET, MOVE_U_TURN},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_UNSEEN_FIST
+    },
+    [FRONTIER_MON_URSHIFU_RAPID_STRIKE_2] = {
+        .species = SPECIES_URSHIFU_RAPID_STRIKE,
+        .moves = {MOVE_SURGING_STRIKES, MOVE_CLOSE_COMBAT, MOVE_AQUA_JET, MOVE_BULK_UP},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_JOLLY,
+        .ability = ABILITY_UNSEEN_FIST
+    },
+    [FRONTIER_MON_REGIELEKI_1] = {
+        .species = SPECIES_REGIELEKI,
+        .moves = {MOVE_THUNDERBOLT, MOVE_VOLT_SWITCH, MOVE_RAPID_SPIN, MOVE_EXPLOSION},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_TRANSISTOR
+    },
+    [FRONTIER_MON_REGIELEKI_2] = {
+        .species = SPECIES_REGIELEKI,
+        .moves = {MOVE_THUNDERBOLT, MOVE_VOLT_SWITCH, MOVE_RAPID_SPIN, MOVE_THUNDER_WAVE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_TRANSISTOR
+    },
+    [FRONTIER_MON_REGIDRAGO_1] = {
+        .species = SPECIES_REGIDRAGO,
+        .moves = {MOVE_DRAGON_ENERGY, MOVE_EARTH_POWER, MOVE_FIRE_BLAST, MOVE_THUNDER_WAVE},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_DRAGONS_MAW
+    },
+    [FRONTIER_MON_REGIDRAGO_2] = {
+        .species = SPECIES_REGIDRAGO,
+        .moves = {MOVE_DRAGON_ENERGY, MOVE_EARTH_POWER, MOVE_FIRE_BLAST, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_MODEST(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_MODEST,
+        .ability = ABILITY_DRAGONS_MAW
+    },
+    [FRONTIER_MON_GLASTRIER_1] = {
+        .species = SPECIES_GLASTRIER,
+        .moves = {MOVE_ICICLE_CRASH, MOVE_HIGH_HORSEPOWER, MOVE_CLOSE_COMBAT, MOVE_SWORDS_DANCE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_CHILLING_NEIGH
+    },
+    [FRONTIER_MON_GLASTRIER_2] = {
+        .species = SPECIES_GLASTRIER,
+        .moves = {MOVE_ICICLE_CRASH, MOVE_HIGH_HORSEPOWER, MOVE_CLOSE_COMBAT, MOVE_IRON_HEAD},
+        .heldItem = ITEM_CHOICE_BAND,
+        .ev = TRAINER_PARTY_EVS_ADAMANT(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_ADAMANT,
+        .ability = ABILITY_CHILLING_NEIGH
+    },
+    [FRONTIER_MON_SPECTRIER_1] = {
+        .species = SPECIES_SPECTRIER,
+        .moves = {MOVE_SHADOW_BALL, MOVE_DRAINING_KISS, MOVE_WILL_O_WISP, MOVE_NASTY_PLOT},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_GRIM_NEIGH
+    },
+    [FRONTIER_MON_SPECTRIER_2] = {
+        .species = SPECIES_SPECTRIER,
+        .moves = {MOVE_SHADOW_BALL, MOVE_DRAINING_KISS, MOVE_DARK_PULSE, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_GRIM_NEIGH
+    },
+    [FRONTIER_MON_CALYREX_1] = {
+        .species = SPECIES_CALYREX,
+        .moves = {MOVE_GIGA_DRAIN, MOVE_PSYSHOCK, MOVE_LEECH_SEED, MOVE_SUBSTITUTE},
+        .heldItem = ITEM_LEFTOVERS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_UNNERVE
+    },
+    [FRONTIER_MON_CALYREX_2] = {
+        .species = SPECIES_CALYREX,
+        .moves = {MOVE_GIGA_DRAIN, MOVE_PSYSHOCK, MOVE_EARTH_POWER, MOVE_ENERGY_BALL},
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_UNNERVE
+    }
