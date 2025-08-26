@@ -26,6 +26,15 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_TIMID,
         .ability = ABILITY_OVERGROW
     },
+    [FRONTIER_MON_VENUSAUR_3] = {
+        .species = SPECIES_VENUSAUR,
+        .moves = {MOVE_LEAF_STORM, MOVE_SLUDGE_BOMB, MOVE_SYNTHESIS, MOVE_KNOCK_OFF},
+        .heldItem = ITEM_LIFE_ORB,
+        .ev = TRAINER_PARTY_EVS_TIMID(),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .nature = NATURE_TIMID,
+        .ability = ABILITY_CHLOROPHYLL
+    },
     [FRONTIER_MON_MEGA_VENUSAUR] = {
         .species = SPECIES_VENUSAUR,
         .moves = {MOVE_GIGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_EARTHQUAKE, MOVE_SYNTHESIS},
