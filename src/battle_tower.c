@@ -76,6 +76,7 @@ static void FillFactoryFrontierTrainerParty(u16 trainerId, u8 firstMonId);
 static void FillFactoryTentTrainerParty(u16 trainerId, u8 firstMonId);
 static u8 GetFrontierTrainerFixedIvs(u16 trainerId);
 static void FillPartnerParty(u16 trainerId);
+static bool IsMegaFrontierMon(u16 monId);
 #if FREE_BATTLE_TOWER_E_READER == FALSE
 static void SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderTrainer);
 #endif //FREE_BATTLE_TOWER_E_READER
@@ -84,6 +85,126 @@ static u8 SetTentPtrsGetLevel(void);
 #include "data/battle_frontier/battle_frontier_trainer_mons.h"
 #include "data/battle_frontier/battle_frontier_trainers.h"
 #include "data/battle_frontier/battle_frontier_mons.h"
+
+static const u16 sMegaFrontierMons[] = {
+    FRONTIER_MON_MEGA_VENUSAUR,
+    FRONTIER_MON_MEGA_CHARIZARD_X_1,
+    FRONTIER_MON_MEGA_CHARIZARD_X_2,
+    FRONTIER_MON_MEGA_CHARIZARD_Y,
+    FRONTIER_MON_MEGA_BLASTOISE_1,
+    FRONTIER_MON_MEGA_BLASTOISE_2,
+    FRONTIER_MON_MEGA_BUTTERFREE_1,
+    FRONTIER_MON_MEGA_BUTTERFREE_2,
+    FRONTIER_MON_MEGA_BEEDRILL,
+    FRONTIER_MON_MEGA_PIDGEOT_1,
+    FRONTIER_MON_MEGA_PIDGEOT_2,
+    FRONTIER_MON_MEGA_ALAKAZAM_1,
+    FRONTIER_MON_MEGA_ALAKAZAM_2,
+    FRONTIER_MON_MEGA_MACHAMP,
+    FRONTIER_MON_MEGA_SLOWBRO,
+    FRONTIER_MON_MEGA_GENGAR_1,
+    FRONTIER_MON_MEGA_GENGAR_2,
+    FRONTIER_MON_MEGA_STEELIX,
+    FRONTIER_MON_MEGA_KINGLER,
+    FRONTIER_MON_MEGA_KANGASKHAN,
+    FRONTIER_MON_MEGA_SCIZOR_1,
+    FRONTIER_MON_MEGA_SCIZOR_2,
+    FRONTIER_MON_MEGA_SCIZOR_3,
+    FRONTIER_MON_MEGA_PINSIR_1,
+    FRONTIER_MON_MEGA_PINSIR_2,
+    FRONTIER_MON_MEGA_GYARADOS_1,
+    FRONTIER_MON_MEGA_GYARADOS_2,
+    FRONTIER_MON_MEGA_LAPRAS,
+    FRONTIER_MON_MEGA_AERODACTYL_1,
+    FRONTIER_MON_MEGA_SNORLAX_1,
+    FRONTIER_MON_MEGA_SNORLAX_2,
+    FRONTIER_MON_MEGA_MEWTWO_X_1,
+    FRONTIER_MON_MEGA_MEWTWO_X_2,
+    FRONTIER_MON_MEGA_MEWTWO_Y_1,
+    FRONTIER_MON_MEGA_MEWTWO_Y_2,
+    FRONTIER_MON_MEGA_MEWTWO_Y_3,
+    FRONTIER_MON_MEGANIUM_1,
+    FRONTIER_MON_MEGANIUM_2,
+    FRONTIER_MON_MEGANIUM_3,
+    FRONTIER_MON_MEGA_AMPHAROS_1,
+    FRONTIER_MON_MEGA_AMPHAROS_2,
+    FRONTIER_MON_YANMEGA_1,
+    FRONTIER_MON_YANMEGA_2,
+    FRONTIER_MON_YANMEGA_3,
+    FRONTIER_MON_MEGA_HERACROSS_1,
+    FRONTIER_MON_MEGA_HERACROSS_2,
+    FRONTIER_MON_MEGA_HOUNDOOM,
+    FRONTIER_MON_MEGA_TYRANITAR_1,
+    FRONTIER_MON_MEGA_TYRANITAR_2,
+    FRONTIER_MON_MEGA_SCEPTILE_1,
+    FRONTIER_MON_MEGA_SCEPTILE_2,
+    FRONTIER_MON_MEGA_BLAZIKEN,
+    FRONTIER_MON_MEGA_SWAMPERT_1,
+    FRONTIER_MON_MEGA_SWAMPERT_2,
+    FRONTIER_MON_MEGA_GARDEVOIR_1,
+    FRONTIER_MON_MEGA_GARDEVOIR_2,
+    FRONTIER_MON_MEGA_GALLADE_1,
+    FRONTIER_MON_MEGA_SABLEYE_1,
+    FRONTIER_MON_MEGA_SABLEYE_2,
+    FRONTIER_MON_MEGA_MAWILE,
+    FRONTIER_MON_MEGA_AGGRON_1,
+    FRONTIER_MON_MEGA_AGGRON_2,
+    FRONTIER_MON_MEGA_MEDICHAM_1,
+    FRONTIER_MON_MEGA_MEDICHAM_2,
+    FRONTIER_MON_MEGA_MANECTRIC,
+    FRONTIER_MON_MEGA_SHARPEDO,
+    FRONTIER_MON_MEGA_CAMERUPT,
+    FRONTIER_MON_MEGA_ALTARIA_1,
+    FRONTIER_MON_MEGA_ALTARIA_2,
+    FRONTIER_MON_MEGA_BANETTE,
+    FRONTIER_MON_MEGA_ABSOL_1,
+    FRONTIER_MON_MEGA_ABSOL_2,
+    FRONTIER_MON_MEGA_GLALIE,
+    FRONTIER_MON_MEGA_SALAMENCE_1,
+    FRONTIER_MON_MEGA_SALAMENCE_2,
+    FRONTIER_MON_MEGA_SALAMENCE_3,
+    FRONTIER_MON_MEGA_METAGROSS_1,
+    FRONTIER_MON_MEGA_METAGROSS_2,
+    FRONTIER_MON_MEGA_LATIOS_1,
+    FRONTIER_MON_MEGA_LATIOS_2,
+    FRONTIER_MON_MEGA_LATIAS_1,
+    FRONTIER_MON_MEGA_RAYQUAZA_1,
+    FRONTIER_MON_MEGA_TORTERRA_1,
+    FRONTIER_MON_MEGA_TORTERRA_2,
+    FRONTIER_MON_MEGA_TORTERRA_3,
+    FRONTIER_MON_MEGA_TORTERRA_4,
+    FRONTIER_MON_MEGA_INFERNAPE_1,
+    FRONTIER_MON_MEGA_INFERNAPE_2,
+    FRONTIER_MON_MEGA_INFERNAPE_3,
+    FRONTIER_MON_MEGA_EMPOLEON_O_1,
+    FRONTIER_MON_MEGA_EMPOLEON_O_2,
+    FRONTIER_MON_MEGA_EMPOLEON_D_1,
+    FRONTIER_MON_MEGA_EMPOLEON_D_2,
+    FRONTIER_MON_MEGA_LUXRAY,
+    FRONTIER_MON_MEGA_LOPUNNY_1,
+    FRONTIER_MON_MEGA_LOPUNNY_2,
+    FRONTIER_MON_MEGA_GARCHOMP_1,
+    FRONTIER_MON_MEGA_GARCHOMP_2,
+    FRONTIER_MON_MEGA_LUCARIO_1,
+    FRONTIER_MON_MEGA_LUCARIO_2,
+    FRONTIER_MON_MEGA_ABOMASNOW_1,
+    FRONTIER_MON_MEGA_ABOMASNOW_2,
+    FRONTIER_MON_MEGA_ABOMASNOW_3,
+    FRONTIER_MON_MEGA_AUDINO_1,
+    FRONTIER_MON_MEGA_DIANCIE_1,
+    FRONTIER_MON_MEGA_DIANCIE_2,
+    FRONTIER_MON_MEGA_DIANCIE_3,
+    FRONTIER_MON_MEGA_ORBEETLE_1,
+    FRONTIER_MON_MEGA_ORBEETLE_2,
+    FRONTIER_MON_MEGA_DREDNAW_1,
+    FRONTIER_MON_MEGA_DREDNAW_2,
+    FRONTIER_MON_MEGA_COALOSSAL,
+    FRONTIER_MON_MEGA_SANDACONDA,
+    FRONTIER_MON_MEGA_TOXTRICITY,
+    FRONTIER_MON_MEGA_CENTISKORCH,
+    FRONTIER_MON_MEGA_GRIMMSNARL,
+    FRONTIER_MON_MEGA_COPPERAJAH,
+};
 
 const u8 gTowerMaleFacilityClasses[30] =
 {
@@ -1660,6 +1781,7 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
     u8 bfMonCount;
     const u16 *monSet = NULL;
     u32 otID = 0;
+    u8 megaCount = 0;
 
     if (trainerId < FRONTIER_TRAINERS_COUNT)
     {
@@ -1717,6 +1839,19 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
         // 20 is not a possible value for level here
         if ((level == FRONTIER_MAX_LEVEL_50 || level == 20) && monId > FRONTIER_MONS_HIGH_TIER)
             continue;
+
+        // If a Mega Evolution, check if trainer already has one
+        if (IsMegaFrontierMon(monId))
+        {
+            if (megaCount == 0)
+            {
+                megaCount++;
+            }
+            else
+            {
+                continue;
+            }
+        }
 
         // Ensure this Pokémon species isn't a duplicate.
         for (j = 0; j < i + firstMonId; j++)
@@ -3244,6 +3379,16 @@ bool32 EmeraldBattleTowerRecordToRuby(struct EmeraldBattleTowerRecord *src, stru
         CalcRubyBattleTowerChecksum(dst);
         return TRUE;
     }
+}
+
+static bool IsMegaFrontierMon(u16 monId)
+{
+    for (u32 i = 0; i < ARRAY_COUNT(sMegaFrontierMons); i++)
+    {
+        if (sMegaFrontierMons[i] == monId)
+            return TRUE;
+    }
+    return FALSE;
 }
 
 void CalcApprenticeChecksum(struct Apprentice *apprentice)
