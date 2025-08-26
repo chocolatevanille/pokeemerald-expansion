@@ -44,6 +44,7 @@
 #define PARTY_SIZE 6
 #define MULTI_PARTY_SIZE (PARTY_SIZE / 2)
 #define FRONTIER_PARTY_SIZE         3
+#define FRONTIER_PARTY_SIZE_FULL    6
 #define FRONTIER_DOUBLES_PARTY_SIZE 4
 #define FRONTIER_MULTI_PARTY_SIZE   2
 #define MAX_FRONTIER_PARTY_SIZE    (max(FRONTIER_PARTY_SIZE,        \
@@ -91,7 +92,9 @@
 // Battle Frontier level modes.
 #define FRONTIER_LVL_50         0
 #define FRONTIER_LVL_OPEN       1
-#define FRONTIER_LVL_MODE_COUNT 2
+// #define FRONTIER_LVL_50_6       2 // 6 Pokémon per team
+// #define FRONTIER_LVL_OPEN_6     3 // 6 Pokémon per team
+#define FRONTIER_LVL_MODE_COUNT 2  // TODO: set to 4 when building 6v6
 #define FRONTIER_LVL_TENT       FRONTIER_LVL_MODE_COUNT // Special usage for indicating Battle Tent
 
 #define TRAINER_ID_LENGTH 4
