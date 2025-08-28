@@ -894,6 +894,7 @@
 #define FRONTIER_MON_LUMINEON_1                  890
 #define FRONTIER_MON_LUMINEON_2                  891
 #define FRONTIER_MON_LUMINEON_3                  892
+#define FRONTIER_MONS_HIGH_TIER                  892
 #define FRONTIER_MON_ABOMASNOW_1                 893
 #define FRONTIER_MON_ABOMASNOW_2                 894
 #define FRONTIER_MON_MEGA_ABOMASNOW_1            895
