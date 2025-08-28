@@ -76,7 +76,7 @@ static void FillFactoryFrontierTrainerParty(u16 trainerId, u8 firstMonId);
 static void FillFactoryTentTrainerParty(u16 trainerId, u8 firstMonId);
 static u8 GetFrontierTrainerFixedIvs(u16 trainerId);
 static void FillPartnerParty(u16 trainerId);
-static bool IsMegaFrontierMon(u16 monId);
+static bool16 IsMegaFrontierMon(u16 monId);
 #if FREE_BATTLE_TOWER_E_READER == FALSE
 static void SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderTrainer);
 #endif //FREE_BATTLE_TOWER_E_READER
@@ -1836,8 +1836,8 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
 
         // "High tier" Pokémon are only allowed on open level mode
         // 20 is not a possible value for level here
-        if ((level == FRONTIER_MAX_LEVEL_50 || level == 20) && monId > FRONTIER_MONS_HIGH_TIER)
-            continue;
+        //if ((level == FRONTIER_MAX_LEVEL_50 || level == 20) && monId > FRONTIER_MONS_HIGH_TIER)
+        //    continue;
 
         // If a Mega Evolution, check if trainer already has one
         if (IsMegaFrontierMon(monId))
@@ -1862,14 +1862,14 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
             continue;
 
         // Ensure this Pokemon's held item isn't a duplicate.
-        for (j = 0; j < i + firstMonId; j++)
-        {
-            if (GetMonData(&gEnemyParty[j], MON_DATA_HELD_ITEM, NULL) != ITEM_NONE
-             && GetMonData(&gEnemyParty[j], MON_DATA_HELD_ITEM, NULL) == gFacilityTrainerMons[monId].heldItem)
-                break;
-        }
-        if (j != i + firstMonId)
-            continue;
+        //for (j = 0; j < i + firstMonId; j++)
+        //{
+        //    if (GetMonData(&gEnemyParty[j], MON_DATA_HELD_ITEM, NULL) != ITEM_NONE
+        //     && GetMonData(&gEnemyParty[j], MON_DATA_HELD_ITEM, NULL) == gFacilityTrainerMons[monId].heldItem)
+        //        break;
+        //}
+        //if (j != i + firstMonId)
+        //    continue;
 
         // Ensure this exact Pokémon index isn't a duplicate. This check doesn't seem necessary
         // because the species and held items were already checked directly above.
@@ -3380,7 +3380,7 @@ bool32 EmeraldBattleTowerRecordToRuby(struct EmeraldBattleTowerRecord *src, stru
     }
 }
 
-static bool IsMegaFrontierMon(u16 monId)
+static bool16 IsMegaFrontierMon(u16 monId)
 {
     for (u32 i = 0; i < ARRAY_COUNT(sMegaFrontierMons); i++)
     {
