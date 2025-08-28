@@ -9154,7 +9154,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_SIMISEAR_3] = {
         .species = SPECIES_SIMISEAR,
-        .moves = {MOVE_FIRE_BLAST, MOVE_FOCUS_BLAST, MOVE_GLASS_KNOT, MOVE_SCORCHING_SANDS},
+        .moves = {MOVE_FIRE_BLAST, MOVE_FOCUS_BLAST, MOVE_GRASS_KNOT, MOVE_SCORCHING_SANDS},
         .heldItem = ITEM_CHOICE_SPECS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -11890,7 +11890,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_AROMATISSE_1] = {
         .species = SPECIES_AROMATISSE,
-        .moves = {MOVE_SPARKLY_SWIRL MOVE_PSYCHIC, MOVE_TRICK_ROOM, MOVE_AROMATHERAPY},
+        .moves = {MOVE_SPARKLY_SWIRL, MOVE_PSYCHIC, MOVE_TRICK_ROOM, MOVE_AROMATHERAPY},
         .heldItem = ITEM_LEFTOVERS,
         .ev = TRAINER_PARTY_EVS_QUIET(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 0),
@@ -12341,7 +12341,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_GOURGEIST_4] = {
         .species = SPECIES_GOURGEIST,
         .moves = {MOVE_GIGA_DRAIN, MOVE_TRICK, MOVE_SHADOW_BALL, MOVE_DESTINY_BOND},
-        .heldItem = ITEM_CHOICE_SCARF
+        .heldItem = ITEM_CHOICE_SCARF,
         .ev = TRAINER_PARTY_EVS_MODEST(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .nature = NATURE_MODEST,
@@ -14240,7 +14240,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_LUNALA_5] = {
         .species = SPECIES_LUNALA,
         .moves = {MOVE_MOONGEIST_BEAM, MOVE_PSYSHOCK, MOVE_TAILWIND, MOVE_DEFOG},
-        .heldItem = ITEM_HEAVY_DUTY_BOOTS
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .nature = NATURE_TIMID,
@@ -14893,7 +14893,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .nature = NATURE_ADAMANT,
         .ability = ABILITY_CHEEK_POUCH
-    }
+    },
     [FRONTIER_MON_CORVIKNIGHT_1] = {
         .species = SPECIES_CORVIKNIGHT,
         .moves = {MOVE_BRAVE_BIRD, MOVE_ROOST, MOVE_DEFOG, MOVE_U_TURN},
