@@ -902,7 +902,7 @@
 #define FRONTIER_MON_MAGNEZONE_5                 898
 #define FRONTIER_MON_MAGNEZONE_6                 899
 #define FRONTIER_MON_LICKILICKY_1                900
-#define FRONTIER_MON_LICKLICKY_2                 901
+#define FRONTIER_MON_LICKILICKY_2                901
 #define FRONTIER_MON_LICKILICKY_3                902
 #define FRONTIER_MON_LICKILICKY_4                903
 #define FRONTIER_MON_LICKILICKY_5                904

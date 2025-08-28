@@ -8153,7 +8153,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT,
         .ability = ABILITY_OWN_TEMPO
     },
-    [FRONTIER_MON_LICKLICKY_2] = {
+    [FRONTIER_MON_LICKILICKY_2] = {
         .species = SPECIES_LICKILICKY,
         .moves = {MOVE_WRING_OUT, MOVE_POWER_WHIP, MOVE_KNOCK_OFF, MOVE_EARTHQUAKE},
         .heldItem = ITEM_LEFTOVERS,
