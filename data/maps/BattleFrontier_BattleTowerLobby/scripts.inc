@@ -411,9 +411,9 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterSinglesChallenge::
 # 206 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	copyvar VAR_0x8004, VAR_RESULT
 # 207 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
-	setvar VAR_0x8005, FRONTIER_PARTY_SIZE
+	setvar VAR_0x8005, FRONTIER_PARTY_SIZE_FULL
 # 208 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
-	special ChoosePartyForBattleFrontier
+	special ChoosePartyForBattleFrontier6V6
 # 209 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	waitstate
 # 210 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
@@ -1197,7 +1197,7 @@ BattleFrontier_BattleTowerLobby_EventScript_EnterElevator::
 # 599 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	special SavePlayerParty
 # 600 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
-	setvar VAR_0x8004, FRONTIER_UTIL_FUNC_SET_PARTY_ORDER
+	setvar VAR_0x8004, FRONTIER_UTIL_FUNC_SET_PARTY_ORDER_BATTLE_TOWER
 # 601 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	call BattleFrontier_BattleTowerLobby_EventScript_GetPartySize
 # 602 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"

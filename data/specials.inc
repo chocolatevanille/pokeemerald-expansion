@@ -257,9 +257,11 @@ gSpecials::
 	def_special CallFallarborTentFunction
 	def_special CallSlateportTentFunction
 	def_special ChoosePartyForBattleFrontier
+	def_special ChoosePartyForBattleFrontier6V6
 	def_special ValidateEReaderTrainer
 	def_special GetBattleTowerSinglesStreak
 	def_special ReducePlayerPartyToSelectedMons
+	def_special ReducePlayerPartyToSelectedMons6V6
 	def_special BedroomPC
 	def_special PlayerPC
 	def_special FieldShowRegionMap

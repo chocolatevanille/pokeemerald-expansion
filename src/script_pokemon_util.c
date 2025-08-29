@@ -365,6 +365,13 @@ void ChoosePartyForBattleFrontier(void)
     InitChooseHalfPartyForBattle(gSpecialVar_0x8004 + 1);
 }
 
+void ChoosePartyForBattleFrontier6V6(void)
+{
+    // Skip party selection and use full party for Battle Tower
+    gSpecialVar_Result = TRUE;
+    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
 static void CB2_ReturnFromChooseBattleFrontierParty(void)
 {
     switch (gSelectedOrderFromParty[0])
@@ -398,6 +405,12 @@ void ReducePlayerPartyToSelectedMons(void)
     for (i = 0; i < MAX_FRONTIER_PARTY_SIZE; i++)
         gPlayerParty[i] = party[i];
 
+    CalculatePlayerPartyCount();
+}
+
+void ReducePlayerPartyToSelectedMons6V6(void)
+{
+    // For Battle Tower 6v6, keep the full party as-is
     CalculatePlayerPartyCount();
 }
 

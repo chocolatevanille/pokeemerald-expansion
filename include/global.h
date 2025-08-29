@@ -327,7 +327,7 @@ struct EmeraldBattleTowerRecord
     /*0x10*/ u16 greeting[EASY_CHAT_BATTLE_WORDS_COUNT];
     /*0x1C*/ u16 speechWon[EASY_CHAT_BATTLE_WORDS_COUNT];
     /*0x28*/ u16 speechLost[EASY_CHAT_BATTLE_WORDS_COUNT];
-    /*0x34*/ struct BattleTowerPokemon party[MAX_FRONTIER_PARTY_SIZE];
+    /*0x34*/ struct BattleTowerPokemon party[FRONTIER_PARTY_SIZE_FULL];
     /*0xE4*/ u8 language;
     /*0xE7*/ //u8 padding[3];
     /*0xE8*/ u32 checksum;
@@ -352,7 +352,7 @@ struct BattleTowerEReaderTrainer
     /*0x10*/ u16 greeting[EASY_CHAT_BATTLE_WORDS_COUNT];
     /*0x1C*/ u16 farewellPlayerLost[EASY_CHAT_BATTLE_WORDS_COUNT];
     /*0x28*/ u16 farewellPlayerWon[EASY_CHAT_BATTLE_WORDS_COUNT];
-    /*0x34*/ struct BattleTowerPokemon party[FRONTIER_PARTY_SIZE];
+    /*0x34*/ struct BattleTowerPokemon party[FRONTIER_PARTY_SIZE_FULL];
     /*0xB8*/ u32 checksum;
 };
 
@@ -399,7 +399,7 @@ struct BattleFrontier
               u8 challengePaused:1;
               u8 disableRecordBattle:1;
               //u8 padding1:4;
-    /*0xCAA*/ u16 selectedPartyMons[MAX_FRONTIER_PARTY_SIZE];
+    /*0xCAA*/ u16 selectedPartyMons[FRONTIER_PARTY_SIZE_FULL];
     /*0xCB2*/ u16 curChallengeBattleNum; // Battle number / room number (Pike) / floor number (Pyramid)
     /*0xCB4*/ u16 trainerIds[20];
     /*0xCDC*/ u32 winStreakActiveFlags;

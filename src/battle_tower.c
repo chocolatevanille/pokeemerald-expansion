@@ -869,7 +869,7 @@ static const u8 sApprenticeChallengeThreshold[MAX_APPRENTICE_QUESTIONS] =
 // Unclear why this was duplicated
 static const u8 sBattleTowerPartySizes2[] =
 {
-    [FRONTIER_MODE_SINGLES]     = FRONTIER_PARTY_SIZE,
+    [FRONTIER_MODE_SINGLES]     = FRONTIER_PARTY_SIZE_FULL,
     [FRONTIER_MODE_DOUBLES]     = FRONTIER_DOUBLES_PARTY_SIZE,
     [FRONTIER_MODE_MULTIS]      = FRONTIER_MULTI_PARTY_SIZE,
     [FRONTIER_MODE_LINK_MULTIS] = FRONTIER_MULTI_PARTY_SIZE,
@@ -906,7 +906,7 @@ static const u16 sUnused[] = { 179, 141, 200, 183 };
 
 static const u8 sBattleTowerPartySizes[FRONTIER_MODE_COUNT] =
 {
-    [FRONTIER_MODE_SINGLES]     = FRONTIER_PARTY_SIZE,
+    [FRONTIER_MODE_SINGLES]     = FRONTIER_PARTY_SIZE_FULL,
     [FRONTIER_MODE_DOUBLES]     = FRONTIER_DOUBLES_PARTY_SIZE,
     [FRONTIER_MODE_MULTIS]      = FRONTIER_MULTI_PARTY_SIZE,
     [FRONTIER_MODE_LINK_MULTIS] = FRONTIER_MULTI_PARTY_SIZE,
@@ -1031,7 +1031,7 @@ static bool8 ChooseSpecialBattleTowerTrainer(void)
             checksum += record[j];
         }
         validMons = 0;
-        for (j = 0; j < MAX_FRONTIER_PARTY_SIZE; j++)
+        for (j = 0; j < FRONTIER_PARTY_SIZE; j++)
         {
             if (gSaveBlock2Ptr->frontier.towerRecords[i].party[j].species != SPECIES_NONE
                 && gSaveBlock2Ptr->frontier.towerRecords[i].party[j].level <= GetFrontierEnemyMonLevel(lvlMode))
@@ -1774,7 +1774,7 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
 static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
 {
     s32 i, j;
-    u16 chosenMonIndices[MAX_FRONTIER_PARTY_SIZE];
+    u16 chosenMonIndices[FRONTIER_PARTY_SIZE_FULL] = {0};
     u8 level = SetFacilityPtrsGetLevel();
     u8 fixedIV = 0;
     u8 bfMonCount;
@@ -1791,7 +1791,7 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
     else if (trainerId == TRAINER_EREADER)
     {
     #if FREE_BATTLE_TOWER_E_READER == FALSE
-        for (i = firstMonId; i < firstMonId + FRONTIER_PARTY_SIZE; i++)
+        for (i = firstMonId; i < firstMonId + FRONTIER_PARTY_SIZE_FULL; i++)
             CreateBattleTowerMon(&gEnemyParty[i], &gSaveBlock2Ptr->frontier.ereaderTrainer.party[i - firstMonId]);
     #endif //FREE_BATTLE_TOWER_E_READER
         return;
@@ -1817,7 +1817,7 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
     else
     {
         // Apprentice.
-        for (i = firstMonId; i < firstMonId + FRONTIER_PARTY_SIZE; i++)
+        for (i = firstMonId; i < firstMonId + FRONTIER_PARTY_SIZE_FULL; i++)
             CreateApprenticeMon(&gEnemyParty[i], &gSaveBlock2Ptr->apprentices[trainerId - TRAINER_RECORD_MIXING_APPRENTICE], i - firstMonId);
         return;
     }
@@ -1911,7 +1911,7 @@ static void UNUSED Unused_CreateApprenticeMons(u16 trainerId, u8 firstMonId)
     else
         level = FRONTIER_MAX_LEVEL_50;
 
-    for (i = 0; i != FRONTIER_PARTY_SIZE; i++)
+    for (i = 0; i != MULTI_PARTY_SIZE; i++)
     {
         CreateMonWithEVSpread(&gEnemyParty[firstMonId + i], apprentice->party[i].species, level, fixedIV, 8);
         friendship = MAX_FRIENDSHIP;
@@ -2139,7 +2139,7 @@ void DoSpecialTrainerBattle(void)
         switch (VarGet(VAR_FRONTIER_BATTLE_MODE))
         {
         case FRONTIER_MODE_SINGLES:
-            FillFrontierTrainerParty(FRONTIER_PARTY_SIZE);
+            FillFrontierTrainerParty(FRONTIER_PARTY_SIZE_FULL);
             break;
         case FRONTIER_MODE_DOUBLES:
             FillFrontierTrainerParty(FRONTIER_DOUBLES_PARTY_SIZE);
@@ -2320,7 +2320,10 @@ static void SaveBattleTowerRecord(void)
         playerRecord->speechLost[i] = gSaveBlock1Ptr->easyChatBattleLost[i];
     }
 
-    for (i = 0; i < MAX_FRONTIER_PARTY_SIZE; i++)
+    // Use different party sizes based on facility
+    u8 partySize = (VarGet(VAR_FRONTIER_FACILITY) == FRONTIER_FACILITY_TOWER) ? FRONTIER_PARTY_SIZE_FULL : FRONTIER_PARTY_SIZE;
+    
+    for (i = 0; i < partySize; i++)
     {
         if (gSaveBlock2Ptr->frontier.selectedPartyMons[i] != 0)
             ConvertPokemonToBattleTowerPokemon(&gPlayerParty[gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1], &playerRecord->party[i]);

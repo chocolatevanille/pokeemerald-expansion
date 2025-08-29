@@ -65,6 +65,7 @@ static void GetChallengeStatus(void);
 static void GetFrontierData(void);
 static void SetFrontierData(void);
 static void SetSelectedPartyOrder(void);
+static void SetSelectedPartyOrderBattleTower(void);
 static void DoSoftReset_(void);
 static void SetFrontierTrainers(void);
 static void SaveSelectedParty(void);
@@ -696,6 +697,7 @@ static void (* const sFrontierUtilFuncs[])(void) =
     [FRONTIER_UTIL_FUNC_GET_DATA]              = GetFrontierData,
     [FRONTIER_UTIL_FUNC_SET_DATA]              = SetFrontierData,
     [FRONTIER_UTIL_FUNC_SET_PARTY_ORDER]       = SetSelectedPartyOrder,
+    [FRONTIER_UTIL_FUNC_SET_PARTY_ORDER_BATTLE_TOWER] = SetSelectedPartyOrderBattleTower,
     [FRONTIER_UTIL_FUNC_SOFT_RESET]            = DoSoftReset_,
     [FRONTIER_UTIL_FUNC_SET_TRAINERS]          = SetFrontierTrainers,
     [FRONTIER_UTIL_FUNC_SAVE_PARTY]            = SaveSelectedParty,
@@ -893,6 +895,16 @@ static void SetSelectedPartyOrder(void)
     for (i = 0; i < gSpecialVar_0x8005; i++)
         gSelectedOrderFromParty[i] = gSaveBlock2Ptr->frontier.selectedPartyMons[i];
     ReducePlayerPartyToSelectedMons();
+}
+
+static void SetSelectedPartyOrderBattleTower(void)
+{
+    s32 i;
+
+    ClearSelectedPartyOrder();
+    for (i = 0; i < gSpecialVar_0x8005; i++)
+        gSelectedOrderFromParty[i] = gSaveBlock2Ptr->frontier.selectedPartyMons[i];
+    ReducePlayerPartyToSelectedMons6V6();
 }
 
 static void DoSoftReset_(void)

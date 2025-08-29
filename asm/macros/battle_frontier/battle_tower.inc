@@ -99,7 +99,7 @@
 	.endm
 
 	.macro multi_do type:req, partnerId:req
-	special ReducePlayerPartyToSelectedMons
+	special ReducePlayerPartyToSelectedMons6V6
 	setvar VAR_0x8004, FRONTIER_UTIL_FUNC_SET_DATA
 	setvar VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER
 	special CallFrontierUtilFunc @ saves the mon order, so the non-selected mons get restored afterwards
