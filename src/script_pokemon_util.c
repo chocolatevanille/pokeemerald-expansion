@@ -367,6 +367,42 @@ void ChoosePartyForBattleFrontier(void)
 
 void ChoosePartyForBattleFrontier6V6(void)
 {
+    int i;
+
+    if (gPlayerPartyCount < 6)
+    {
+        gSpecialVar_Result = FALSE;
+        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        return;
+    }
+
+    // Check for banned Pokémon and duplicate species in party
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+        if (species != SPECIES_NONE && species != SPECIES_EGG)
+        {
+            if (gSpeciesInfo[species].isFrontierBanned)
+            {
+                gSpecialVar_Result = FALSE;
+                SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+                return;
+            }
+            
+            // Check for duplicate species
+            for (int j = i + 1; j < gPlayerPartyCount; j++)
+            {
+                u16 otherSpecies = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES);
+                if (otherSpecies == species)
+                {
+                    gSpecialVar_Result = FALSE;
+                    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+                    return;
+                }
+            }
+        }
+    }
+    
     // Skip party selection and use full party for Battle Tower
     gSpecialVar_Result = TRUE;
     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
