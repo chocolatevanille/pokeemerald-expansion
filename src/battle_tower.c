@@ -1031,7 +1031,7 @@ static bool8 ChooseSpecialBattleTowerTrainer(void)
             checksum += record[j];
         }
         validMons = 0;
-        for (j = 0; j < FRONTIER_PARTY_SIZE; j++)
+        for (j = 0; j < MAX_FRONTIER_PARTY_SIZE; j++)
         {
             if (gSaveBlock2Ptr->frontier.towerRecords[i].party[j].species != SPECIES_NONE
                 && gSaveBlock2Ptr->frontier.towerRecords[i].party[j].level <= GetFrontierEnemyMonLevel(lvlMode))
@@ -1750,19 +1750,19 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
         u32 data = TRUE;
         SetMonData(dst, MON_DATA_IS_SHINY, &data);
     }
-    if (fmon->dynamaxLevel > 0)
+    if (TRUE)
     {
-        u32 data = fmon->dynamaxLevel;
+        u32 data = 0;
         SetMonData(dst, MON_DATA_DYNAMAX_LEVEL, &data);
     }
-    if (fmon->gigantamaxFactor)
+    if (TRUE)
     {
-        u32 data = fmon->gigantamaxFactor;
+        u32 data = 0;
         SetMonData(dst, MON_DATA_GIGANTAMAX_FACTOR, &data);
     }
-    if (fmon->teraType)
+    if (TRUE)
     {
-        u32 data = fmon->teraType;
+        u32 data = 0;
         SetMonData(dst, MON_DATA_TERA_TYPE, &data);
     }
 
@@ -1774,7 +1774,7 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
 static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
 {
     s32 i, j;
-    u16 chosenMonIndices[FRONTIER_PARTY_SIZE_FULL] = {0};
+    u16 chosenMonIndices[FRONTIER_PARTY_SIZE_FULL];
     u8 level = SetFacilityPtrsGetLevel();
     u8 fixedIV = 0;
     u8 bfMonCount;
@@ -2321,7 +2321,7 @@ static void SaveBattleTowerRecord(void)
     }
 
     // Use different party sizes based on facility
-    u8 partySize = (VarGet(VAR_FRONTIER_FACILITY) == FRONTIER_FACILITY_TOWER) ? FRONTIER_PARTY_SIZE_FULL : FRONTIER_PARTY_SIZE;
+    u8 partySize = (VarGet(VAR_FRONTIER_FACILITY) == FRONTIER_FACILITY_TOWER) ? FRONTIER_PARTY_SIZE_FULL : MAX_FRONTIER_PARTY_SIZE;
     
     for (i = 0; i < partySize; i++)
     {
