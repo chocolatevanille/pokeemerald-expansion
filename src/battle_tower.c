@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle_tower.h"
+#include "battle_tower_team_preview.h"
 #include "apprentice.h"
 #include "event_data.h"
 #include "battle_setup.h"
@@ -1125,6 +1126,23 @@ static void SetNextFacilityOpponent(void)
             if (gSaveBlock2Ptr->frontier.curChallengeBattleNum + 1 < FRONTIER_STAGES_PER_CHALLENGE)
                 gSaveBlock2Ptr->frontier.trainerIds[gSaveBlock2Ptr->frontier.curChallengeBattleNum] = gTrainerBattleOpponent_A;
         }
+        
+        // Generate the opponent's team first
+        if (battleMode == FRONTIER_MODE_MULTIS || battleMode == FRONTIER_MODE_LINK_MULTIS)
+        {
+            FillFrontierTrainersParties(FRONTIER_MULTI_PARTY_SIZE);
+        }
+        else if (battleMode == FRONTIER_MODE_DOUBLES)
+        {
+            FillFrontierTrainerParty(FRONTIER_DOUBLES_PARTY_SIZE);
+        }
+        else
+        {
+            FillFrontierTrainerParty(FRONTIER_PARTY_SIZE_FULL);
+        }
+        
+        // Load opponent's team into player's party for team preview
+        LoadOpponentTeamIntoPlayerParty();
     }
 }
 

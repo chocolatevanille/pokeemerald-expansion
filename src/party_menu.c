@@ -8,6 +8,7 @@
 #include "battle_pike.h"
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
+#include "battle_tower_team_preview.h"
 #include "bg.h"
 #include "bw_summary_screen.h"
 #include "contest.h"
@@ -482,8 +483,11 @@ static void Task_PartyMenuWaitForFade(u8 taskId);
 static void Task_ChooseContestMon(u8 taskId);
 static void CB2_ChooseContestMon(void);
 static void Task_ChoosePartyMon(u8 taskId);
+static void Task_DisplayParty(u8 taskId);
+static void Task_ReloadPlayerParty(u8 taskId);
 static void Task_ChooseMonForMoveRelearner(u8);
 static void CB2_ChooseMonForMoveRelearner(void);
+static void CB2_DisplayPartyReturn(void);
 static void Task_BattlePyramidChooseMonHeldItems(u8);
 static void ShiftMoveSlot(struct Pokemon*, u8, u8);
 static void BlitBitmapToPartyWindow_LeftColumn(u8, u8, u8, u8, u8, u8);
@@ -8011,6 +8015,40 @@ static void CB2_ChooseContestMon(void)
     gSpecialVar_0x8004 = gContestMonPartyIndex;
     gFieldCallback2 = CB2_FadeFromPartyMenu;
     SetMainCallback2(CB2_ReturnToField);
+}
+
+void DisplayParty(void)
+{
+    LockPlayerFieldControls();
+    FadeScreen(FADE_TO_BLACK, 0);
+    CreateTask(Task_DisplayParty, 10);
+}
+
+void Task_DisplayParty(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CANT_SWITCH, FALSE, PARTY_MSG_CHOOSE_MON_OR_CANCEL, Task_TryCreateSelectionWindow, CB2_DisplayPartyReturn);
+        DestroyTask(taskId);
+    }
+}
+
+static void CB2_DisplayPartyReturn(void)
+{
+    gFieldCallback2 = CB2_FadeFromPartyMenu;
+    SetMainCallback2(CB2_ReturnToField);
+}
+
+void ReloadPlayerParty(void)
+{
+    LockPlayerFieldControls();
+    CreateTask(Task_ReloadPlayerParty, 10);
+}
+
+static void Task_ReloadPlayerParty(u8 taskId) {
+    RestorePlayerParty();
+    DestroyTask(taskId);
 }
 
 // Used as a script special for showing a party mon to various npcs (e.g. in-game trades, move deleter)
