@@ -1768,22 +1768,6 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
         u32 data = TRUE;
         SetMonData(dst, MON_DATA_IS_SHINY, &data);
     }
-    if (TRUE)
-    {
-        u32 data = 0;
-        SetMonData(dst, MON_DATA_DYNAMAX_LEVEL, &data);
-    }
-    if (TRUE)
-    {
-        u32 data = 0;
-        SetMonData(dst, MON_DATA_GIGANTAMAX_FACTOR, &data);
-    }
-    if (TRUE)
-    {
-        u32 data = 0;
-        SetMonData(dst, MON_DATA_TERA_TYPE, &data);
-    }
-
 
     SetMonData(dst, MON_DATA_POKEBALL, &ball);
     CalculateMonStats(dst);
