@@ -511,8 +511,10 @@ BattleFrontier_BattlePalaceBattleRoom_Text_SpenserFirstIntro:
 	.string "Pokémon always!\p"
 	.string "My heart beats as one with\n"
 	.string "Pokémon always!\p"
-	.string "Young one of a TRAINER!\n"
-	.string "Do you believe in your Pokémon?\p"
+	.string "Young one of a TRAINER!\p"
+	.string "You have accomplished much\n"
+	.string "throughout HOENN.\p"
+	.string "But do you believe in your Pokémon?\p"
 	.string "Can you believe them through\n"
 	.string "and through?\p"
 	.string "If your bonds of trust are frail,\n"
@@ -520,17 +522,19 @@ BattleFrontier_BattlePalaceBattleRoom_Text_SpenserFirstIntro:
 
 BattleFrontier_BattlePalaceBattleRoom_Text_ProveYourBondWithMons:
 	.string "The bond you share with your Pokémon!\n"
-	.string "Prove it to me here!$"
+	.string "{PLAYER}! Prove it to me here!$"
 
 BattleFrontier_BattlePalaceBattleRoom_Text_SpenserPostSilverBattle:
 	.string "SPENSER: Gwahahah!\p"
 	.string "Hah, you never fell for my bluster!\n"
 	.string "Sorry for trying that stunt!\p"
+	.string "Your bonds were apparent the moment!\n"
+	.string "I entered the room.\p"
 	.string "Here!\n"
 	.string "Bring me the thing!$"
 
 BattleFrontier_BattlePalaceBattleRoom_Text_LetsSeeFrontierPass:
-	.string "My, my, if only you could maintain that\n"
+	.string "My, my, if only I could maintain that\n"
 	.string "facade of distinguished authority…\p"
 	.string "Here!\n"
 	.string "Let's see your FRONTIER PASS!$"
@@ -540,7 +544,7 @@ BattleFrontier_BattlePalaceBattleRoom_Text_ReceivedSpiritsSymbol:
 	.string "the FRONTIER PASS!$"
 
 BattleFrontier_BattlePalaceBattleRoom_Text_SpenserAwaitNextTime:
-	.string "SPENSER: Your Pokémon's eyes are \n"
+	.string "SPENSER: Your Pokémon's eyes are\n"
 	.string "truly clear and unclouded.\p"
 	.string "I will eagerly await the next\n"
 	.string "opportunity to see you.$"
@@ -563,13 +567,12 @@ BattleFrontier_BattlePalaceBattleRoom_Text_SpenserYourTeamIsAdmirable:
 	.string "SPENSER: Well, that was some display!\n"
 	.string "Even fully unleashed, my brethren\l"
 	.string "could not overpower you.\p"
+	.string "SCOTT was right to bring you here.\n"
 	.string "Your team spirit is truly admirable!\p"
 	.string "Here!\n"
-	.string "Bring me that thing, will you?$"
+	.string "Bring me that thing again, will you?$"
 
 BattleFrontier_BattlePalaceBattleRoom_Text_HurryWithFrontierPass:
-	.string "My, my, if only you could maintain\n"
-	.string "a certain level of decorum…\p"
 	.string "Gaaah, here!\n"
 	.string "Hurry with that FRONTIER PASS, you!$"
 
@@ -579,6 +582,7 @@ BattleFrontier_BattlePalaceBattleRoom_Text_SpiritsSymbolTookGoldenShine:
 
 BattleFrontier_BattlePalaceBattleRoom_Text_SpenserComeSeeMeAgain:
 	.string "SPENSER: Gwahahah!\p"
-	.string "Come see me time and again!\n"
+	.string "Come see me time and again,\n"
+	.string "{PLAYER}!\p"
 	.string "My brethren and I will be waiting!$"
 `

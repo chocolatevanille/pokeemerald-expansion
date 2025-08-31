@@ -47,17 +47,7 @@ struct FrontierBrainMon
     u8 nature;
     u8 evs[NUM_STATS];
     u16 moves[MAX_MON_MOVES];
-};
-
-struct FrontierBrain
-{
-    u16 trainerId;
-    u8 objEventGfx;
-    u8 isFemale;
-    const u8 *lostTexts[2];
-    const u8 *wonTexts[2];
-    u16 battledBit[2];
-    u8 streakAppearances[4];
+    bool16 isShiny;
 };
 
 // This file's functions.
@@ -95,216 +85,133 @@ static void ShowPyramidResultsWindow(void);
 static void ShowLinkContestResultsWindow(void);
 static void CopyFrontierBrainText(bool8 playerWonText);
 
-// battledBit: Flags to change the conversation when the Frontier Brain is encountered for a battle
-// First bit is has battled them before and not won yet, second bit is has battled them and won (obtained a Symbol)
-const struct FrontierBrain gFrontierBrainInfo[NUM_FRONTIER_FACILITIES] =
+static const u8 sFrontierBrainStreakAppearances[NUM_FRONTIER_FACILITIES][4] =
 {
-    [FRONTIER_FACILITY_TOWER] =
-    {
-        .trainerId = TRAINER_ANABEL,
-        .objEventGfx = OBJ_EVENT_GFX_ANABEL,
-        .isFemale = TRUE,
-        .lostTexts = {
-            COMPOUND_STRING("Okay, I understand…"), //Silver
-            COMPOUND_STRING("Thank you…")           //Gold
-        },
-        .wonTexts = {
-            COMPOUND_STRING("It's very disappointing…"), //Silver
-            COMPOUND_STRING("I'm terribly sorry…")       //Gold
-        },
-        .battledBit = {1 << 0, 1 << 1},
-        .streakAppearances = {35, 70, 35, 1},
-    },
-    [FRONTIER_FACILITY_DOME] =
-    {
-        .trainerId = TRAINER_TUCKER,
-        .objEventGfx = OBJ_EVENT_GFX_TUCKER,
-        .isFemale = FALSE,
-        .lostTexts = {
-            COMPOUND_STRING(
-                "Grr…\n"
-                "What the…"),        //Silver
-            COMPOUND_STRING(
-                "Ahahaha!\n"
-                "You're inspiring!") //Gold
-        },
-        .wonTexts = {
-            COMPOUND_STRING(
-                "Ahahaha! Aren't you embarrassed?\n"
-                "Everyone's watching!"),                              //Silver
-            COMPOUND_STRING("My DOME ACE title isn't just for show!") //Gold
-        },
-        .battledBit = {1 << 2, 1 << 3},
-        .streakAppearances = {1, 2, 5, 0},
-    },
-    [FRONTIER_FACILITY_PALACE] =
-    {
-        .trainerId = TRAINER_SPENSER,
-        .objEventGfx = OBJ_EVENT_GFX_SPENSER,
-        .isFemale = FALSE,
-        .lostTexts = {
-            COMPOUND_STRING(
-                "Ah…\n"
-                "Now this is something else…"), //Silver
-            COMPOUND_STRING(
-                "Gwah!\n"
-                "Hahahaha!")                    //Gold
-        },
-        .wonTexts = {
-            COMPOUND_STRING(
-                "Your POKéMON are wimpy because\n"
-                "you're wimpy as a TRAINER!"),           //Silver
-            COMPOUND_STRING(
-                "Gwahahaha!\n"
-                "My brethren, we have nothing to fear!") //Gold
-        },
-        .battledBit = {1 << 4, 1 << 5},
-        .streakAppearances = {21, 42, 21, 1},
-    },
-    [FRONTIER_FACILITY_ARENA] =
-    {
-        .trainerId = TRAINER_GRETA,
-        .objEventGfx = OBJ_EVENT_GFX_GRETA,
-        .isFemale = TRUE,
-        .lostTexts = {
-            COMPOUND_STRING(
-                "No way!\n"
-                "Good job!"),        //Silver
-            COMPOUND_STRING(
-                "Huh?\n"
-                "Are you serious?!") //Gold
-        },
-        .wonTexts = {
-            COMPOUND_STRING(
-                "Oh, come on!\n"
-                "You have to try harder than that!"), //Silver
-            COMPOUND_STRING(
-                "Heheh!\n"
-                "What did you expect?")               //Gold
-        },
-        .battledBit = {1 << 6, 1 << 7},
-        .streakAppearances = {28, 56, 28, 1},
-    },
-    [FRONTIER_FACILITY_FACTORY] =
-    {
-        .trainerId = TRAINER_NOLAND,
-        .objEventGfx = OBJ_EVENT_GFX_NOLAND,
-        .isFemale = FALSE,
-        .lostTexts = {
-            COMPOUND_STRING(
-                "Good job!\n"
-                "You know what you're doing!"),    //Silver
-            COMPOUND_STRING("What happened here?") //Gold
-        },
-        .wonTexts = {
-            COMPOUND_STRING(
-                "Way to work!\n"
-                "That was a good lesson, eh?"), //Silver
-            COMPOUND_STRING(
-                "Hey, hey, hey!\n"
-                "You're finished already?")     //Gold
-        },
-        .battledBit = {1 << 8, 1 << 9},
-        .streakAppearances = {21, 42, 21, 1},
-    },
-    [FRONTIER_FACILITY_PIKE] =
-    {
-        .trainerId = TRAINER_LUCY,
-        .objEventGfx = OBJ_EVENT_GFX_LUCY,
-        .isFemale = TRUE,
-        .lostTexts = {
-            COMPOUND_STRING("Urk…"), //Silver
-            COMPOUND_STRING("Darn!") //Gold
-        },
-        .wonTexts = {
-            COMPOUND_STRING("Humph…"), //Silver
-            COMPOUND_STRING("Hah!")    //Gold
-        },
-        .battledBit = {1 << 10, 1 << 11},
-        .streakAppearances = {28, 140, 56, 1},
-    },
-    [FRONTIER_FACILITY_PYRAMID] =
-    {
-        .trainerId = TRAINER_BRANDON,
-        .objEventGfx = OBJ_EVENT_GFX_BRANDON,
-        .isFemale = FALSE,
-        .lostTexts = {
-            COMPOUND_STRING(
-                "That's it! You've done great!\n"
-                "You've worked hard for this!"), //Silver
-            COMPOUND_STRING(
-                "That's it! You've done it!\n"
-                "You kept working for this!")    //Gold
-        },
-        .wonTexts = {
-            COMPOUND_STRING(
-                "Hey! What's wrong with you!\n"
-                "Let's see some effort! Get up!"),       //Silver
-            COMPOUND_STRING(
-                "Hey! Don't you give up now!\n"
-                "Get up! Don't lose faith in yourself!") //Gold
-        },
-        .battledBit = {1 << 12, 1 << 13},
-        .streakAppearances = {21, 70, 35, 0},
-    },
+    [FRONTIER_FACILITY_TOWER]   = {35,  70, 35, 1},
+    [FRONTIER_FACILITY_DOME]    = { 4,   9,  5, 0},
+    [FRONTIER_FACILITY_PALACE]  = {21,  42, 21, 1},
+    [FRONTIER_FACILITY_ARENA]   = {28,  56, 28, 1},
+    [FRONTIER_FACILITY_FACTORY] = {21,  42, 21, 1},
+    [FRONTIER_FACILITY_PIKE]    = {28, 140, 56, 1},
+    [FRONTIER_FACILITY_PYRAMID] = {21,  70, 35, 0},
 };
 
-static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZE] =
+static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZE_FULL] =
 {
     [FRONTIER_FACILITY_TOWER] =
     {
         // Silver Symbol.
         {
             {
+                .species = SPECIES_METAGROSS,
+                .heldItem = ITEM_AIR_BALLOON,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_ADAMANT,
+                .evs = {0, 252, 4, 0, 0, 252},
+                .moves = {MOVE_STEALTH_ROCK, MOVE_METEOR_MASH, MOVE_EARTHQUAKE, MOVE_ZEN_HEADBUTT},
+                .isShiny = FALSE,
+            },
+            {
                 .species = SPECIES_ALAKAZAM,
-                .heldItem = ITEM_BRIGHT_POWDER,
-                .fixedIV = 24,
-                .nature = NATURE_MODEST,
-                .evs = {106, 0, 152, 152, 100, 0},
-                .moves = {MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_DISABLE},
+                .heldItem = ITEM_ALAKAZITE,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_TIMID,
+                .evs = {0, 0, 0, 252, 6, 252},
+                .moves = {MOVE_PSYSHOCK, MOVE_ENERGY_BALL, MOVE_FOCUS_BLAST, MOVE_SHADOW_BALL},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_ENTEI,
                 .heldItem = ITEM_LUM_BERRY,
-                .fixedIV = 24,
-                .nature = NATURE_LONELY,
-                .evs = {100, 152, 152, 0, 100, 6},
-                .moves = {MOVE_FIRE_BLAST, MOVE_CALM_MIND, MOVE_RETURN, MOVE_ROAR},
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_JOLLY,
+                .evs = {0, 252, 4, 0, 0, 252},
+                .moves = {MOVE_EXTREME_SPEED, MOVE_FLARE_BLITZ, MOVE_STOMPING_TANTRUM, MOVE_WILL_O_WISP},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_SNORLAX,
-                .heldItem = ITEM_QUICK_CLAW,
-                .fixedIV = 24,
-                .nature = NATURE_ADAMANT,
-                .evs = {152, 152, 0, 0, 106, 100},
-                .moves = {MOVE_BODY_SLAM, MOVE_BELLY_DRUM, MOVE_YAWN, MOVE_SHADOW_BALL},
+                .heldItem = ITEM_SITRUS_BERRY,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_IMPISH,
+                .evs = {252, 0, 252, 0, 4, 0},
+                .moves = {MOVE_BELLY_DRUM, MOVE_RETURN, MOVE_CRUNCH, MOVE_HIGH_HORSEPOWER},
+                .isShiny = TRUE,
+            },
+            {
+                .species = SPECIES_PRIMARINA,
+                .heldItem = ITEM_LIFE_ORB,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_MODEST,
+                .evs = {4, 0, 0, 252, 252, 0},
+                .moves = {MOVE_MOONBLAST, MOVE_SPARKLING_ARIA, MOVE_ENERGY_BALL, MOVE_HAZE},
+                .isShiny = FALSE,
+            },
+            {
+                .species = SPECIES_WEAVILE,
+                .heldItem = ITEM_SITRUS_BERRY,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_IMPISH,
+                .evs = {252, 0, 252, 0, 4, 0},
+                .moves = {MOVE_BELLY_DRUM, MOVE_RETURN, MOVE_CRUNCH, MOVE_HIGH_HORSEPOWER},
+                .isShiny = FALSE,
             },
         },
         // Gold Symbol.
         {
             {
                 .species = SPECIES_RAIKOU,
-                .heldItem = ITEM_LUM_BERRY,
+                .heldItem = ITEM_AIR_BALLOON,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_MODEST,
-                .evs = {158, 0, 252, 100, 0, 0},
-                .moves = {MOVE_THUNDERBOLT, MOVE_CALM_MIND, MOVE_REFLECT, MOVE_REST},
+                .nature = NATURE_TIMID,
+                .evs = {0, 0, 0, 252, 4, 252},
+                .moves = {MOVE_THUNDERBOLT, MOVE_VOLT_SWITCH, MOVE_AURA_SPHERE, MOVE_THUNDER_WAVE},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_LATIOS,
-                .heldItem = ITEM_BRIGHT_POWDER,
+                .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_MODEST,
-                .evs = {252, 0, 252, 6, 0, 0},
-                .moves = {MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_RECOVER, MOVE_DRAGON_CLAW},
+                .nature = NATURE_TIMID,
+                .evs = {0, 0, 0, 252, 4, 252},
+                .moves = {MOVE_DRACO_METEOR, MOVE_LUSTER_PURGE, MOVE_RECOVER, MOVE_CALM_MIND},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_SNORLAX,
-                .heldItem = ITEM_CHESTO_BERRY,
+                .heldItem = ITEM_SNORLAXITE,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_CAREFUL,
+                .evs = {252, 4, 0, 0, 252, 0},
+                .moves = {MOVE_CURSE, MOVE_RETURN, MOVE_REST, MOVE_SLEEP_TALK},
+                .isShiny = TRUE,
+            },
+            {
+                .species = SPECIES_SALAMENCE,
+                .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
-                .evs = {252, 252, 0, 0, 6, 0},
-                .moves = {MOVE_CURSE, MOVE_RETURN, MOVE_REST, MOVE_SHADOW_BALL},
+                .evs = {0, 252, 0, 0, 4, 252},
+                .moves = {MOVE_DRAGON_DANCE, MOVE_DUAL_WINGBEAT, MOVE_DRAGON_CLAW, MOVE_ROOST},
+                .isShiny = FALSE,
+            },
+            {
+                .species = SPECIES_SNEASLER,
+                .heldItem = ITEM_LIFE_ORB,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_JOLLY,
+                .evs = {0, 252, 0, 0, 4, 252},
+                .moves = {MOVE_DIRE_CLAW, MOVE_CLOSE_COMBAT, MOVE_ROCK_SLIDE, MOVE_SUBSTITUTE},
+                .isShiny = FALSE,
+            },
+            {
+                .species = SPECIES_FLUTTER_MANE,
+                .heldItem = ITEM_BOOSTER_ENERGY,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_TIMID,
+                .evs = {0, 0, 0, 252, 4, 252},
+                .moves = {MOVE_CALM_MIND, MOVE_MOONBLAST, MOVE_THUNDER_WAVE, MOVE_HEX},
+                .isShiny = FALSE,
             },
         },
     },
@@ -313,55 +220,61 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_SWAMPERT,
-                .heldItem = ITEM_FOCUS_BAND,
-                .fixedIV = 20,
-                .nature = NATURE_BRAVE,
-                .evs = {152, 152, 106, 0, 100, 0},
-                .moves = {MOVE_SURF, MOVE_EARTHQUAKE, MOVE_ICE_BEAM, MOVE_COUNTER},
+                .species = SPECIES_VOLCARONA,
+                .heldItem = ITEM_LIFE_ORB,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_TIMID,
+                .evs = {0, 0, 0, 252, 4, 252},
+                .moves = {MOVE_BUG_BUZZ, MOVE_FIERY_DANCE, MOVE_ROOST, MOVE_QUIVER_DANCE},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_SALAMENCE,
                 .heldItem = ITEM_LUM_BERRY,
-                .fixedIV = 20,
+                .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
-                .evs = {152, 152, 106, 100, 0, 0},
+                .evs = {0, 252, 0, 0, 4, 252},
                 .moves = {MOVE_EARTHQUAKE, MOVE_BRICK_BREAK, MOVE_DRAGON_CLAW, MOVE_AERIAL_ACE},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_CHARIZARD,
-                .heldItem = ITEM_WHITE_HERB,
-                .fixedIV = 20,
-                .nature = NATURE_QUIET,
-                .evs = {100, 152, 106, 152, 0, 0},
-                .moves = {MOVE_OVERHEAT, MOVE_ROCK_SLIDE, MOVE_AERIAL_ACE, MOVE_EARTHQUAKE},
+                .heldItem = ITEM_CHARIZARDITE_X,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_ADAMANT,
+                .evs = {0, 252, 0, 0, 4, 252},
+                .moves = {MOVE_FLARE_BLITZ, MOVE_DRAGON_CLAW, MOVE_ROOST, MOVE_DRAGON_DANCE},
+                .isShiny = FALSE,
             },
         },
         // Gold Symbol.
         {
             {
-                .species = SPECIES_SWAMPERT,
-                .heldItem = ITEM_LEFTOVERS,
+                .species = SPECIES_HYDREIGON,
+                .heldItem = ITEM_LIFE_ORB,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_BRAVE,
-                .evs = {252, 252, 6, 0, 0, 0},
-                .moves = {MOVE_SURF, MOVE_EARTHQUAKE, MOVE_ICE_BEAM, MOVE_MIRROR_COAT},
+                .nature = NATURE_TIMID,
+                .evs = {0, 0, 0, 252, 6, 252},
+                .moves = {MOVE_DRACO_METEOR, MOVE_DARK_PULSE, MOVE_FIRE_BLAST, MOVE_NASTY_PLOT},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_METAGROSS,
-                .heldItem = ITEM_QUICK_CLAW,
+                .heldItem = ITEM_METAGROSSITE,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_BRAVE,
-                .evs = {252, 252, 6, 0, 0, 0},
-                .moves = {MOVE_PSYCHIC, MOVE_METEOR_MASH, MOVE_EARTHQUAKE, MOVE_PROTECT},
+                .nature = NATURE_ADAMANT,
+                .evs = {0, 252, 6, 0, 0, 252},
+                .moves = {MOVE_METEOR_MASH, MOVE_HAMMER_ARM, MOVE_EARTHQUAKE, MOVE_AGILITY},
+                .isShiny = TRUE,
             },
             {
                 .species = SPECIES_LATIAS,
-                .heldItem = ITEM_CHESTO_BERRY,
+                .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_MODEST,
-                .evs = {252, 0, 252, 6, 0, 0},
-                .moves = {MOVE_THUNDERBOLT, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_REST},
+                .nature = NATURE_TIMID,
+                .evs = {0, 0, 0, 252, 4, 252},
+                .moves = {MOVE_MIST_BALL, MOVE_THUNDERBOLT, MOVE_CALM_MIND, MOVE_ICE_BEAM},
+                .isShiny = FALSE,
             },
         },
     },
@@ -376,6 +289,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_ADAMANT,
                 .evs = {152, 0, 0, 152, 100, 106},
                 .moves = {MOVE_CONFUSE_RAY, MOVE_DOUBLE_TEAM, MOVE_TOXIC, MOVE_FLY},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_SLAKING,
@@ -384,6 +298,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_HARDY,
                 .evs = {152, 152, 0, 106, 100, 0},
                 .moves = {MOVE_EARTHQUAKE, MOVE_SWAGGER, MOVE_SHADOW_BALL, MOVE_BRICK_BREAK},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_LAPRAS,
@@ -392,6 +307,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_QUIET,
                 .evs = {0, 0, 252, 0, 106, 152},
                 .moves = {MOVE_ICE_BEAM, MOVE_HORN_DRILL, MOVE_CONFUSE_RAY, MOVE_PROTECT},
+                .isShiny = FALSE,
             },
         },
         // Gold Symbol.
@@ -403,6 +319,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_HASTY,
                 .evs = {6, 252, 252, 0, 0, 0},
                 .moves = {MOVE_OVERHEAT, MOVE_EXTREME_SPEED, MOVE_ROAR, MOVE_PROTECT},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_SLAKING,
@@ -411,6 +328,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_HARDY,
                 .evs = {6, 252, 0, 252, 0, 0},
                 .moves = {MOVE_HYPER_BEAM, MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_YAWN},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_SUICUNE,
@@ -419,6 +337,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_HASTY,
                 .evs = {252, 0, 252, 6, 0, 0},
                 .moves = {MOVE_BLIZZARD, MOVE_SURF, MOVE_BITE, MOVE_CALM_MIND},
+                .isShiny = FALSE,
             },
         },
     },
@@ -433,6 +352,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_JOLLY,
                 .evs = {106, 152, 0, 152, 0, 100},
                 .moves = {MOVE_MEGAHORN, MOVE_ROCK_TOMB, MOVE_ENDURE, MOVE_REVERSAL},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_UMBREON,
@@ -441,6 +361,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_CALM,
                 .evs = {152, 0, 100, 0, 152, 106},
                 .moves = {MOVE_BODY_SLAM, MOVE_CONFUSE_RAY, MOVE_PSYCHIC, MOVE_FEINT_ATTACK},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_SHEDINJA,
@@ -449,6 +370,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_ADAMANT,
                 .evs = {0, 252, 6, 252, 0, 0},
                 .moves = {MOVE_SHADOW_BALL, MOVE_RETURN, MOVE_CONFUSE_RAY, MOVE_AERIAL_ACE},
+                .isShiny = FALSE,
             },
         },
         // Gold Symbol.
@@ -460,6 +382,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_CALM,
                 .evs = {252, 0, 0, 0, 252, 6},
                 .moves = {MOVE_DOUBLE_EDGE, MOVE_CONFUSE_RAY, MOVE_REST, MOVE_PSYCHIC},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_GENGAR,
@@ -468,6 +391,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_MODEST,
                 .evs = {252, 0, 252, 0, 6, 0},
                 .moves = {MOVE_PSYCHIC, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_BRELOOM,
@@ -476,6 +400,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_JOLLY,
                 .evs = {6, 252, 0, 252, 0, 0},
                 .moves = {MOVE_SPORE, MOVE_FOCUS_PUNCH, MOVE_GIGA_DRAIN, MOVE_HEADBUTT},
+                .isShiny = FALSE,
             },
         },
     },
@@ -491,6 +416,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_BRAVE,
                 .evs = {0, 252, 252, 0, 6, 0},
                 .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_METAL_CLAW},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_SKARMORY,
@@ -499,6 +425,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_IMPISH,
                 .evs = {252, 0, 0, 0, 6, 252},
                 .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_PROTECT, MOVE_STEEL_WING},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_AGGRON,
@@ -507,6 +434,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_ADAMANT,
                 .evs = {0, 252, 0, 0, 252, 6},
                 .moves = {MOVE_THUNDERBOLT, MOVE_PROTECT, MOVE_SOLAR_BEAM, MOVE_DRAGON_CLAW},
+                .isShiny = FALSE,
             },
         },
         {
@@ -517,6 +445,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_BRAVE,
                 .evs = {0, 252, 252, 0, 6, 0},
                 .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_METAL_CLAW},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_SKARMORY,
@@ -525,6 +454,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_IMPISH,
                 .evs = {252, 0, 0, 0, 6, 252},
                 .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_PROTECT, MOVE_STEEL_WING},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_AGGRON,
@@ -533,6 +463,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_ADAMANT,
                 .evs = {0, 252, 0, 0, 252, 6},
                 .moves = {MOVE_THUNDERBOLT, MOVE_PROTECT, MOVE_SOLAR_BEAM, MOVE_DRAGON_CLAW},
+                .isShiny = FALSE,
             },
         },
     },
@@ -547,6 +478,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_BRAVE,
                 .evs = {252, 0, 252, 0, 6, 0},
                 .moves = {MOVE_SWAGGER, MOVE_CRUNCH, MOVE_POISON_FANG, MOVE_GIGA_DRAIN},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_SHUCKLE,
@@ -555,6 +487,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_BOLD,
                 .evs = {252, 0, 0, 0, 106, 252},
                 .moves = {MOVE_TOXIC, MOVE_SANDSTORM, MOVE_PROTECT, MOVE_REST},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_MILOTIC,
@@ -563,6 +496,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_MODEST,
                 .evs = {152, 0, 100, 0, 152, 106},
                 .moves = {MOVE_ICE_BEAM, MOVE_MIRROR_COAT, MOVE_SURF, MOVE_RECOVER},
+                .isShiny = FALSE,
             },
         },
         // Gold Symbol.
@@ -574,6 +508,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_BOLD,
                 .evs = {252, 0, 0, 0, 252, 6},
                 .moves = {MOVE_SWAGGER, MOVE_CRUNCH, MOVE_SLUDGE_BOMB, MOVE_GIGA_DRAIN},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_STEELIX,
@@ -582,6 +517,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_BRAVE,
                 .evs = {252, 0, 0, 0, 6, 252},
                 .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_EXPLOSION, MOVE_SCREECH},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_GYARADOS,
@@ -590,6 +526,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_ADAMANT,
                 .evs = {252, 6, 0, 0, 0, 252},
                 .moves = {MOVE_DRAGON_DANCE, MOVE_RETURN, MOVE_ROAR, MOVE_REST},
+                .isShiny = FALSE,
             },
         },
     },
@@ -604,6 +541,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_ADAMANT,
                 .evs = {152, 152, 0, 0, 106, 100},
                 .moves = {MOVE_EXPLOSION, MOVE_SUPERPOWER, MOVE_EARTHQUAKE, MOVE_ANCIENT_POWER},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_REGISTEEL,
@@ -612,6 +550,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_ADAMANT,
                 .evs = {152, 152, 0, 0, 6, 200},
                 .moves = {MOVE_EARTHQUAKE, MOVE_METAL_CLAW, MOVE_TOXIC, MOVE_IRON_DEFENSE},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_REGICE,
@@ -620,6 +559,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_MODEST,
                 .evs = {106, 0, 152, 0, 100, 152},
                 .moves = {MOVE_ICE_BEAM, MOVE_AMNESIA, MOVE_THUNDER, MOVE_REST},
+                .isShiny = FALSE,
             },
         },
         // Gold Symbol.
@@ -631,6 +571,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_MILD,
                 .evs = {6, 0, 252, 252, 0, 0},
                 .moves = {MOVE_BLIZZARD, MOVE_WATER_PULSE, MOVE_AERIAL_ACE, MOVE_REFLECT},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_ZAPDOS,
@@ -639,6 +580,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_MILD,
                 .evs = {6, 0, 252, 252, 0, 0},
                 .moves = {MOVE_THUNDER, MOVE_DETECT, MOVE_DRILL_PECK, MOVE_LIGHT_SCREEN},
+                .isShiny = FALSE,
             },
             {
                 .species = SPECIES_MOLTRES,
@@ -647,6 +589,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_MILD,
                 .evs = {6, 0, 252, 252, 0, 0},
                 .moves = {MOVE_FIRE_BLAST, MOVE_HYPER_BEAM, MOVE_AERIAL_ACE, MOVE_SAFEGUARD},
+                .isShiny = FALSE,
             },
         },
     },
@@ -689,6 +632,19 @@ static const u8 sBattlePointAwards[NUM_FRONTIER_FACILITIES][FRONTIER_MODE_COUNT]
     {
         [FRONTIER_MODE_SINGLES]     = {  5,  5,  6,  6,  7,  7,  8,  8,  9,  9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 },
     },
+};
+
+// Flags to change the conversation when the Frontier Brain is encountered for a battle
+// First bit is has battled them before and not won yet, second bit is has battled them and won (obtained a Symbol)
+static const u16 sBattledBrainBitFlags[NUM_FRONTIER_FACILITIES][2] =
+{
+    [FRONTIER_FACILITY_TOWER]   = {1 << 0, 1 << 1},
+    [FRONTIER_FACILITY_DOME]    = {1 << 2, 1 << 3},
+    [FRONTIER_FACILITY_PALACE]  = {1 << 4, 1 << 5},
+    [FRONTIER_FACILITY_ARENA]   = {1 << 6, 1 << 7},
+    [FRONTIER_FACILITY_FACTORY] = {1 << 8, 1 << 9},
+    [FRONTIER_FACILITY_PIKE]    = {1 << 10, 1 << 11},
+    [FRONTIER_FACILITY_PYRAMID] = {1 << 12, 1 << 13},
 };
 
 static void (* const sFrontierUtilFuncs[])(void) =
@@ -752,6 +708,18 @@ static const struct WindowTemplate sRankingHallRecordsWindowTemplate =
     .baseBlock = 1
 };
 
+// Second field - whether the character is female.
+static const u8 sFrontierBrainObjEventGfx[NUM_FRONTIER_FACILITIES][2] =
+{
+    [FRONTIER_FACILITY_TOWER]   = {OBJ_EVENT_GFX_ANABEL,  TRUE},
+    [FRONTIER_FACILITY_DOME]    = {OBJ_EVENT_GFX_TUCKER,  FALSE},
+    [FRONTIER_FACILITY_PALACE]  = {OBJ_EVENT_GFX_SPENSER, FALSE},
+    [FRONTIER_FACILITY_ARENA]   = {OBJ_EVENT_GFX_GRETA,   TRUE},
+    [FRONTIER_FACILITY_FACTORY] = {OBJ_EVENT_GFX_NOLAND,  FALSE},
+    [FRONTIER_FACILITY_PIKE]    = {OBJ_EVENT_GFX_LUCY,    TRUE},
+    [FRONTIER_FACILITY_PYRAMID] = {OBJ_EVENT_GFX_BRANDON, FALSE},
+};
+
 static const u8 *const sRecordsWindowChallengeTexts[][2] =
 {
     [RANKING_HALL_TOWER_SINGLES] = {gText_BattleTower2,  gText_FacilitySingle},
@@ -785,6 +753,74 @@ static const u8 *const sHallFacilityToRecordsText[] =
     [RANKING_HALL_PYRAMID]       = gText_FrontierFacilityFloorsCleared,
     [RANKING_HALL_TOWER_LINK]    = gText_FrontierFacilityWinStreak,
 };
+
+static const u16 sFrontierBrainTrainerIds[NUM_FRONTIER_FACILITIES] =
+{
+    [FRONTIER_FACILITY_TOWER]   = TRAINER_ANABEL,
+    [FRONTIER_FACILITY_DOME]    = TRAINER_TUCKER,
+    [FRONTIER_FACILITY_PALACE]  = TRAINER_SPENSER,
+    [FRONTIER_FACILITY_ARENA]   = TRAINER_GRETA,
+    [FRONTIER_FACILITY_FACTORY] = TRAINER_NOLAND,
+    [FRONTIER_FACILITY_PIKE]    = TRAINER_LUCY,
+    [FRONTIER_FACILITY_PYRAMID] = TRAINER_BRANDON,
+};
+
+static const u8 *const sFrontierBrainPlayerLostSilverTexts[NUM_FRONTIER_FACILITIES] =
+{
+    [FRONTIER_FACILITY_TOWER]   = gText_AnabelWonSilver,
+    [FRONTIER_FACILITY_DOME]    = gText_TuckerWonSilver,
+    [FRONTIER_FACILITY_PALACE]  = gText_SpenserWonSilver,
+    [FRONTIER_FACILITY_ARENA]   = gText_GretaWonSilver,
+    [FRONTIER_FACILITY_FACTORY] = gText_NolandWonSilver,
+    [FRONTIER_FACILITY_PIKE]    = gText_LucyWonSilver,
+    [FRONTIER_FACILITY_PYRAMID] = gText_BrandonWonSilver,
+};
+
+static const u8 *const sFrontierBrainPlayerWonSilverTexts[NUM_FRONTIER_FACILITIES] =
+{
+    [FRONTIER_FACILITY_TOWER]   = gText_AnabelDefeatSilver,
+    [FRONTIER_FACILITY_DOME]    = gText_TuckerDefeatSilver,
+    [FRONTIER_FACILITY_PALACE]  = gText_SpenserDefeatSilver,
+    [FRONTIER_FACILITY_ARENA]   = gText_GretaDefeatSilver,
+    [FRONTIER_FACILITY_FACTORY] = gText_NolandDefeatSilver,
+    [FRONTIER_FACILITY_PIKE]    = gText_LucyDefeatSilver,
+    [FRONTIER_FACILITY_PYRAMID] = gText_BrandonDefeatSilver,
+};
+
+static const u8 *const sFrontierBrainPlayerLostGoldTexts[NUM_FRONTIER_FACILITIES] =
+{
+    [FRONTIER_FACILITY_TOWER]   = gText_AnabelWonGold,
+    [FRONTIER_FACILITY_DOME]    = gText_TuckerWonGold,
+    [FRONTIER_FACILITY_PALACE]  = gText_SpenserWonGold,
+    [FRONTIER_FACILITY_ARENA]   = gText_GretaWonGold,
+    [FRONTIER_FACILITY_FACTORY] = gText_NolandWonGold,
+    [FRONTIER_FACILITY_PIKE]    = gText_LucyWonGold,
+    [FRONTIER_FACILITY_PYRAMID] = gText_BrandonWonGold,
+};
+
+static const u8 *const sFrontierBrainPlayerWonGoldTexts[NUM_FRONTIER_FACILITIES] =
+{
+    [FRONTIER_FACILITY_TOWER]   = gText_AnabelDefeatGold,
+    [FRONTIER_FACILITY_DOME]    = gText_TuckerDefeatGold,
+    [FRONTIER_FACILITY_PALACE]  = gText_SpenserDefeatGold,
+    [FRONTIER_FACILITY_ARENA]   = gText_GretaDefeatGold,
+    [FRONTIER_FACILITY_FACTORY] = gText_NolandDefeatGold,
+    [FRONTIER_FACILITY_PIKE]    = gText_LucyDefeatGold,
+    [FRONTIER_FACILITY_PYRAMID] = gText_BrandonDefeatGold,
+};
+
+static const u8 *const *const sFrontierBrainPlayerLostTexts[] =
+{
+    sFrontierBrainPlayerLostSilverTexts,
+    sFrontierBrainPlayerLostGoldTexts,
+};
+
+static const u8 *const *const sFrontierBrainPlayerWonTexts[] =
+{
+    sFrontierBrainPlayerWonSilverTexts,
+    sFrontierBrainPlayerWonGoldTexts,
+};
+
 
 // code
 void CallFrontierUtilFunc(void)
@@ -847,7 +883,7 @@ static void GetFrontierData(void)
         gSpecialVar_Result = gSaveBlock2Ptr->frontier.disableRecordBattle;
         break;
     case FRONTIER_DATA_HEARD_BRAIN_SPEECH:
-        gSpecialVar_Result = gSaveBlock2Ptr->frontier.battledBrainFlags & gFrontierBrainInfo[facility].battledBit[hasSymbol];
+        gSpecialVar_Result = gSaveBlock2Ptr->frontier.battledBrainFlags & sBattledBrainBitFlags[facility][hasSymbol];
         break;
     }
 }
@@ -882,7 +918,7 @@ static void SetFrontierData(void)
         gSaveBlock2Ptr->frontier.disableRecordBattle = gSpecialVar_0x8006;
         break;
     case FRONTIER_DATA_HEARD_BRAIN_SPEECH:
-        gSaveBlock2Ptr->frontier.battledBrainFlags |= gFrontierBrainInfo[facility].battledBit[hasSymbol];
+        gSaveBlock2Ptr->frontier.battledBrainFlags |= sBattledBrainBitFlags[facility][hasSymbol];
         break;
     }
 }
@@ -1672,7 +1708,7 @@ u8 GetFrontierBrainStatus(void)
     s32 facility = VarGet(VAR_FRONTIER_FACILITY);
     s32 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
     u16 winStreakNoModifier = GetCurrentFacilityWinStreak();
-    s32 winStreak = winStreakNoModifier + gFrontierBrainInfo[facility].streakAppearances[3];
+    s32 winStreak = winStreakNoModifier + sFrontierBrainStreakAppearances[facility][3];
     s32 symbolsCount;
 
     if (battleMode != FRONTIER_MODE_SINGLES)
@@ -1684,20 +1720,20 @@ u8 GetFrontierBrainStatus(void)
     // Missing a symbol
     case 0:
     case 1:
-        if (winStreak == gFrontierBrainInfo[facility].streakAppearances[symbolsCount])
+        if (winStreak == sFrontierBrainStreakAppearances[facility][symbolsCount])
             status = symbolsCount + 1; // FRONTIER_BRAIN_SILVER and FRONTIER_BRAIN_GOLD
         break;
     // Already received both symbols
     case 2:
     default:
         // Silver streak is reached
-        if (winStreak == gFrontierBrainInfo[facility].streakAppearances[0])
+        if (winStreak == sFrontierBrainStreakAppearances[facility][0])
             status = FRONTIER_BRAIN_STREAK;
         // Gold streak is reached
-        else if (winStreak == gFrontierBrainInfo[facility].streakAppearances[1])
+        else if (winStreak == sFrontierBrainStreakAppearances[facility][1])
             status = FRONTIER_BRAIN_STREAK_LONG;
         // Some increment of the gold streak is reached
-        else if (winStreak > gFrontierBrainInfo[facility].streakAppearances[1] && (winStreak - gFrontierBrainInfo[facility].streakAppearances[1]) % gFrontierBrainInfo[facility].streakAppearances[2] == 0)
+        else if (winStreak > sFrontierBrainStreakAppearances[facility][1] && (winStreak - sFrontierBrainStreakAppearances[facility][1]) % sFrontierBrainStreakAppearances[facility][2] == 0)
             status = FRONTIER_BRAIN_STREAK_LONG;
         break;
     }
@@ -2468,7 +2504,7 @@ u8 GetFrontierBrainTrainerPicIndex(void)
     else
         facility = VarGet(VAR_FRONTIER_FACILITY);
 
-    return GetTrainerPicFromId(gFrontierBrainInfo[facility].trainerId);
+    return GetTrainerPicFromId(sFrontierBrainTrainerIds[facility]);
 }
 
 u8 GetFrontierBrainTrainerClass(void)
@@ -2480,7 +2516,7 @@ u8 GetFrontierBrainTrainerClass(void)
     else
         facility = VarGet(VAR_FRONTIER_FACILITY);
 
-    return GetTrainerClassFromId(gFrontierBrainInfo[facility].trainerId);
+    return GetTrainerClassFromId(sFrontierBrainTrainerIds[facility]);
 }
 
 void CopyFrontierBrainTrainerName(u8 *dst)
@@ -2494,7 +2530,7 @@ void CopyFrontierBrainTrainerName(u8 *dst)
     else
         facility = VarGet(VAR_FRONTIER_FACILITY);
 
-    trainerName = GetTrainerNameFromId(gFrontierBrainInfo[facility].trainerId);
+    trainerName = GetTrainerNameFromId(sFrontierBrainTrainerIds[facility]);
     for (i = 0; i < PLAYER_NAME_LENGTH; i++)
         dst[i] = trainerName[i];
 
@@ -2504,13 +2540,13 @@ void CopyFrontierBrainTrainerName(u8 *dst)
 bool8 IsFrontierBrainFemale(void)
 {
     s32 facility = VarGet(VAR_FRONTIER_FACILITY);
-    return gFrontierBrainInfo[facility].isFemale;
+    return sFrontierBrainObjEventGfx[facility][1];
 }
 
 void SetFrontierBrainObjEventGfx_2(void)
 {
     s32 facility = VarGet(VAR_FRONTIER_FACILITY);
-    VarSet(VAR_OBJ_GFX_ID_0, gFrontierBrainInfo[facility].objEventGfx);
+    VarSet(VAR_OBJ_GFX_ID_0, sFrontierBrainObjEventGfx[facility][0]);
 }
 
 #define FRONTIER_BRAIN_OTID 61226
@@ -2521,19 +2557,25 @@ void CreateFrontierBrainPokemon(void)
     s32 selectedMonBits;
     s32 monPartyId;
     s32 monLevel = 0;
+    s32 teamSize = FRONTIER_PARTY_SIZE;
     u8 friendship;
     s32 facility = VarGet(VAR_FRONTIER_FACILITY);
     s32 symbol = GetFronterBrainSymbol();
 
     if (facility == FRONTIER_FACILITY_DOME)
         selectedMonBits = GetDomeTrainerSelectedMons(TrainerIdToDomeTournamentId(TRAINER_FRONTIER_BRAIN));
+    else if (facility == FRONTIER_FACILITY_TOWER)
+    {
+        teamSize = FRONTIER_PARTY_SIZE_FULL;
+        selectedMonBits = (1 << FRONTIER_PARTY_SIZE_FULL) - 1; // all 6 mons selected
+    }
     else
-        selectedMonBits = (1 << FRONTIER_PARTY_SIZE) - 1; // all 3 mons selected
+        selectedMonBits = (1 << FRONTIER_PARTY_SIZE) - 1; // 3 mons selected
 
     ZeroEnemyPartyMons();
     monPartyId = 0;
     monLevel = SetFacilityPtrsGetLevel();
-    for (i = 0; i < FRONTIER_PARTY_SIZE; selectedMonBits >>= 1, i++)
+    for (i = 0; i < teamSize; selectedMonBits >>= 1, i++)
     {
         if (!(selectedMonBits & 1))
             continue;
@@ -2549,6 +2591,7 @@ void CreateFrontierBrainPokemon(void)
                   TRUE, j,
                   OT_ID_PRESET, FRONTIER_BRAIN_OTID);
         SetMonData(&gEnemyParty[monPartyId], MON_DATA_HELD_ITEM, &sFrontierBrainsMons[facility][symbol][i].heldItem);
+        // SetMonData(&gEnemyParty[monPartyId], MON_DATA_IS_SHINY, &sFrontierBrainsMons[facility][symbol][i].isShiny); // Not implemented
         for (j = 0; j < NUM_STATS; j++)
             SetMonData(&gEnemyParty[monPartyId], MON_DATA_HP_EV + j, &sFrontierBrainsMons[facility][symbol][i].evs[j]);
         friendship = MAX_FRIENDSHIP;
@@ -2577,7 +2620,7 @@ u16 GetFrontierBrainMonSpecies(u8 monId)
 void SetFrontierBrainObjEventGfx(u8 facility)
 {
     gTrainerBattleOpponent_A = TRAINER_FRONTIER_BRAIN;
-    VarSet(VAR_OBJ_GFX_ID_0, gFrontierBrainInfo[facility].objEventGfx);
+    VarSet(VAR_OBJ_GFX_ID_0, sFrontierBrainObjEventGfx[facility][0]);
 }
 
 u16 GetFrontierBrainMonMove(u8 monId, u8 moveSlotId)
@@ -2612,12 +2655,12 @@ s32 GetFronterBrainSymbol(void)
     if (symbol == 2)
     {
         u16 winStreak = GetCurrentFacilityWinStreak();
-        if (winStreak + gFrontierBrainInfo[facility].streakAppearances[3] == gFrontierBrainInfo[facility].streakAppearances[0])
+        if (winStreak + sFrontierBrainStreakAppearances[facility][3] == sFrontierBrainStreakAppearances[facility][0])
             symbol = 0;
-        else if (winStreak + gFrontierBrainInfo[facility].streakAppearances[3] == gFrontierBrainInfo[facility].streakAppearances[1])
+        else if (winStreak + sFrontierBrainStreakAppearances[facility][3] == sFrontierBrainStreakAppearances[facility][1])
             symbol = 1;
-        else if (winStreak + gFrontierBrainInfo[facility].streakAppearances[3] > gFrontierBrainInfo[facility].streakAppearances[1]
-                 && (winStreak + gFrontierBrainInfo[facility].streakAppearances[3] - gFrontierBrainInfo[facility].streakAppearances[1]) % gFrontierBrainInfo[facility].streakAppearances[2] == 0)
+       else if (winStreak + sFrontierBrainStreakAppearances[facility][3] > sFrontierBrainStreakAppearances[facility][1]
+                 && (winStreak + sFrontierBrainStreakAppearances[facility][3] - sFrontierBrainStreakAppearances[facility][1]) % sFrontierBrainStreakAppearances[facility][2] == 0)
             symbol = 1;
     }
     return symbol;
@@ -2643,10 +2686,10 @@ static void CopyFrontierBrainText(bool8 playerWonText)
     switch (playerWonText)
     {
     case FALSE:
-        StringCopy(gStringVar4, gFrontierBrainInfo[facility].wonTexts[symbol]);
+        StringCopy(gStringVar4, sFrontierBrainPlayerLostTexts[symbol][facility]);
         break;
     case TRUE:
-        StringCopy(gStringVar4, gFrontierBrainInfo[facility].lostTexts[symbol]);
+        StringCopy(gStringVar4, sFrontierBrainPlayerWonTexts[symbol][facility]);
         break;
     }
 }

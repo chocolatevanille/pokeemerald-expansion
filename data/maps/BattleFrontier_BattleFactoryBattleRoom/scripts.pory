@@ -259,6 +259,8 @@ BattleFrontier_BattleFactoryBattleRoom_Text_NolandImFactoryHead:
 	.string "Hey, my name's NOLAND!\n"
 	.string "I'm basically in charge of this place,\l"
 	.string "which is why I'm the FACTORY HEAD!\p"
+	.string "You're that champ SCOTT brought over,\n"
+	.string "right? {PLAYER}, was it?\p"
 	.string "I had a look at your Battle Swap data.\p"
 	.string "You seem to have the right idea,\n"
 	.string "but you're still square in your head!\p"
@@ -268,6 +270,8 @@ BattleFrontier_BattleFactoryBattleRoom_Text_NolandImFactoryHead:
 	.string "It may as well be useless!\p"
 	.string "You have to experience things with\n"
 	.string "your heart and your body, understand?\p"
+	.string "No… That's far too abstract. Let me\n"
+	.string "show you firsthand.\p"
 	.string "I'll take you on under the same\n"
 	.string "conditions as you.\p"
 	.string "I'll be using rental Pokémon, too!$"
@@ -277,7 +281,8 @@ BattleFrontier_BattleFactoryBattleRoom_Text_ShakeOutKnowledgeBringItOn:
 	.string "knowledge and bring it on!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_NolandLetsSeeFrontierPass:
-	.string "NOLAND: Smart going!\n"
+	.string "NOLAND: I'll admit, I wasn't expecting\n"
+	.string "to lose… Smart going!\p"
 	.string "Let's see your FRONTIER PASS.$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_ReceivedKnowledgeSymbol:
@@ -292,22 +297,25 @@ BattleFrontier_BattleFactoryBattleRoom_Text_NextTimeNoHoldsBarred:
 	.string "You keep up your studies!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_HarderLookThanLastTime:
-	.string "NOLAND: Hey, hey! How's it going?\n"
-	.string "You keeping up with your studies?\p"
+	.string "NOLAND: Hey, hey! How's it going,\n"
+	.string "{PLAYER}? You keeping up with\l"
+	.string "your studies?\p"
 	.string "…Oh?\p"
 	.string "You've taken on a harder look than\n"
-	.string "the last time I saw you.\p"
+	.string "the last time. Something's.\l"
+	.string "clicked, hasn't it?\p"
 	.string "Now, this should be fun!\n"
 	.string "I'm getting excited, hey!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_AllRightBringItOn:
 	.string "All right!\n"
-	.string "Bring it on!$"
+	.string "Show me what you've learned!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_OutOfMyLeagueLetsSeePass:
 	.string "NOLAND: What the…\n"
 	.string "You're getting out of my league!\p"
-	.string "Sheesh!\n"
+	.string "Sheesh! I guess that CHAMPION\n"
+	.string "title isn't just for show, hey?\p"
 	.string "Let's see that FRONTIER PASS!$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_KnowledgeSymbolTookGoldenShine:
