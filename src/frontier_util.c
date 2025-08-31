@@ -29,6 +29,7 @@
 #include "load_save.h"
 #include "battle_dome.h"
 #include "constants/battle_frontier.h"
+#include "constants/abilities.h"
 #include "constants/battle_move_effects.h"
 #include "constants/battle_pike.h"
 #include "constants/frontier_util.h"
@@ -48,6 +49,7 @@ struct FrontierBrainMon
     u8 evs[NUM_STATS];
     u16 moves[MAX_MON_MOVES];
     bool16 isShiny;
+    u16 ability;
 };
 
 // This file's functions.
@@ -110,6 +112,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 252, 4, 0, 0, 252},
                 .moves = {MOVE_STEALTH_ROCK, MOVE_METEOR_MASH, MOVE_EARTHQUAKE, MOVE_ZEN_HEADBUTT},
                 .isShiny = FALSE,
+                .ability = ABILITY_CLEAR_BODY,
             },
             {
                 .species = SPECIES_ALAKAZAM,
@@ -119,6 +122,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 0, 0, 252, 6, 252},
                 .moves = {MOVE_PSYSHOCK, MOVE_ENERGY_BALL, MOVE_FOCUS_BLAST, MOVE_SHADOW_BALL},
                 .isShiny = FALSE,
+                .ability = ABILITY_MAGIC_GUARD,
             },
             {
                 .species = SPECIES_ENTEI,
@@ -128,6 +132,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 252, 4, 0, 0, 252},
                 .moves = {MOVE_EXTREME_SPEED, MOVE_FLARE_BLITZ, MOVE_STOMPING_TANTRUM, MOVE_WILL_O_WISP},
                 .isShiny = FALSE,
+                .ability = ABILITY_PRESSURE,
             },
             {
                 .species = SPECIES_SNORLAX,
@@ -137,6 +142,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {252, 0, 252, 0, 4, 0},
                 .moves = {MOVE_BELLY_DRUM, MOVE_RETURN, MOVE_CRUNCH, MOVE_HIGH_HORSEPOWER},
                 .isShiny = TRUE,
+                .ability = ABILITY_THICK_FAT,
             },
             {
                 .species = SPECIES_PRIMARINA,
@@ -146,19 +152,31 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {4, 0, 0, 252, 252, 0},
                 .moves = {MOVE_MOONBLAST, MOVE_SPARKLING_ARIA, MOVE_ENERGY_BALL, MOVE_HAZE},
                 .isShiny = FALSE,
+                .ability = ABILITY_LIQUID_VOICE,
             },
             {
                 .species = SPECIES_WEAVILE,
-                .heldItem = ITEM_SITRUS_BERRY,
+                .heldItem = ITEM_NEVER_MELT_ICE,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_IMPISH,
-                .evs = {252, 0, 252, 0, 4, 0},
-                .moves = {MOVE_BELLY_DRUM, MOVE_RETURN, MOVE_CRUNCH, MOVE_HIGH_HORSEPOWER},
+                .nature = NATURE_JOLLY,
+                .evs = {0, 0, 252, 0, 4, 252},
+                .moves = {MOVE_KNOCK_OFF, MOVE_ICE_SHARD, MOVE_TRIPLE_AXEL, MOVE_LOW_KICK},
                 .isShiny = FALSE,
+                .ability = ABILITY_INFILTRATOR,
             },
         },
         // Gold Symbol.
         {
+            {
+                .species = SPECIES_LANDORUS_THERIAN,
+                .heldItem = ITEM_ROCKY_HELMET,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_IMPISH,
+                .evs = TRAINER_PARTY_EVS_IMPISH(),
+                .moves = {MOVE_EARTHQUAKE, MOVE_U_TURN, MOVE_KNOCK_OFF, MOVE_STEALTH_ROCK},
+                .isShiny = FALSE,
+                .ability = ABILITY_INTIMIDATE,
+            },
             {
                 .species = SPECIES_RAIKOU,
                 .heldItem = ITEM_AIR_BALLOON,
@@ -167,42 +185,37 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 0, 0, 252, 4, 252},
                 .moves = {MOVE_THUNDERBOLT, MOVE_VOLT_SWITCH, MOVE_AURA_SPHERE, MOVE_THUNDER_WAVE},
                 .isShiny = FALSE,
+                .ability = ABILITY_PRESSURE,
             },
             {
                 .species = SPECIES_LATIOS,
-                .heldItem = ITEM_LEFTOVERS,
+                .heldItem = ITEM_LIFE_ORB,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_TIMID,
                 .evs = {0, 0, 0, 252, 4, 252},
                 .moves = {MOVE_DRACO_METEOR, MOVE_LUSTER_PURGE, MOVE_RECOVER, MOVE_CALM_MIND},
                 .isShiny = FALSE,
+                .ability = ABILITY_LEVITATE,
             },
             {
-                .species = SPECIES_SNORLAX,
-                .heldItem = ITEM_SNORLAXITE,
+                .species = SPECIES_LOPUNNY,
+                .heldItem = ITEM_LOPUNNITE,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_CAREFUL,
-                .evs = {252, 4, 0, 0, 252, 0},
-                .moves = {MOVE_CURSE, MOVE_RETURN, MOVE_REST, MOVE_SLEEP_TALK},
-                .isShiny = TRUE,
-            },
-            {
-                .species = SPECIES_SALAMENCE,
-                .heldItem = ITEM_LEFTOVERS,
-                .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_ADAMANT,
+                .nature = NATURE_JOLLY,
                 .evs = {0, 252, 0, 0, 4, 252},
-                .moves = {MOVE_DRAGON_DANCE, MOVE_DUAL_WINGBEAT, MOVE_DRAGON_CLAW, MOVE_ROOST},
-                .isShiny = FALSE,
+                .moves = {MOVE_HIGH_JUMP_KICK, MOVE_RETURN, MOVE_FAKE_OUT, MOVE_TRIPLE_AXEL},
+                .isShiny = TRUE,
+                .ability = ABILITY_LIMBER,
             },
             {
                 .species = SPECIES_SNEASLER,
-                .heldItem = ITEM_LIFE_ORB,
+                .heldItem = ITEM_BLACK_GLASSES,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_JOLLY,
                 .evs = {0, 252, 0, 0, 4, 252},
                 .moves = {MOVE_DIRE_CLAW, MOVE_CLOSE_COMBAT, MOVE_ROCK_SLIDE, MOVE_SUBSTITUTE},
                 .isShiny = FALSE,
+                .ability = ABILITY_POISON_TOUCH,
             },
             {
                 .species = SPECIES_FLUTTER_MANE,
@@ -212,6 +225,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 0, 0, 252, 4, 252},
                 .moves = {MOVE_CALM_MIND, MOVE_MOONBLAST, MOVE_THUNDER_WAVE, MOVE_HEX},
                 .isShiny = FALSE,
+                .ability = ABILITY_PROTOSYNTHESIS,
             },
         },
     },
@@ -220,13 +234,14 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_VOLCARONA,
-                .heldItem = ITEM_LIFE_ORB,
+                .species = SPECIES_VICTINI,
+                .heldItem = ITEM_CHOICE_BAND,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_TIMID,
-                .evs = {0, 0, 0, 252, 4, 252},
-                .moves = {MOVE_BUG_BUZZ, MOVE_FIERY_DANCE, MOVE_ROOST, MOVE_QUIVER_DANCE},
+                .nature = NATURE_ADAMANT,
+                .evs = {0, 252, 0, 0, 4, 252},
+                .moves = {MOVE_V_CREATE, MOVE_ZEN_HEADBUTT, MOVE_WILD_CHARGE, MOVE_U_TURN},
                 .isShiny = FALSE,
+                .ability = ABILITY_VICTORY_STAR,
             },
             {
                 .species = SPECIES_SALAMENCE,
@@ -236,6 +251,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 252, 0, 0, 4, 252},
                 .moves = {MOVE_EARTHQUAKE, MOVE_BRICK_BREAK, MOVE_DRAGON_CLAW, MOVE_AERIAL_ACE},
                 .isShiny = FALSE,
+                .ability = ABILITY_INTIMIDATE,
             },
             {
                 .species = SPECIES_CHARIZARD,
@@ -245,27 +261,30 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 252, 0, 0, 4, 252},
                 .moves = {MOVE_FLARE_BLITZ, MOVE_DRAGON_CLAW, MOVE_ROOST, MOVE_DRAGON_DANCE},
                 .isShiny = FALSE,
+                .ability = ABILITY_BLAZE,
             },
         },
         // Gold Symbol.
         {
             {
-                .species = SPECIES_HYDREIGON,
-                .heldItem = ITEM_LIFE_ORB,
+                .species = SPECIES_DIANCIE,
+                .heldItem = ITEM_DIANCITE,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_TIMID,
                 .evs = {0, 0, 0, 252, 6, 252},
-                .moves = {MOVE_DRACO_METEOR, MOVE_DARK_PULSE, MOVE_FIRE_BLAST, MOVE_NASTY_PLOT},
+                .moves = {MOVE_DIAMOND_STORM, MOVE_MOONBLAST, MOVE_EARTH_POWER, MOVE_CALM_MIND},
                 .isShiny = FALSE,
+                .ability = ABILITY_CLEAR_BODY,
             },
             {
-                .species = SPECIES_METAGROSS,
-                .heldItem = ITEM_METAGROSSITE,
+                .species = SPECIES_QUAQUAVAL,
+                .heldItem = ITEM_LIFE_ORB,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_ADAMANT,
+                .nature = NATURE_JOLLY,
                 .evs = {0, 252, 6, 0, 0, 252},
-                .moves = {MOVE_METEOR_MASH, MOVE_HAMMER_ARM, MOVE_EARTHQUAKE, MOVE_AGILITY},
+                .moves = {MOVE_AQUA_STEP, MOVE_CLOSE_COMBAT, MOVE_FLIP_TURN, MOVE_TRIPLE_AXEL},
                 .isShiny = TRUE,
+                .ability = ABILITY_TORRENT,
             },
             {
                 .species = SPECIES_LATIAS,
@@ -273,8 +292,9 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_TIMID,
                 .evs = {0, 0, 0, 252, 4, 252},
-                .moves = {MOVE_MIST_BALL, MOVE_THUNDERBOLT, MOVE_CALM_MIND, MOVE_ICE_BEAM},
+                .moves = {MOVE_MIST_BALL, MOVE_ROOST, MOVE_CALM_MIND, MOVE_DRAGON_PULSE},
                 .isShiny = FALSE,
+                .ability = ABILITY_LEVITATE,
             },
         },
     },
@@ -283,43 +303,47 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_CROBAT,
-                .heldItem = ITEM_BRIGHT_POWDER,
-                .fixedIV = 16,
-                .nature = NATURE_ADAMANT,
-                .evs = {152, 0, 0, 152, 100, 106},
-                .moves = {MOVE_CONFUSE_RAY, MOVE_DOUBLE_TEAM, MOVE_TOXIC, MOVE_FLY},
+                .species = SPECIES_SYLVEON,
+                .heldItem = ITEM_FAIRY_FEATHER,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_MODEST,
+                .evs = {252, 0, 0, 252, 4, 0},
+                .moves = {MOVE_HYPER_VOICE, MOVE_PROTECT, MOVE_CALM_MIND, MOVE_SHADOW_BALL},
                 .isShiny = FALSE,
+                .ability = ABILITY_PIXILATE,
             },
             {
-                .species = SPECIES_SLAKING,
-                .heldItem = ITEM_SCOPE_LENS,
-                .fixedIV = 16,
-                .nature = NATURE_HARDY,
-                .evs = {152, 152, 0, 106, 100, 0},
-                .moves = {MOVE_EARTHQUAKE, MOVE_SWAGGER, MOVE_SHADOW_BALL, MOVE_BRICK_BREAK},
+                .species = SPECIES_FROSMOTH,
+                .heldItem = ITEM_LEFTOVERS,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_TIMID,
+                .evs = {0, 0, 0, 252, 4, 252},
+                .moves = {MOVE_ICE_BEAM, MOVE_BUG_BUZZ, MOVE_ROOST, MOVE_QUIVER_DANCE},
                 .isShiny = FALSE,
+                .ability = ABILITY_ICE_SCALES,
             },
             {
                 .species = SPECIES_LAPRAS,
-                .heldItem = ITEM_QUICK_CLAW,
-                .fixedIV = 16,
-                .nature = NATURE_QUIET,
-                .evs = {0, 0, 252, 0, 106, 152},
-                .moves = {MOVE_ICE_BEAM, MOVE_HORN_DRILL, MOVE_CONFUSE_RAY, MOVE_PROTECT},
+                .heldItem = ITEM_LEFTOVERS,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_MODEST,
+                .evs = {252, 0, 0, 252, 4, 0},
+                .moves = {MOVE_ICE_BEAM, MOVE_SCALD, MOVE_CONFUSE_RAY, MOVE_PROTECT},
                 .isShiny = FALSE,
+                .ability = ABILITY_WATER_ABSORB,
             },
         },
         // Gold Symbol.
         {
             {
-                .species = SPECIES_ARCANINE,
-                .heldItem = ITEM_WHITE_HERB,
+                .species = SPECIES_TAPU_LELE,
+                .heldItem = ITEM_TWISTED_SPOON,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_HASTY,
-                .evs = {6, 252, 252, 0, 0, 0},
-                .moves = {MOVE_OVERHEAT, MOVE_EXTREME_SPEED, MOVE_ROAR, MOVE_PROTECT},
+                .nature = NATURE_MODEST,
+                .evs = {252, 0, 0, 252, 4, 0},
+                .moves = {MOVE_PSYSHOCK, MOVE_MOONBLAST, MOVE_CALM_MIND, MOVE_TAUNT},
                 .isShiny = FALSE,
+                .ability = ABILITY_PSYCHIC_SURGE,
             },
             {
                 .species = SPECIES_SLAKING,
@@ -329,15 +353,17 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {6, 252, 0, 252, 0, 0},
                 .moves = {MOVE_HYPER_BEAM, MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_YAWN},
                 .isShiny = FALSE,
+                .ability = ABILITY_TRUANT,
             },
             {
                 .species = SPECIES_SUICUNE,
-                .heldItem = ITEM_KINGS_ROCK,
+                .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_HASTY,
                 .evs = {252, 0, 252, 6, 0, 0},
                 .moves = {MOVE_BLIZZARD, MOVE_SURF, MOVE_BITE, MOVE_CALM_MIND},
                 .isShiny = FALSE,
+                .ability = ABILITY_PRESSURE,
             },
         },
     },
@@ -353,6 +379,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {106, 152, 0, 152, 0, 100},
                 .moves = {MOVE_MEGAHORN, MOVE_ROCK_TOMB, MOVE_ENDURE, MOVE_REVERSAL},
                 .isShiny = FALSE,
+                .ability = ABILITY_MOXIE,
             },
             {
                 .species = SPECIES_UMBREON,
@@ -362,6 +389,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {152, 0, 100, 0, 152, 106},
                 .moves = {MOVE_BODY_SLAM, MOVE_CONFUSE_RAY, MOVE_PSYCHIC, MOVE_FEINT_ATTACK},
                 .isShiny = FALSE,
+                .ability = ABILITY_SYNCHRONIZE,
             },
             {
                 .species = SPECIES_SHEDINJA,
@@ -371,6 +399,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 252, 6, 252, 0, 0},
                 .moves = {MOVE_SHADOW_BALL, MOVE_RETURN, MOVE_CONFUSE_RAY, MOVE_AERIAL_ACE},
                 .isShiny = FALSE,
+                .ability = ABILITY_WONDER_GUARD,
             },
         },
         // Gold Symbol.
@@ -383,6 +412,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {252, 0, 0, 0, 252, 6},
                 .moves = {MOVE_DOUBLE_EDGE, MOVE_CONFUSE_RAY, MOVE_REST, MOVE_PSYCHIC},
                 .isShiny = FALSE,
+                .ability = ABILITY_SYNCHRONIZE,
             },
             {
                 .species = SPECIES_GENGAR,
@@ -392,6 +422,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {252, 0, 252, 0, 6, 0},
                 .moves = {MOVE_PSYCHIC, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
                 .isShiny = FALSE,
+                .ability = ABILITY_LEVITATE,
             },
             {
                 .species = SPECIES_BRELOOM,
@@ -401,6 +432,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {6, 252, 0, 252, 0, 0},
                 .moves = {MOVE_SPORE, MOVE_FOCUS_PUNCH, MOVE_GIGA_DRAIN, MOVE_HEADBUTT},
                 .isShiny = FALSE,
+                .ability = ABILITY_TECHNICIAN,
             },
         },
     },
@@ -417,6 +449,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 252, 252, 0, 6, 0},
                 .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_METAL_CLAW},
                 .isShiny = FALSE,
+                .ability = ABILITY_CLEAR_BODY,
             },
             {
                 .species = SPECIES_SKARMORY,
@@ -426,6 +459,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {252, 0, 0, 0, 6, 252},
                 .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_PROTECT, MOVE_STEEL_WING},
                 .isShiny = FALSE,
+                .ability = ABILITY_STURDY,
             },
             {
                 .species = SPECIES_AGGRON,
@@ -435,6 +469,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 252, 0, 0, 252, 6},
                 .moves = {MOVE_THUNDERBOLT, MOVE_PROTECT, MOVE_SOLAR_BEAM, MOVE_DRAGON_CLAW},
                 .isShiny = FALSE,
+                .ability = ABILITY_STURDY,
             },
         },
         {
@@ -446,6 +481,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 252, 252, 0, 6, 0},
                 .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_METAL_CLAW},
                 .isShiny = FALSE,
+                .ability = ABILITY_CLEAR_BODY,
             },
             {
                 .species = SPECIES_SKARMORY,
@@ -455,6 +491,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {252, 0, 0, 0, 6, 252},
                 .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_PROTECT, MOVE_STEEL_WING},
                 .isShiny = FALSE,
+                .ability = ABILITY_STURDY,
             },
             {
                 .species = SPECIES_AGGRON,
@@ -464,6 +501,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {0, 252, 0, 0, 252, 6},
                 .moves = {MOVE_THUNDERBOLT, MOVE_PROTECT, MOVE_SOLAR_BEAM, MOVE_DRAGON_CLAW},
                 .isShiny = FALSE,
+                .ability = ABILITY_STURDY,
             },
         },
     },
@@ -479,6 +517,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {252, 0, 252, 0, 6, 0},
                 .moves = {MOVE_SWAGGER, MOVE_CRUNCH, MOVE_POISON_FANG, MOVE_GIGA_DRAIN},
                 .isShiny = FALSE,
+                .ability = ABILITY_MERCILESS,
             },
             {
                 .species = SPECIES_SHUCKLE,
@@ -488,6 +527,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {252, 0, 0, 0, 106, 252},
                 .moves = {MOVE_TOXIC, MOVE_SANDSTORM, MOVE_PROTECT, MOVE_REST},
                 .isShiny = FALSE,
+                .ability = ABILITY_STURDY,
             },
             {
                 .species = SPECIES_MILOTIC,
@@ -497,6 +537,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {152, 0, 100, 0, 152, 106},
                 .moves = {MOVE_ICE_BEAM, MOVE_MIRROR_COAT, MOVE_SURF, MOVE_RECOVER},
                 .isShiny = FALSE,
+                .ability = ABILITY_MARVEL_SCALE,
             },
         },
         // Gold Symbol.
@@ -509,6 +550,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {252, 0, 0, 0, 252, 6},
                 .moves = {MOVE_SWAGGER, MOVE_CRUNCH, MOVE_SLUDGE_BOMB, MOVE_GIGA_DRAIN},
                 .isShiny = FALSE,
+                .ability = ABILITY_MERCILESS,
             },
             {
                 .species = SPECIES_STEELIX,
@@ -518,6 +560,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {252, 0, 0, 0, 6, 252},
                 .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_EXPLOSION, MOVE_SCREECH},
                 .isShiny = FALSE,
+                .ability = ABILITY_SHEER_FORCE,
             },
             {
                 .species = SPECIES_GYARADOS,
@@ -527,6 +570,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {252, 6, 0, 0, 0, 252},
                 .moves = {MOVE_DRAGON_DANCE, MOVE_RETURN, MOVE_ROAR, MOVE_REST},
                 .isShiny = FALSE,
+                .ability = ABILITY_INTIMIDATE,
             },
         },
     },
@@ -542,6 +586,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {152, 152, 0, 0, 106, 100},
                 .moves = {MOVE_EXPLOSION, MOVE_SUPERPOWER, MOVE_EARTHQUAKE, MOVE_ANCIENT_POWER},
                 .isShiny = FALSE,
+                .ability = ABILITY_SOLID_ROCK,
             },
             {
                 .species = SPECIES_REGISTEEL,
@@ -551,6 +596,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {152, 152, 0, 0, 6, 200},
                 .moves = {MOVE_EARTHQUAKE, MOVE_METAL_CLAW, MOVE_TOXIC, MOVE_IRON_DEFENSE},
                 .isShiny = FALSE,
+                .ability = ABILITY_CLEAR_BODY,
             },
             {
                 .species = SPECIES_REGICE,
@@ -560,6 +606,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {106, 0, 152, 0, 100, 152},
                 .moves = {MOVE_ICE_BEAM, MOVE_AMNESIA, MOVE_THUNDER, MOVE_REST},
                 .isShiny = FALSE,
+                .ability = ABILITY_CLEAR_BODY,
             },
         },
         // Gold Symbol.
@@ -572,6 +619,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {6, 0, 252, 252, 0, 0},
                 .moves = {MOVE_BLIZZARD, MOVE_WATER_PULSE, MOVE_AERIAL_ACE, MOVE_REFLECT},
                 .isShiny = FALSE,
+                .ability = ABILITY_PRESSURE,
             },
             {
                 .species = SPECIES_ZAPDOS,
@@ -581,6 +629,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {6, 0, 252, 252, 0, 0},
                 .moves = {MOVE_THUNDER, MOVE_DETECT, MOVE_DRILL_PECK, MOVE_LIGHT_SCREEN},
                 .isShiny = FALSE,
+                .ability = ABILITY_PRESSURE,
             },
             {
                 .species = SPECIES_MOLTRES,
@@ -590,6 +639,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .evs = {6, 0, 252, 252, 0, 0},
                 .moves = {MOVE_FIRE_BLAST, MOVE_HYPER_BEAM, MOVE_AERIAL_ACE, MOVE_SAFEGUARD},
                 .isShiny = FALSE,
+                .ability = ABILITY_PRESSURE,
             },
         },
     },
@@ -2559,6 +2609,7 @@ void CreateFrontierBrainPokemon(void)
     s32 monLevel = 0;
     s32 teamSize = FRONTIER_PARTY_SIZE;
     u8 friendship;
+    u8 abilitySlot;
     s32 facility = VarGet(VAR_FRONTIER_FACILITY);
     s32 symbol = GetFronterBrainSymbol();
 
@@ -2604,6 +2655,16 @@ void CreateFrontierBrainPokemon(void)
         SetMonData(&gEnemyParty[monPartyId], MON_DATA_FRIENDSHIP, &friendship);
         j = FALSE;
         SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_IS_SHINY, &j);
+        abilitySlot = 0; 
+        for (int j = 0; j < NUM_ABILITY_SLOTS; j++)
+        {
+            if (gSpeciesInfo[sFrontierBrainsMons[facility][symbol][i].species].abilities[j] == sFrontierBrainsMons[facility][symbol][i].ability)
+            {
+                abilitySlot = j;
+                break;
+            }
+        }
+        SetMonData(&gEnemyParty[monPartyId], MON_DATA_ABILITY_NUM, &abilitySlot);
         CalculateMonStats(&gEnemyParty[monPartyId]);
         monPartyId++;
     }
