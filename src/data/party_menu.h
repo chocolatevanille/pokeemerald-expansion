@@ -864,6 +864,7 @@ static const u8 *const sActionStringTable[] =
     [PARTY_MSG_CHOOSE_SECOND_FUSION]   = gText_NextFusionMon,
     [PARTY_MSG_WHICH_TYPE_RELEARN]     = gText_WhichTypeRelearn,
     [PARTY_MSG_WHICH_STATUS]           = COMPOUND_STRING("Inflict which status?"), // hexorb Branch
+    [PARTY_MSG_TEAM_PREVIEW]           = gText_TeamPreview, // Battle Tower team preview
 };
 
 static const u8 *const sDescriptionStringTable[] =

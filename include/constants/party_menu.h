@@ -84,7 +84,7 @@
 #define PARTY_MSG_CHOOSE_SECOND_FUSION      28
 #define PARTY_MSG_WHICH_TYPE_RELEARN        29
 #define PARTY_MSG_WHICH_STATUS              30 // hexorb Branch
-#define PARTY_MSG_OPPONENT_TEAM             31 // team preview in Battle Tower
+#define PARTY_MSG_TEAM_PREVIEW              31 // team preview in Battle Tower
 #define PARTY_MSG_NONE                      127
 
 // IDs for DisplayPartyPokemonDescriptionText, to display a message in the party pokemon's box

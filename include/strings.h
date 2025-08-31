@@ -1943,6 +1943,7 @@ extern const u8 gText_ThatIsntAnEgg[];
 extern const u8 gText_OtherTrainersPkmnCantBeTraded[];
 extern const u8 gText_OtherTrainerCantAcceptPkmn[];
 extern const u8 gText_CantTradeWithTrainer[];
+extern const u8 gText_TeamPreview[];
 
 // trade
 extern const u8 gText_XWillBeSentToY[];

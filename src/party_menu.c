@@ -472,6 +472,7 @@ static u8 GetBattleEntryLevelCap(void);
 static u8 GetMaxBattleEntries(void);
 static u8 GetMinBattleEntries(void);
 static void Task_ContinueChoosingHalfParty(u8);
+static void Task_DisplayPartyWaitForClose(u8 taskId);
 static void BufferBattlePartyOrder(u8 *, bool8);
 static void BufferBattlePartyOrderBySide(u8 *, u8, u8);
 static void Task_InitMultiPartnerPartySlideIn(u8);
@@ -8029,8 +8030,17 @@ void Task_DisplayParty(u8 taskId)
     if (!gPaletteFade.active)
     {
         CleanupOverworldWindowsAndTilemaps();
-        InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CANT_SWITCH, FALSE, PARTY_MSG_CHOOSE_MON_OR_CANCEL, Task_TryCreateSelectionWindow, CB2_DisplayPartyReturn);
+        InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CANT_SWITCH, FALSE, PARTY_MSG_TEAM_PREVIEW, Task_DisplayPartyWaitForClose, CB2_DisplayPartyReturn);
         DestroyTask(taskId);
+    }
+}
+
+static void Task_DisplayPartyWaitForClose(u8 taskId)
+{
+    if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        Task_ClosePartyMenu(taskId);
     }
 }
 
