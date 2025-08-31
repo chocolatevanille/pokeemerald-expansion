@@ -106,6 +106,36 @@ static const struct PikeWildMon sLvl50_Mons1[] =
         .species = SPECIES_DUSCLOPS,
         .levelDelta = 5,
         .moves = {MOVE_WILL_O_WISP, MOVE_MEAN_LOOK, MOVE_TOXIC, MOVE_SHADOW_PUNCH}
+    },
+    {
+        .species = SPECIES_DHELMISE,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_WHIRLPOOL, MOVE_SLUDGE_BOMB, MOVE_HEX}
+    },
+    {
+        .species = SPECIES_PARASECT,
+        .levelDelta = 5,
+        .moves = {MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_LEECH_SEED, MOVE_LEECH_LIFE}
+    },
+    {
+        .species = SPECIES_TREVENANT,
+        .levelDelta = 5,
+        .moves = {MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY, MOVE_SHADOW_CLAW, MOVE_CURSE}
+    },
+    {
+        .species = SPECIES_SPIDOPS,
+        .levelDelta = 5,
+        .moves = {MOVE_SUCKER_PUNCH, MOVE_BLOCK, MOVE_TOXIC, MOVE_SILK_TRAP}
+    },
+    {
+        .species = SPECIES_SALAZZLE,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_SWAGGER, MOVE_TORMENT, MOVE_SLUDGE_WAVE}
+    },
+    {
+        .species = SPECIES_SHIINOTIC,
+        .levelDelta = 5,
+        .moves = {MOVE_POISON_POWDER, MOVE_STUN_SPORE, MOVE_LEECH_SEED, MOVE_GIGA_DRAIN}
     }
 };
 
@@ -122,9 +152,34 @@ static const struct PikeWildMon sLvl50_Mons2[] =
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
     },
     {
-        .species = SPECIES_ELECTRODE,
+        .species = SPECIES_SPIDOPS,
         .levelDelta = 5,
-        .moves = {MOVE_EXPLOSION, MOVE_SELF_DESTRUCT, MOVE_THUNDER, MOVE_TOXIC}
+        .moves = {MOVE_SUCKER_PUNCH, MOVE_BLOCK, MOVE_TOXIC, MOVE_SILK_TRAP}
+    },
+    {
+        .species = SPECIES_PARASECT,
+        .levelDelta = 5,
+        .moves = {MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_LEECH_SEED, MOVE_LEECH_LIFE}
+    },
+    {
+        .species = SPECIES_TREVENANT,
+        .levelDelta = 5,
+        .moves = {MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY, MOVE_SHADOW_CLAW, MOVE_CURSE}
+    },
+    {
+        .species = SPECIES_DUSCLOPS,
+        .levelDelta = 5,
+        .moves = {MOVE_WILL_O_WISP, MOVE_MEAN_LOOK, MOVE_TOXIC, MOVE_SHADOW_PUNCH}
+    },
+    {
+        .species = SPECIES_REUNICLUS,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_TRICK_ROOM, MOVE_PSYCHIC, MOVE_PAIN_SPLIT}
+    },
+    {
+        .species = SPECIES_DHELMISE,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_WHIRLPOOL, MOVE_SLUDGE_BOMB, MOVE_HEX}
     }
 };
 
@@ -144,6 +199,36 @@ static const struct PikeWildMon sLvl50_Mons3[] =
         .species = SPECIES_BRELOOM,
         .levelDelta = 5,
         .moves = {MOVE_SPORE, MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_HIDDEN_POWER}
+    },
+    {
+        .species = SPECIES_UMBREON,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_MEAN_LOOK, MOVE_SUCKER_PUNCH}
+    },
+    {
+        .species = SPECIES_TOXAPEX,
+        .levelDelta = 5,
+        .moves = {MOVE_SPIKE_CANNON, MOVE_TOXIC_SPIKES, MOVE_BANEFUL_BUNKER, MOVE_SCALD}
+    },
+    {
+        .species = SPECIES_PARASECT,
+        .levelDelta = 5,
+        .moves = {MOVE_STUN_SPORE, MOVE_SPORE, MOVE_LEECH_SEED, MOVE_SAPPY_SEED}
+    },
+    {
+        .species = SPECIES_LAPRAS,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_ICE_BEAM, MOVE_SCALD}
+    },
+    {
+        .species = SPECIES_MALAMAR,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_SWAGGER, MOVE_FOUL_PLAY, MOVE_DESTINY_BOND}
+    },
+    {
+        .species = SPECIES_REUNICLUS,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_TRICK_ROOM, MOVE_PSYCHIC, MOVE_PAIN_SPLIT}
     }
 };
 
@@ -163,6 +248,31 @@ static const struct PikeWildMon sLvl50_Mons4[] =
         .species = SPECIES_WOBBUFFET,
         .levelDelta = 5,
         .moves = {MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_SAFEGUARD, MOVE_DESTINY_BOND}
+    },
+    {
+        .species = SPECIES_TOXAPEX,
+        .levelDelta = 5,
+        .moves = {MOVE_SPIKE_CANNON, MOVE_TOXIC_SPIKES, MOVE_BANEFUL_BUNKER, MOVE_SCALD}
+    },
+    {
+        .species = SPECIES_UMBREON,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_MEAN_LOOK, MOVE_SUCKER_PUNCH}
+    },
+    {
+        .species = SPECIES_LAPRAS,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_ICE_BEAM, MOVE_SCALD}
+    },
+    {
+        .species = SPECIES_MALAMAR,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_SWAGGER, MOVE_FOUL_PLAY, MOVE_DESTINY_BOND}
+    },
+    {
+        .species = SPECIES_KLEFKI,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_SWAGGER, MOVE_FOUL_PLAY, MOVE_THUNDER_WAVE}
     }
 };
 
@@ -179,17 +289,47 @@ static const struct PikeWildMon sLvlOpen_Mons1[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
+        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
     },
     {
         .species = SPECIES_DUSCLOPS,
         .levelDelta = 5,
-        .moves = {MOVE_WILL_O_WISP, MOVE_MEAN_LOOK, MOVE_TOXIC, MOVE_ICE_BEAM}
+        .moves = {MOVE_WILL_O_WISP, MOVE_MEAN_LOOK, MOVE_TOXIC, MOVE_SHADOW_PUNCH}
+    },
+    {
+        .species = SPECIES_DHELMISE,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_WHIRLPOOL, MOVE_SLUDGE_BOMB, MOVE_HEX}
+    },
+    {
+        .species = SPECIES_PARASECT,
+        .levelDelta = 5,
+        .moves = {MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_LEECH_SEED, MOVE_LEECH_LIFE}
+    },
+    {
+        .species = SPECIES_TREVENANT,
+        .levelDelta = 5,
+        .moves = {MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY, MOVE_SHADOW_CLAW, MOVE_CURSE}
+    },
+    {
+        .species = SPECIES_SPIDOPS,
+        .levelDelta = 5,
+        .moves = {MOVE_SUCKER_PUNCH, MOVE_BLOCK, MOVE_TOXIC, MOVE_SILK_TRAP}
+    },
+    {
+        .species = SPECIES_SALAZZLE,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_SWAGGER, MOVE_TORMENT, MOVE_SLUDGE_WAVE}
+    },
+    {
+        .species = SPECIES_SHIINOTIC,
+        .levelDelta = 5,
+        .moves = {MOVE_POISON_POWDER, MOVE_STUN_SPORE, MOVE_LEECH_SEED, MOVE_GIGA_DRAIN}
     }
 };
 
@@ -198,17 +338,42 @@ static const struct PikeWildMon sLvlOpen_Mons2[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
+        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
     },
     {
-        .species = SPECIES_ELECTRODE,
+        .species = SPECIES_SPIDOPS,
         .levelDelta = 5,
-        .moves = {MOVE_EXPLOSION, MOVE_SELF_DESTRUCT, MOVE_THUNDER, MOVE_TOXIC}
+        .moves = {MOVE_SUCKER_PUNCH, MOVE_BLOCK, MOVE_TOXIC, MOVE_SILK_TRAP}
+    },
+    {
+        .species = SPECIES_PARASECT,
+        .levelDelta = 5,
+        .moves = {MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_LEECH_SEED, MOVE_LEECH_LIFE}
+    },
+    {
+        .species = SPECIES_TREVENANT,
+        .levelDelta = 5,
+        .moves = {MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY, MOVE_SHADOW_CLAW, MOVE_CURSE}
+    },
+    {
+        .species = SPECIES_DUSCLOPS,
+        .levelDelta = 5,
+        .moves = {MOVE_WILL_O_WISP, MOVE_MEAN_LOOK, MOVE_TOXIC, MOVE_SHADOW_PUNCH}
+    },
+    {
+        .species = SPECIES_REUNICLUS,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_TRICK_ROOM, MOVE_PSYCHIC, MOVE_PAIN_SPLIT}
+    },
+    {
+        .species = SPECIES_DHELMISE,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_WHIRLPOOL, MOVE_SLUDGE_BOMB, MOVE_HEX}
     }
 };
 
@@ -217,17 +382,47 @@ static const struct PikeWildMon sLvlOpen_Mons3[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
+        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
     },
     {
         .species = SPECIES_BRELOOM,
         .levelDelta = 5,
         .moves = {MOVE_SPORE, MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_HIDDEN_POWER}
+    },
+    {
+        .species = SPECIES_UMBREON,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_MEAN_LOOK, MOVE_SUCKER_PUNCH}
+    },
+    {
+        .species = SPECIES_TOXAPEX,
+        .levelDelta = 5,
+        .moves = {MOVE_SPIKE_CANNON, MOVE_TOXIC_SPIKES, MOVE_BANEFUL_BUNKER, MOVE_SCALD}
+    },
+    {
+        .species = SPECIES_PARASECT,
+        .levelDelta = 5,
+        .moves = {MOVE_STUN_SPORE, MOVE_SPORE, MOVE_LEECH_SEED, MOVE_SAPPY_SEED}
+    },
+    {
+        .species = SPECIES_LAPRAS,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_ICE_BEAM, MOVE_SCALD}
+    },
+    {
+        .species = SPECIES_MALAMAR,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_SWAGGER, MOVE_FOUL_PLAY, MOVE_DESTINY_BOND}
+    },
+    {
+        .species = SPECIES_REUNICLUS,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_TRICK_ROOM, MOVE_PSYCHIC, MOVE_PAIN_SPLIT}
     }
 };
 
@@ -236,17 +431,42 @@ static const struct PikeWildMon sLvlOpen_Mons4[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
+        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
     },
     {
         .species = SPECIES_WOBBUFFET,
         .levelDelta = 5,
-        .moves = {MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_SAFEGUARD, MOVE_ENCORE}
+        .moves = {MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_SAFEGUARD, MOVE_DESTINY_BOND}
+    },
+    {
+        .species = SPECIES_TOXAPEX,
+        .levelDelta = 5,
+        .moves = {MOVE_SPIKE_CANNON, MOVE_TOXIC_SPIKES, MOVE_BANEFUL_BUNKER, MOVE_SCALD}
+    },
+    {
+        .species = SPECIES_UMBREON,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_MEAN_LOOK, MOVE_SUCKER_PUNCH}
+    },
+    {
+        .species = SPECIES_LAPRAS,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_ICE_BEAM, MOVE_SCALD}
+    },
+    {
+        .species = SPECIES_MALAMAR,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_SWAGGER, MOVE_FOUL_PLAY, MOVE_DESTINY_BOND}
+    },
+    {
+        .species = SPECIES_KLEFKI,
+        .levelDelta = 5,
+        .moves = {MOVE_TOXIC, MOVE_SWAGGER, MOVE_FOUL_PLAY, MOVE_THUNDER_WAVE}
     }
 };
 
