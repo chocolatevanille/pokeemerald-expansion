@@ -138,8 +138,8 @@ BattleFrontier_BattlePyramidLobby_EventScript_TryEnterChallenge::
 	callnative RemoveFollowingPokemon
 	call BattleFrontier_EventScript_GetLvlMode
 	copyvar VAR_0x8004, VAR_RESULT
-	setvar VAR_0x8005, FRONTIER_PARTY_SIZE
-	special ChoosePartyForBattleFrontier
+	setvar VAR_0x8005, FRONTIER_PARTY_SIZE_FULL
+	special ChoosePartyForBattleFrontier6V6
 	waitstate
 	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattlePyramidLobby_EventScript_LoadPartyAndCancelChallenge
 	msgbox BattleFrontier_BattlePyramidLobby_Text_OkayToSaveBeforeChallenge, MSGBOX_YESNO
@@ -165,7 +165,6 @@ BattleFrontier_BattlePyramidLobby_EventScript_SaveBeforeChallenge::
 	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattlePyramidLobby_EventScript_CancelChallengeSaveFailed
 BattleFrontier_BattlePyramidLobby_EventScript_EnterChallenge::
 	special SavePlayerParty
-	frontier_setpartyorder FRONTIER_PARTY_SIZE
 	msgbox BattleFrontier_BattlePyramidLobby_Text_ShowYouIntoPyramid, MSGBOX_DEFAULT
 	closemessage
 	call BattleFrontier_BattlePyramidLobby_EventScript_WalkToPanelAndReceiveBag

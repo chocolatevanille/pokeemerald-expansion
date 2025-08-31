@@ -1210,10 +1210,10 @@ static void RestorePyramidPlayerParty(void)
 {
     int i, j, k, l;
 
-    for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
+    for (i = 0; i < FRONTIER_PARTY_SIZE_FULL; i++)
     {
         int partyIndex = gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1;
-        for (j = 0; j < FRONTIER_PARTY_SIZE; j++)
+        for (j = 0; j < FRONTIER_PARTY_SIZE_FULL; j++)
         {
             if (GetMonData(&gSaveBlock1Ptr->playerParty[partyIndex], MON_DATA_SPECIES, NULL) == GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL))
             {
@@ -1234,7 +1234,7 @@ static void RestorePyramidPlayerParty(void)
         }
     }
 
-    for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
+    for (i = 0; i < FRONTIER_PARTY_SIZE_FULL; i++)
         gSaveBlock2Ptr->frontier.selectedPartyMons[i] = gSelectedOrderFromParty[i];
 }
 

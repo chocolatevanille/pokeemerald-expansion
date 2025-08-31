@@ -1396,16 +1396,13 @@ void BattleSetup_StartTrainerBattle(void)
 
         if (gNoOfApproachingTrainers == 2)
         {
-            FillFrontierTrainersParties(1);
-            ZeroMonData(&gEnemyParty[1]);
+            FillFrontierTrainersParties(2);
             ZeroMonData(&gEnemyParty[2]);
-            ZeroMonData(&gEnemyParty[4]);
             ZeroMonData(&gEnemyParty[5]);
         }
         else
         {
-            FillFrontierTrainerParty(1);
-            ZeroMonData(&gEnemyParty[1]);
+            FillFrontierTrainerParty(2);
             ZeroMonData(&gEnemyParty[2]);
         }
 
