@@ -1563,140 +1563,142 @@ BattleFrontier_BattlePikeRoomNormal_Text_LucyShowMeFrontierPass:
 # 782 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "LUCY: … … … … … …\n"
 # 783 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "Show me your FRONTIER PASS…$"
+	.string "So you are {PLAYER}…\p"
 # 784 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
+	.string "Show me your FRONTIER PASS…$"
 # 785 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_ReceivedLuckSymbol:
+
 # 786 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "The Luck Symbol was embossed on\n"
+BattleFrontier_BattlePikeRoomNormal_Text_ReceivedLuckSymbol:
 # 787 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "the FRONTIER PASS!$"
+	.string "The Luck Symbol was embossed on\n"
 # 788 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
+	.string "the FRONTIER PASS!$"
 # 789 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_AllThereIsDisappear:
+
 # 790 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "…That's all there is…\n"
+BattleFrontier_BattlePikeRoomNormal_Text_AllThereIsDisappear:
 # 791 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "Disappear already…$"
+	.string "…That's all there is…\n"
 # 792 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
+	.string "Disappear already…$"
 # 793 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_LucyYouAgain:
+
 # 794 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "LUCY: …You again…\p"
+BattleFrontier_BattlePikeRoomNormal_Text_LucyYouAgain:
 # 795 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "… … … … … …\p"
+	.string "LUCY: …You again…\p"
 # 796 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "…I've trampled flowers and braved\n"
+	.string "… … … … … …\p"
 # 797 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "storms to get to where I am…\p"
+	.string "…I've trampled flowers and braved\n"
 # 798 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "I don't feel any compulsion to keep\n"
+	.string "storms to get to where I am…\p"
 # 799 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "losing to the same opponent…\p"
+	.string "I don't feel any compulsion to keep\n"
 # 800 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "… … … … … …\n"
+	.string "losing to the same opponent…\p"
 # 801 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "Fine… I'll do it…$"
+	.string "… … … … … …\n"
 # 802 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
+	.string "Fine… I'll do it…$"
 # 803 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_NowComeOn:
+
 # 804 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "Now!\n"
+BattleFrontier_BattlePikeRoomNormal_Text_NowComeOn:
 # 805 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "Come on!$"
+	.string "Now!\n"
 # 806 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
+	.string "Come on!$"
 # 807 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_LucyFrontierPass:
+
 # 808 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "LUCY: … … … … … …\p"
+BattleFrontier_BattlePikeRoomNormal_Text_LucyFrontierPass:
 # 809 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "…FRONTIER PASS…$"
+	.string "LUCY: … … … … … …\p"
 # 810 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
+	.string "…FRONTIER PASS…$"
 # 811 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_LuckSymbolTookGoldenShine:
+
 # 812 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "The Luck Symbol took on\n"
+BattleFrontier_BattlePikeRoomNormal_Text_LuckSymbolTookGoldenShine:
 # 813 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "a golden shine!$"
+	.string "The Luck Symbol took on\n"
 # 814 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
+	.string "a golden shine!$"
 # 815 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_IWontForget:
+
 # 816 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "…You, I won't forget…\n"
+BattleFrontier_BattlePikeRoomNormal_Text_IWontForget:
 # 817 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "…Ever…$"
+	.string "…You, I won't forget…\n"
 # 818 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
+	.string "…Ever…$"
 # 819 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomNoHeal:
+
 # 820 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "I welcome you…\p"
+BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomNoHeal:
 # 821 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "Giggle…\n"
+	.string "I welcome you…\p"
 # 822 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "You seem to be bereft of luck…\p"
-# 823 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "If only you hadn't chosen this room,\n"
-# 824 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "your Pokémon could have been healed…$"
-# 825 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
-# 826 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomHealOne:
-# 827 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "I welcome you…\p"
-# 828 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "Since you have chosen this room, I will\n"
-# 829 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "restore one Pokémon to full health…$"
-# 830 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
-# 831 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomHealTwo:
-# 832 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "I welcome you…\p"
-# 833 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "Since you have chosen this room, I will\n"
-# 834 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "restore two Pokémon to full health…$"
-# 835 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
-# 836 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-@ Unused
-# 837 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreAllMons:
-# 838 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "I welcome you…\p"
-# 839 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Giggle…\n"
+# 823 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "You seem to be bereft of luck…\p"
+# 824 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "If only you hadn't chosen this room,\n"
+# 825 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "your Pokémon could have been healed…$"
+# 826 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+
+# 827 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomHealOne:
+# 828 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "I welcome you…\p"
+# 829 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "Since you have chosen this room, I will\n"
+# 830 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "restore one Pokémon to full health…$"
+# 831 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+
+# 832 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomHealTwo:
+# 833 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "I welcome you…\p"
+# 834 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "Since you have chosen this room, I will\n"
+# 835 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "restore two Pokémon to full health…$"
+# 836 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+
+# 837 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+@ Unused
+# 838 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreAllMons:
+# 839 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "I welcome you…\p"
 # 840 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "You should thank your lucky stars…\p"
+	.string "Giggle…\n"
 # 841 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "Since you have chosen this room,\n"
+	.string "You should thank your lucky stars…\p"
 # 842 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "all your Pokémon will be restored…$"
+	.string "Since you have chosen this room,\n"
 # 843 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-
+	.string "all your Pokémon will be restored…$"
 # 844 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_ShallFetchOurMaster:
-# 845 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "I shall go fetch our master…$"
-# 846 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 
+# 845 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+BattleFrontier_BattlePikeRoomNormal_Text_ShallFetchOurMaster:
+# 846 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "I shall go fetch our master…$"
 # 847 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreTwoMons:
+
 # 848 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "Ah, you're a lucky one!\n"
+BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreTwoMons:
 # 849 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "I'm in good spirits now.\p"
+	.string "Ah, you're a lucky one!\n"
 # 850 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "I will restore two of your Pokémon\n"
+	.string "I'm in good spirits now.\p"
 # 851 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "I will restore two of your Pokémon\n"
+# 852 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "to full health!$"
