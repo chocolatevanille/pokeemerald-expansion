@@ -57,6 +57,7 @@ FallarborTown_BattleTentBattleRoom_EventScript_NextOpponentEnter::
 	battletent_getopponentintro
 	msgbox gStringVar4, MSGBOX_DEFAULT
 	waitmessage
+	special ReloadPlayerParty
 	call BattleFrontier_BattleArenaBattleRoom_EventScript_DoArenaBattle
 	switch VAR_RESULT
 	case 1, FallarborTown_BattleTentBattleRoom_EventScript_DefeatedOpponent

@@ -51,6 +51,9 @@ VerdanturfTown_BattleTentBattleRoom_EventScript_NextOpponentEnter::
 	battletent_getopponentintro
 	msgbox gStringVar4, MSGBOX_DEFAULT
 	waitmessage
+	special DisplayParty
+	waitstate
+	special ReloadPlayerParty
 	call BattleFrontier_BattlePalaceBattleRoom_EventScript_DoPalaceBattle
 	switch VAR_RESULT
 	case 1, VerdanturfTown_BattleTentBattleRoom_EventScript_DefeatedOpponent

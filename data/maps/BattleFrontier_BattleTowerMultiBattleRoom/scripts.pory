@@ -83,6 +83,7 @@ BattleFrontier_BattleTowerMultiBattleRoom_EventScript_OpponentsEnter::
 	waitmovement 0
 	msgbox gStringVar4, MSGBOX_DEFAULT
 	waitmessage
+	special ReloadPlayerParty
 	goto BattleFrontier_BattleTowerMultiBattleRoom_EventScript_DoTowerBattle
 
 BattleFrontier_BattleTowerMultiBattleRoom_EventScript_DoOpponentIntrosLink::
