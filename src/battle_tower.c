@@ -1032,7 +1032,7 @@ static bool8 ChooseSpecialBattleTowerTrainer(void)
             checksum += record[j];
         }
         validMons = 0;
-        for (j = 0; j < MAX_FRONTIER_PARTY_SIZE; j++)
+        for (j = 0; j < FRONTIER_PARTY_SIZE_FULL; j++)
         {
             if (gSaveBlock2Ptr->frontier.towerRecords[i].party[j].species != SPECIES_NONE
                 && gSaveBlock2Ptr->frontier.towerRecords[i].party[j].level <= GetFrontierEnemyMonLevel(lvlMode))
@@ -1140,9 +1140,6 @@ static void SetNextFacilityOpponent(void)
         {
             FillFrontierTrainerParty(FRONTIER_PARTY_SIZE_FULL);
         }
-        
-        // Load opponent's team into player's party for team preview
-        LoadOpponentTeamIntoPlayerParty();
     }
 }
 
@@ -2323,8 +2320,7 @@ static void SaveBattleTowerRecord(void)
     }
 
     // Use different party sizes based on facility
-    u8 partySize = (VarGet(VAR_FRONTIER_FACILITY) == FRONTIER_FACILITY_TOWER) ? FRONTIER_PARTY_SIZE_FULL : MAX_FRONTIER_PARTY_SIZE;
-    
+    u8 partySize = (VarGet(VAR_FRONTIER_FACILITY) == FRONTIER_FACILITY_TOWER || VarGet(VAR_FRONTIER_FACILITY) == FRONTIER_FACILITY_PYRAMID) ? FRONTIER_PARTY_SIZE_FULL : FRONTIER_DOUBLES_PARTY_SIZE;
     for (i = 0; i < partySize; i++)
     {
         if (gSaveBlock2Ptr->frontier.selectedPartyMons[i] != 0)
