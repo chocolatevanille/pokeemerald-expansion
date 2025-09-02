@@ -43,9 +43,12 @@ BattleFrontier_BattleTowerBattleRoom_EventScript_OpponentEnter::
 	tower_getopponentintro 0
 	msgbox gStringVar4, MSGBOX_DEFAULT
 	waitmessage
-	special DisplayParty
+	special LoadOpponentPartyIntoPlayerParty
+	waitstate
+	special DisplayPartyForTeamPreview
 	waitstate
 	special ReloadPlayerParty
+	waitstate
 	call BattleFrontier_BattleTowerBattleRoom_EventScript_DoTowerBattle
 	switch VAR_RESULT
 	case B_OUTCOME_WON, BattleFrontier_BattleTowerBattleRoom_EventScript_DefeatedOpponent
@@ -522,7 +525,7 @@ BattleFrontier_BattleTowerBattleRoom_Text_GreetingsImAnabel:
 	.string "And yet, the reason I've come to\n"
 	.string "to see you…\p"
 	.string "Well, there is but one reason…\p"
-	.string "… … … …\n"
+	.string "… … … …$"
 
 BattleFrontier_BattleTowerBattleRoom_Text_LetMeSeeYourTalent:
 	.string "Let me see your talent in\n"

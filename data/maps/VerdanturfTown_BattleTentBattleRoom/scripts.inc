@@ -105,260 +105,254 @@ VerdanturfTown_BattleTentBattleRoom_EventScript_NextOpponentEnter::
 # 53 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitmessage
 # 54 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	special DisplayParty
-# 55 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	waitstate
-# 56 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	special ReloadPlayerParty
-# 57 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	call BattleFrontier_BattlePalaceBattleRoom_EventScript_DoPalaceBattle
-# 58 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 55 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	switch VAR_RESULT
-# 59 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 56 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case 1, VerdanturfTown_BattleTentBattleRoom_EventScript_DefeatedOpponent
-# 60 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 57 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_WarpToLobbyLost::
-# 61 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 58 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, CHALLENGE_STATUS_LOST
+# 59 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	special LoadPlayerParty
+# 60 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	warp MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY, 6, 6
+# 61 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	waitstate
 # 62 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	special LoadPlayerParty
+
 # 63 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	warp MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY, 6, 6
-# 64 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	waitstate
-# 65 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-
-# 66 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_DefeatedOpponent::
-# 67 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 64 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	frontier_get FRONTIER_DATA_BATTLE_NUM
-# 68 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 65 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	addvar VAR_RESULT, 1
-# 69 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 66 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	frontier_set FRONTIER_DATA_BATTLE_NUM, VAR_RESULT
-# 70 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 67 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	switch VAR_RESULT
-# 71 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 68 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case 3, VerdanturfTown_BattleTentBattleRoom_EventScript_WarpToLobbyWon
-# 72 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 69 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	applymovement LOCALID_OPPONENT, VerdanturfTown_BattleTentBattleRoom_Movement_OpponentExit
-# 73 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 70 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitmovement 0
-# 74 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 71 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	removeobject LOCALID_OPPONENT
-# 75 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 72 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	applymovement LOCALID_ATTENDANT, Common_Movement_WalkInPlaceFasterDown
-# 76 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 73 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-# 77 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 74 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitmovement 0
-# 78 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 75 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	msgbox BattleFrontier_BattlePalaceBattleRoom_Text_LetMeRestoreYourMons, MSGBOX_DEFAULT
-# 79 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 76 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	special LoadPlayerParty
-# 80 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 77 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	special SavePlayerParty
-# 81 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 78 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	frontier_setpartyorder FRONTIER_PARTY_SIZE
-# 82 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 79 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	playfanfare MUS_HEAL
-# 83 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 80 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitfanfare
-# 84 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 81 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	special HealPlayerParty
-# 85 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 82 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 86 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 83 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge::
-# 87 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 84 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	frontier_get FRONTIER_DATA_BATTLE_NUM
-# 88 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 85 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	call_if_eq VAR_RESULT, 1, VerdanturfTown_BattleTentBattleRoom_EventScript_ReadyFor2ndOpponent
-# 89 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 86 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	call_if_eq VAR_RESULT, 2, VerdanturfTown_BattleTentBattleRoom_EventScript_ReadyFor3rdOpponent
-# 90 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 87 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	multichoice 20, 6, MULTI_GO_ON_REST_RETIRE, TRUE
-# 91 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 88 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	switch VAR_RESULT
-# 92 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 89 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case 0, VerdanturfTown_BattleTentBattleRoom_EventScript_ContinueChallenge
-# 93 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 90 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case 1, VerdanturfTown_BattleTentBattleRoom_EventScript_AskPauseChallenge
-# 94 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 91 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case 2, VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge
-# 95 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 92 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 96 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 93 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_AskPauseChallenge::
-# 97 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 94 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	msgbox BattleFrontier_BattlePalaceBattleRoom_Text_SaveAndQuitGame, MSGBOX_YESNO
-# 98 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 95 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	switch VAR_RESULT
-# 99 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 96 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case NO, VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge
-# 100 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 97 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case YES, VerdanturfTown_BattleTentBattleRoom_EventScript_PauseChallenge
-# 101 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 98 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case MULTI_B_PRESSED, VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge
-# 102 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 99 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 103 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 100 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge::
-# 104 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 101 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	message BattleFrontier_BattlePalaceBattleRoom_Text_WishToQuitChallenge
-# 105 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 102 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitmessage
-# 106 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 103 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	multichoicedefault 20, 8, MULTI_YESNO, 1, FALSE
-# 107 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 104 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	switch VAR_RESULT
-# 108 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 105 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case 1, VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge
-# 109 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 106 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case 0, VerdanturfTown_BattleTentBattleRoom_EventScript_WarpToLobbyLost
-# 110 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 107 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case MULTI_B_PRESSED, VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge
-# 111 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 108 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 112 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 109 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_ContinueChallenge::
-# 113 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 110 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	applymovement LOCALID_ATTENDANT, Common_Movement_WalkInPlaceFasterRight
-# 114 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 111 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-# 115 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 112 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitmovement 0
-# 116 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 113 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	closemessage
-# 117 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 114 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	goto VerdanturfTown_BattleTentBattleRoom_EventScript_NextOpponentEnter
-# 118 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 115 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 119 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 116 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_WarpToLobbyWon::
-# 120 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 117 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, CHALLENGE_STATUS_WON
-# 121 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 118 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	special LoadPlayerParty
-# 122 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 119 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	warp MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY, 6, 6
-# 123 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 120 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitstate
-# 124 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 121 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 125 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 122 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_PauseChallenge::
-# 126 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 123 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	message BattleFrontier_BattlePalaceBattleRoom_Text_SavingData
-# 127 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 124 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitmessage
-# 128 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 125 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	verdanturftent_save CHALLENGE_STATUS_PAUSED
-# 129 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 126 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	playse SE_SAVE
-# 130 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 127 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitse
-# 131 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 128 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 132 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 129 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	frontier_reset
-# 133 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 130 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	end
-# 134 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 131 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 135 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 132 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_OnWarp:
-# 136 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 133 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	map_script_2 VAR_TEMP_1, 0, VerdanturfTown_BattleTentBattleRoom_EventScript_SetUpObjects
-# 137 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 134 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	.2byte 0
-# 138 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 135 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 139 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 136 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_SetUpObjects::
-# 140 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 137 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	hideobjectat LOCALID_PLAYER, MAP_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM
-# 141 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 138 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	call VerdanturfTown_BattleTentBattleRoom_EventScript_SetPlayerGfx
-# 142 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 139 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	setvar VAR_TEMP_1, 1
-# 143 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 140 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, VerdanturfTown_BattleTentBattleRoom_Movement_SetInvisible
-# 144 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 141 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	removeobject LOCALID_OPPONENT
-# 145 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 142 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	end
-# 146 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 143 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 147 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 144 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_ReadyFor2ndOpponent::
-# 148 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 145 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	message BattleFrontier_BattlePalaceBattleRoom_Text_PreparedFor2ndOpponent
+# 146 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	waitmessage
+# 147 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	return
+# 148 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+
 # 149 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	waitmessage
-# 150 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	return
-# 151 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-
-# 152 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_EventScript_ReadyFor3rdOpponent::
-# 153 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 150 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	message BattleFrontier_BattlePalaceBattleRoom_Text_PreparedFor3rdOpponent
-# 154 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 151 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitmessage
-# 155 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 152 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	return
-# 156 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 153 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 157 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 154 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_Movement_SetInvisible:
-# 158 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 155 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	set_invisible
-# 159 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 156 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	step_end
-# 160 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 157 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 161 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 158 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_Movement_PlayerEnter:
-# 162 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 159 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	set_visible
+# 160 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	walk_up
+# 161 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	walk_up
+# 162 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	walk_up
 # 163 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	walk_up
-# 164 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	walk_up
-# 165 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	walk_up
-# 166 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	face_right
-# 167 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 164 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	step_end
-# 168 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 165 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 169 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 166 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_Movement_OpponentEnter:
+# 167 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	walk_down
+# 168 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	walk_down
+# 169 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	walk_down
 # 170 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	walk_down
 # 171 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	walk_down
-# 172 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	walk_down
-# 173 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	walk_down
-# 174 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	face_left
-# 175 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 172 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	step_end
-# 176 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 173 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 
-# 177 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 174 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 VerdanturfTown_BattleTentBattleRoom_Movement_OpponentExit:
+# 175 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	walk_up
+# 176 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	walk_up
+# 177 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	walk_up
 # 178 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	walk_up
 # 179 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	walk_up
-# 180 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	walk_up
-# 181 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	walk_up
-# 182 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	step_end

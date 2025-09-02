@@ -92,7 +92,6 @@ BattleFrontier_BattleArenaBattleRoom_EventScript_AnnounceTrainers::
 	palace_getopponentintro
 	msgbox gStringVar4, MSGBOX_DEFAULT
 	waitmessage
-	special ReloadPlayerParty
 	call BattleFrontier_BattleArenaBattleRoom_EventScript_DoArenaBattle
 	switch VAR_RESULT
 	case 1, BattleFrontier_BattleArenaBattleRoom_EventScript_DefeatedOpponent

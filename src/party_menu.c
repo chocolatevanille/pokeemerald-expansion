@@ -484,7 +484,8 @@ static void Task_PartyMenuWaitForFade(u8 taskId);
 static void Task_ChooseContestMon(u8 taskId);
 static void CB2_ChooseContestMon(void);
 static void Task_ChoosePartyMon(u8 taskId);
-static void Task_DisplayParty(u8 taskId);
+static void Task_DisplayPartyForTeamPreview(u8 taskId);
+static void Task_LoadOpponentPartyIntoPlayerParty(u8 taskId);
 static void Task_ReloadPlayerParty(u8 taskId);
 static void Task_ChooseMonForMoveRelearner(u8);
 static void CB2_ChooseMonForMoveRelearner(void);
@@ -8018,14 +8019,14 @@ static void CB2_ChooseContestMon(void)
     SetMainCallback2(CB2_ReturnToField);
 }
 
-void DisplayParty(void)
+void DisplayPartyForTeamPreview(void)
 {
     LockPlayerFieldControls();
     FadeScreen(FADE_TO_BLACK, 0);
-    CreateTask(Task_DisplayParty, 10);
+    CreateTask(Task_DisplayPartyForTeamPreview, 10);
 }
 
-void Task_DisplayParty(u8 taskId)
+void Task_DisplayPartyForTeamPreview(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
@@ -8048,6 +8049,17 @@ static void CB2_DisplayPartyReturn(void)
 {
     gFieldCallback2 = CB2_FadeFromPartyMenu;
     SetMainCallback2(CB2_ReturnToField);
+}
+
+void LoadOpponentPartyIntoPlayerParty(void)
+{
+    LockPlayerFieldControls();
+    CreateTask(Task_LoadOpponentPartyIntoPlayerParty, 10);
+}
+
+static void Task_LoadOpponentPartyIntoPlayerParty(u8 taskId) {
+    LoadOpponentTeamIntoPlayerParty();
+    DestroyTask(taskId);
 }
 
 void ReloadPlayerParty(void)

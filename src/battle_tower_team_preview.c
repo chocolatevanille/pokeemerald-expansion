@@ -3,6 +3,8 @@
 #include "event_data.h"
 #include "pokemon.h"
 #include "constants/battle_frontier.h"
+#include "event_data.h"
+#include "script.h"
 
 // Backup storage for the player's original party
 static struct Pokemon sPlayerPartyBackup[PARTY_SIZE];
@@ -48,6 +50,7 @@ void LoadOpponentTeamIntoPlayerParty(void)
         gPlayerParty[i] = gEnemyParty[i];
     }
     gPlayerPartyCount = monsCount;
+    ScriptContext_Enable();
 }
 
 void RestorePlayerParty(void)
@@ -60,4 +63,6 @@ void RestorePlayerParty(void)
         gPlayerParty[i] = sPlayerPartyBackup[i];
     }
     gPlayerPartyCount = sPlayerPartyCountBackup;
+
+    ScriptContext_Enable();
 }

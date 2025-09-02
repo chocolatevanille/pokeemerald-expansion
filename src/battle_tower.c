@@ -1814,7 +1814,7 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
         return;
     }
     else
-    {
+    {   
         // Apprentice.
         for (i = firstMonId; i < firstMonId + FRONTIER_PARTY_SIZE_FULL; i++)
             CreateApprenticeMon(&gEnemyParty[i], &gSaveBlock2Ptr->apprentices[trainerId - TRAINER_RECORD_MIXING_APPRENTICE], i - firstMonId);
@@ -1822,9 +1822,8 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
     }
 
     // Regular battle frontier trainer.
-    // Attempt to fill the trainer's party with random Pokémon until 3 have been
-    // successfully chosen. The trainer's party may not have duplicate Pokémon species
-    // or duplicate held items.
+    // Attempt to fill the trainer's party with random Pokémon until 6 have been
+    // successfully chosen. The trainer's party may not have duplicate Pokémon species.
     for (bfMonCount = 0; monSet[bfMonCount] != 0xFFFF; bfMonCount++)
         ;
     i = 0;
