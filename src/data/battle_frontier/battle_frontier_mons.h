@@ -1666,7 +1666,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_EXEGGUTOR_ALOLA_1] = {
         .species = SPECIES_EXEGGUTOR_ALOLA,
-        .moves = {MOVE_CHLOROBLAST, MOVE_DRACO_BARRAGE, MOVE_LIGHT_SCREEN, MOVE_REFLECT},
+        .moves = {MOVE_CHLOROBLAST, MOVE_DRACO_METEOR, MOVE_LIGHT_SCREEN, MOVE_REFLECT},
         .heldItem = ITEM_LIGHT_CLAY,
         .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -1675,7 +1675,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_EXEGGUTOR_ALOLA_2] = {
         .species = SPECIES_EXEGGUTOR_ALOLA,
-        .moves = {MOVE_CHLOROBLAST, MOVE_DRACO_BARRAGE, MOVE_PSYSHOCK, MOVE_SLUDGE_BOMB},
+        .moves = {MOVE_CHLOROBLAST, MOVE_DRACO_METEOR, MOVE_PSYSHOCK, MOVE_SLUDGE_BOMB},
         .heldItem = ITEM_CHOICE_SPECS,
         .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -1684,7 +1684,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_EXEGGUTOR_ALOLA_3] = {
         .species = SPECIES_EXEGGUTOR_ALOLA,
-        .moves = {MOVE_CHLOROBLAST, MOVE_DRACO_BARRAGE, MOVE_PSYSHOCK, MOVE_SLUDGE_BOMB},
+        .moves = {MOVE_CHLOROBLAST, MOVE_DRACO_METEOR, MOVE_PSYSHOCK, MOVE_SLUDGE_BOMB},
         .heldItem = ITEM_LIFE_ORB,
         .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -1693,7 +1693,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_EXEGGUTOR_ALOLA_4] = {
         .species = SPECIES_EXEGGUTOR_ALOLA,
-        .moves = {MOVE_CHLOROBLAST, MOVE_DRACO_BARRAGE, MOVE_GIGA_DRAIN, MOVE_SUBSTITUTE},
+        .moves = {MOVE_CHLOROBLAST, MOVE_DRACO_METEOR, MOVE_GIGA_DRAIN, MOVE_SUBSTITUTE},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -1702,7 +1702,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_EXEGGUTOR_ALOLA_5] = {
         .species = SPECIES_EXEGGUTOR_ALOLA,
-        .moves = {MOVE_CHLOROBLAST, MOVE_DRACO_BARRAGE, MOVE_SUNNY_DAY, MOVE_WEATHER_BALL},
+        .moves = {MOVE_CHLOROBLAST, MOVE_DRACO_METEOR, MOVE_SUNNY_DAY, MOVE_WEATHER_BALL},
         .heldItem = ITEM_LIFE_ORB,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -1990,7 +1990,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_KINGDRA_2] = {
         .species = SPECIES_KINGDRA,
-        .moves = {MOVE_SCALD, MOVE_DRACO_BARRAGE, MOVE_RAIN_DANCE, MOVE_HURRICANE},
+        .moves = {MOVE_SCALD, MOVE_DRACO_METEOR, MOVE_RAIN_DANCE, MOVE_HURRICANE},
         .heldItem = ITEM_LIFE_ORB,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -2539,7 +2539,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MEGA_LAPRAS] = {
         .species = SPECIES_LAPRAS,
-        .moves = {MOVE_BOOMBURST, MOVE_DRACO_BARRAGE, MOVE_ICE_BEAM, MOVE_RAIN_DANCE},
+        .moves = {MOVE_BOOMBURST, MOVE_DRACO_METEOR, MOVE_ICE_BEAM, MOVE_RAIN_DANCE},
         .heldItem = ITEM_LAPRASITE,
         .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -3592,7 +3592,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MEGA_AMPHAROS_1] = {
         .species = SPECIES_AMPHAROS,
-        .moves = {MOVE_THUNDERBOLT, MOVE_DRACO_BARRAGE, MOVE_COTTON_GUARD, MOVE_TAIL_GLOW},
+        .moves = {MOVE_THUNDERBOLT, MOVE_DRACO_METEOR, MOVE_COTTON_GUARD, MOVE_TAIL_GLOW},
         .heldItem = ITEM_AMPHAROSITE,
         .ev = TRAINER_PARTY_EVS_CALM(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -3601,7 +3601,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MEGA_AMPHAROS_2] = {
         .species = SPECIES_AMPHAROS,
-        .moves = {MOVE_THUNDERBOLT, MOVE_DRACO_BARRAGE, MOVE_POWER_GEM, MOVE_TAIL_GLOW},
+        .moves = {MOVE_THUNDERBOLT, MOVE_DRACO_METEOR, MOVE_POWER_GEM, MOVE_TAIL_GLOW},
         .heldItem = ITEM_AMPHAROSITE,
         .ev = TRAINER_PARTY_EVS_MODEST_WALL(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4789,7 +4789,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_SCEPTILE_1] = {
         .species = SPECIES_SCEPTILE,
-        .moves = {MOVE_LEAF_STORM, MOVE_FOCUS_BLAST, MOVE_DRACO_BARRAGE, MOVE_SYNTHESIS},
+        .moves = {MOVE_LEAF_STORM, MOVE_FOCUS_BLAST, MOVE_DRACO_METEOR, MOVE_SYNTHESIS},
         .heldItem = ITEM_LIFE_ORB,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4807,7 +4807,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_SCEPTILE_3] = {
         .species = SPECIES_SCEPTILE,
-        .moves = {MOVE_LEAF_STORM, MOVE_FOCUS_BLAST, MOVE_DRACO_BARRAGE, MOVE_GIGA_DRAIN},
+        .moves = {MOVE_LEAF_STORM, MOVE_FOCUS_BLAST, MOVE_DRACO_METEOR, MOVE_GIGA_DRAIN},
         .heldItem = ITEM_CHOICE_SPECS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6616,7 +6616,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_SALAMENCE_3] = {
         .species = SPECIES_SALAMENCE,
-        .moves = {MOVE_DRACO_BARRAGE, MOVE_FIRE_BLAST, MOVE_EARTHQUAKE, MOVE_ROOST},
+        .moves = {MOVE_DRACO_METEOR, MOVE_FIRE_BLAST, MOVE_EARTHQUAKE, MOVE_ROOST},
         .heldItem = ITEM_LIFE_ORB,
         .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_SP_ATK(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6778,7 +6778,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_LATIOS_1] = {
         .species = SPECIES_LATIOS,
-        .moves = {MOVE_DRACO_BARRAGE, MOVE_PSYCHIC, MOVE_SURF, MOVE_ROOST},
+        .moves = {MOVE_DRACO_METEOR, MOVE_PSYCHIC, MOVE_SURF, MOVE_ROOST},
         .heldItem = ITEM_LIFE_ORB,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6787,7 +6787,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_LATIOS_2] = {
         .species = SPECIES_LATIOS,
-        .moves = {MOVE_DRACO_BARRAGE, MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_TRICK},
+        .moves = {MOVE_DRACO_METEOR, MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_TRICK},
         .heldItem = ITEM_CHOICE_SPECS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6796,7 +6796,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_LATIOS_3] = {
         .species = SPECIES_LATIOS,
-        .moves = {MOVE_DRACO_BARRAGE, MOVE_PSYCHIC, MOVE_ROOST, MOVE_CALM_MIND},
+        .moves = {MOVE_DRACO_METEOR, MOVE_PSYCHIC, MOVE_ROOST, MOVE_CALM_MIND},
         .heldItem = ITEM_LEFTOVERS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6805,7 +6805,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MEGA_LATIOS_1] = {
         .species = SPECIES_LATIOS,
-        .moves = {MOVE_DRACO_BARRAGE, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_ROOST},
+        .moves = {MOVE_DRACO_METEOR, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_ROOST},
         .heldItem = ITEM_LATIOSITE,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6814,7 +6814,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MEGA_LATIOS_2] = {
         .species = SPECIES_LATIOS,
-        .moves = {MOVE_DRACO_BARRAGE, MOVE_PSYCHIC, MOVE_ICE_BEAM, MOVE_THUNDERBOLT},
+        .moves = {MOVE_DRACO_METEOR, MOVE_PSYCHIC, MOVE_ICE_BEAM, MOVE_THUNDERBOLT},
         .heldItem = ITEM_LATIOSITE,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6823,7 +6823,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_LATIAS_1] = {
         .species = SPECIES_LATIAS,
-        .moves = {MOVE_DRACO_BARRAGE, MOVE_PSYCHIC, MOVE_SURF, MOVE_ROOST},
+        .moves = {MOVE_DRACO_METEOR, MOVE_PSYCHIC, MOVE_SURF, MOVE_ROOST},
         .heldItem = ITEM_LEFTOVERS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6832,7 +6832,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_LATIAS_2] = {
         .species = SPECIES_LATIAS,
-        .moves = {MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_DRACO_BARRAGE, MOVE_ROOST},
+        .moves = {MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_DRACO_METEOR, MOVE_ROOST},
         .heldItem = ITEM_LEFTOVERS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6841,7 +6841,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MEGA_LATIAS] = {
         .species = SPECIES_LATIAS,
-        .moves = {MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_DRACO_BARRAGE, MOVE_ROOST},
+        .moves = {MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_DRACO_METEOR, MOVE_ROOST},
         .heldItem = ITEM_LATIASITE,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 6, 0, 252),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6913,7 +6913,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_RAYQUAZA_2] = {
         .species = SPECIES_RAYQUAZA,
-        .moves = {MOVE_DRACO_BARRAGE, MOVE_AIR_SLASH, MOVE_FIRE_BLAST, MOVE_SURF},
+        .moves = {MOVE_DRACO_METEOR, MOVE_AIR_SLASH, MOVE_FIRE_BLAST, MOVE_SURF},
         .heldItem = ITEM_CHOICE_SPECS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -11134,7 +11134,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_RESHIRAM_1] = {
         .species = SPECIES_RESHIRAM,
-        .moves = {MOVE_BLUE_FLARE, MOVE_DRACO_BARRAGE, MOVE_EARTH_POWER, MOVE_ROOST},
+        .moves = {MOVE_BLUE_FLARE, MOVE_DRACO_METEOR, MOVE_EARTH_POWER, MOVE_ROOST},
         .heldItem = ITEM_HEAVY_DUTY_BOOTS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -11143,7 +11143,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_RESHIRAM_2] = {
         .species = SPECIES_RESHIRAM,
-        .moves = {MOVE_BLUE_FLARE, MOVE_DRACO_BARRAGE, MOVE_EARTH_POWER, MOVE_PSYCHIC},
+        .moves = {MOVE_BLUE_FLARE, MOVE_DRACO_METEOR, MOVE_EARTH_POWER, MOVE_PSYCHIC},
         .heldItem = ITEM_CHOICE_SPECS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -11269,7 +11269,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_KYUREM_1] = {
         .species = SPECIES_KYUREM,
-        .moves = {MOVE_DRACO_BARRAGE, MOVE_ICE_BEAM, MOVE_EARTH_POWER, MOVE_ROOST},
+        .moves = {MOVE_DRACO_METEOR, MOVE_ICE_BEAM, MOVE_EARTH_POWER, MOVE_ROOST},
         .heldItem = ITEM_LEFTOVERS,
         .ev = TRAINER_PARTY_EVS_TIMID(),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
