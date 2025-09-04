@@ -1394,16 +1394,18 @@ void BattleSetup_StartTrainerBattle(void)
         VarSet(VAR_TEMP_PLAYING_PYRAMID_MUSIC, 0);
         gBattleTypeFlags |= BATTLE_TYPE_PYRAMID;
 
-        if (gNoOfApproachingTrainers == 2)
+        if (gNoOfApproachingTrainers == )
         {
-            FillFrontierTrainersParties(2);
+            FillFrontierTrainersParties(1);
+            ZeroMonData(&gEnemyParty[1]);
             ZeroMonData(&gEnemyParty[2]);
+            ZeroMonData(&gEnemyParty[4]);
             ZeroMonData(&gEnemyParty[5]);
         }
         else
         {
-            FillFrontierTrainerParty(2);
-            ZeroMonData(&gEnemyParty[2]);
+            FillFrontierTrainerParty(1);
+            ZeroMonData(&gEnemyParty[1]);
         }
 
         MarkApproachingPyramidTrainersAsBattled();
