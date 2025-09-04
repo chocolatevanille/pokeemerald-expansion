@@ -2912,7 +2912,7 @@ static void AwardBattleTowerRibbons(void)
     s32 i;
     u32 partyIndex;
 #ifdef BUGFIX
-    struct RibbonCounter ribbons[MAX_FRONTIER_PARTY_SIZE];
+    struct RibbonCounter ribbons[FRONTIER_PARTY_SIZE_FULL];
 #else
     struct RibbonCounter ribbons[3]; // BUG: 4 Pokémon can receive ribbons in a double battle mode.
 #endif
