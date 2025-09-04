@@ -1394,7 +1394,7 @@ void BattleSetup_StartTrainerBattle(void)
         VarSet(VAR_TEMP_PLAYING_PYRAMID_MUSIC, 0);
         gBattleTypeFlags |= BATTLE_TYPE_PYRAMID;
 
-        if (gNoOfApproachingTrainers == )
+        if (gNoOfApproachingTrainers == 2)
         {
             FillFrontierTrainersParties(1);
             ZeroMonData(&gEnemyParty[1]);
