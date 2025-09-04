@@ -56,6 +56,10 @@ static const struct GMaxMove sGMaxMoveTable[] =
 // Returns whether a battler can Dynamax.
 bool32 CanDynamax(u32 battler)
 {
+    // Prevent Dynamax in Battle Frontier
+    if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_DOME | BATTLE_TYPE_PALACE | BATTLE_TYPE_ARENA | BATTLE_TYPE_FACTORY | BATTLE_TYPE_PIKE | BATTLE_TYPE_PYRAMID))
+        return FALSE;
+
     u16 species = gBattleMons[battler].species;
     u16 holdEffect = GetBattlerHoldEffect(battler, FALSE);
 
