@@ -6825,7 +6825,6 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gShinyOverworldPalette_Urshifu
         )
         .isLegendary = TRUE,
-        .isFrontierBanned = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sUrshifuSingleStrikeLevelUpLearnset,
         .teachableLearnset = sUrshifuSingleStrikeTeachableLearnset,
@@ -6884,7 +6883,6 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         SHADOW(1, 13, SHADOW_SIZE_L)
         FOOTPRINT(Urshifu)
         .isLegendary = TRUE,
-        .isFrontierBanned = TRUE,
         .isGigantamax = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sUrshifuSingleStrikeLevelUpLearnset,
@@ -6952,7 +6950,6 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gShinyOverworldPalette_Urshifu
         )
         .isLegendary = TRUE,
-        .isFrontierBanned = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sUrshifuRapidStrikeLevelUpLearnset,
         .teachableLearnset = sUrshifuRapidStrikeTeachableLearnset,
@@ -7011,7 +7008,6 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         SHADOW(2, 13, SHADOW_SIZE_M)
         FOOTPRINT(Urshifu)
         .isLegendary = TRUE,
-        .isFrontierBanned = TRUE,
         .isGigantamax = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sUrshifuRapidStrikeLevelUpLearnset,

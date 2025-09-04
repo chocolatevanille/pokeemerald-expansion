@@ -6533,7 +6533,6 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gShinyOverworldPalette_Darkrai
         )
         .isMythical = TRUE,
-        .isFrontierBanned = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sDarkraiLevelUpLearnset,
         .teachableLearnset = sDarkraiTeachableLearnset,
