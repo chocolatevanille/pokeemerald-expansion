@@ -2137,7 +2137,10 @@ void DoSpecialTrainerBattle(void)
         switch (VarGet(VAR_FRONTIER_BATTLE_MODE))
         {
         case FRONTIER_MODE_SINGLES:
-            FillFrontierTrainerParty(FRONTIER_PARTY_SIZE_FULL);
+            if (VarGet(VAR_UNUSED_0x40F9) != 1)
+            {
+                FillFrontierTrainerParty(FRONTIER_PARTY_SIZE_FULL);
+            }
             break;
         case FRONTIER_MODE_DOUBLES:
             FillFrontierTrainerParty(FRONTIER_DOUBLES_PARTY_SIZE);
