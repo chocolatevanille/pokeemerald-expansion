@@ -372,14 +372,14 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_CERULEDGE,
-                .heldItem = ITEM_LIFE_ORB,
+                .species = SPECIES_BLAZIKEN,
+                .heldItem = ITEM_BLAZIKENITE,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_JOLLY,
-                .evs = {0, 252, 0, 0, 0, 252},
-                .moves = {MOVE_BITTER_BLADE, MOVE_NIGHT_SLASH, MOVE_SUNNY_DAY, MOVE_SOLAR_BLADE},
-                .isShiny = FALSE,
-                .ability = ABILITY_SHARPNESS,
+                .evs = {0, 252, 4, 0, 0, 252},
+                .moves = {MOVE_BLAZE_KICK, MOVE_HIGH_JUMP_KICK, MOVE_EARTHQUAKE, MOVE_STONE_EDGE},
+                .isShiny = TRUE,
+                .ability = ABILITY_STRIKER,
             },
             {
                 .species = SPECIES_HERACROSS,
@@ -421,18 +421,18 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_NAIVE,
                 .evs = {0, 4, 0, 252, 0, 252},
                 .moves = {MOVE_MOONBLAST, MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_DESTINY_BOND},
-                .isShiny = FALSE,
+                .isShiny = TRUE,
                 .ability = ABILITY_QUARK_DRIVE,
             },
             {
-                .species = SPECIES_BLAZIKEN,
-                .heldItem = ITEM_BLAZIKENITE,
+                .species = SPECIES_CERULEDGE,
+                .heldItem = ITEM_LIFE_ORB,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_JOLLY,
-                .evs = {0, 252, 4, 0, 0, 252},
-                .moves = {MOVE_BLAZE_KICK, MOVE_HIGH_JUMP_KICK, MOVE_EARTHQUAKE, MOVE_STONE_EDGE},
-                .isShiny = TRUE,
-                .ability = ABILITY_STRIKER,
+                .evs = {0, 252, 0, 0, 0, 252},
+                .moves = {MOVE_BITTER_BLADE, MOVE_NIGHT_SLASH, MOVE_SUNNY_DAY, MOVE_SOLAR_BLADE},
+                .isShiny = FALSE,
+                .ability = ABILITY_SHARPNESS,
             },
         },
     },
@@ -711,7 +711,7 @@ static const u8 sBattlePointAwards[NUM_FRONTIER_FACILITIES][FRONTIER_MODE_COUNT]
     /* facility, mode, tier */
     [FRONTIER_FACILITY_TOWER] = /* Tier: 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 */
     {
-        [FRONTIER_MODE_SINGLES]     = {  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 },
+        [FRONTIER_MODE_SINGLES]     = {  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 },
         [FRONTIER_MODE_DOUBLES]     = {  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 },
         [FRONTIER_MODE_MULTIS]      = {  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 },
         [FRONTIER_MODE_LINK_MULTIS] = {  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 },
