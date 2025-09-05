@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk1",
+      "script": "BattleFrontier_ExchangeServiceCorner_EventScript_BuffClerk",
       "flag": "0"
     },
     {
@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk2",
+      "script": "BattleFrontier_ExchangeServiceCorner_EventScript_DefenseClerk",
       "flag": "0"
     },
     {
@@ -102,7 +102,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleFrontier_ExchangeServiceCorner_EventScript_VitaminClerk",
+      "script": "BattleFrontier_ExchangeServiceCorner_EventScript_OffenseClerk",
       "flag": "0"
     },
     {
@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleFrontier_ExchangeServiceCorner_EventScript_HoldItemClerk",
+      "script": "BattleFrontier_ExchangeServiceCorner_EventScript_UtilityClerk",
       "flag": "0"
     },
     {

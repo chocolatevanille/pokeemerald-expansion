@@ -2329,9 +2329,9 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
-    case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1:
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_BUFF_ITEM_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 11;
+        task->tNumItems = 8;
         task->tLeft = 14;
         task->tTop = 1;
         task->tWidth = 15;
@@ -2339,9 +2339,9 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
-    case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_DEFENSE_ITEM_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 6;
+        task->tNumItems = 15;
         task->tLeft = 14;
         task->tTop = 1;
         task->tWidth = 15;
@@ -2349,9 +2349,9 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
-    case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_OFFENSE_ITEM_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 7;
+        task->tNumItems = 12;
         task->tLeft = 14;
         task->tTop = 1;
         task->tWidth = 15;
@@ -2359,9 +2359,9 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
-    case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_UTILITY_ITEM_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 10;
+        task->tNumItems = 8;
         task->tLeft = 14;
         task->tTop = 1;
         task->tWidth = 15;
@@ -2459,30 +2459,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_100Pts,
         gText_QuestionMark
     },
-    [SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1] =
-    {
-        gText_KissPoster16BP,
-        gText_KissCushion32BP,
-        gText_SmoochumDoll32BP,
-        gText_TogepiDoll48BP,
-        gText_MeowthDoll48BP,
-        gText_ClefairyDoll48BP,
-        gText_DittoDoll48BP,
-        gText_CyndaquilDoll80BP,
-        gText_ChikoritaDoll80BP,
-        gText_TotodileDoll80BP,
-        gText_Exit
-    },
-    [SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2] =
-    {
-        gText_LaprasDoll128BP,
-        gText_SnorlaxDoll128BP,
-        gText_VenusaurDoll256BP,
-        gText_CharizardDoll256BP,
-        gText_BlastoiseDoll256BP,
-        gText_Exit
-    },
-    [SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR] =
+    [SCROLL_MULTI_BF_EXCHANGE_CORNER_BUFF_ITEM_VENDOR] =
     {
         gText_Protein1BP,
         gText_Calcium1BP,
@@ -2490,19 +2467,51 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Zinc1BP,
         gText_Carbos1BP,
         gText_HpUp1BP,
+        gText_PPMax4BP,
         gText_Exit
     },
-    [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
+    [SCROLL_MULTI_BF_EXCHANGE_CORNER_DEFENSE_ITEM_VENDOR] =
     {
+        gText_AbilityShield16BP,
+        gText_SafetyGoggles16BP,
+        gText_ShedShell16BP,
+        gText_ShellBell16BP,
+        gText_WeaknessPolicy16BP,
+        gText_AirBalloon32BP,
+        gText_ClearAmulet32BP,
         gText_Leftovers48BP,
-        gText_WhiteHerb48BP,
-        gText_QuickClaw48BP,
         gText_MentalHerb48BP,
-        gText_BrightPowder64BP,
+        gText_SalacBerry48BP,
+        gText_SitrusBerry48BP,
+        gText_AssaultVest64BP,
+        gText_FocusSash64BP,
+        gText_RockyHelmet64BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_BF_EXCHANGE_CORNER_OFFENSE_ITEM_VENDOR] =
+    {
+        gText_LoadedDice16BP,
+        gText_ProtectivePads16BP,
+        gText_PunchingGlove16BP,
+        gText_ExpertBelt32BP,
+        gText_ThroatSpray32BP,
+        gText_WhiteHerb48BP,
+        gText_PowerHerb48BP,
         gText_ChoiceBand64BP,
-        gText_KingsRock64BP,
-        gText_FocusBand64BP,
-        gText_ScopeLens64BP,
+        gText_ChoiceScarf64BP,
+        gText_ChoiceSpecs64BP,
+        gText_LifeOrb64BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_BF_EXCHANGE_CORNER_UTILITY_ITEM_VENDOR] =
+    {
+        gText_ElectricSeed16BP,
+        gText_GrassySeed16BP,
+        gText_MistySeed16BP,
+        gText_PsychicSeed16BP,
+        gText_TerrainExtender32BP,
+        gText_BoosterEnergy80BP,
+        gText_SoulDew100BP,
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
@@ -2994,44 +3003,26 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
 {
     #include "data/battle_frontier/battle_frontier_exchange_corner.h"
 
-    if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR)
+    if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_BUFF_ITEM_VENDOR && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_UTILITY_ITEM_VENDOR)
     {
         FillWindowPixelRect(0, PIXEL_FILL(1), 0, 0, 216, 32);
         switch (menu)
         {
-        case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1:
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_Decor1Descriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
-            if (sFrontierExchangeCorner_Decor1[selection] == ITEM_LIST_END)
-            {
-                ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Decor1[selection]);
-            }
-            else
-            {
-                FreeSpriteTilesByTag(TAG_ITEM_ICON);
-                FreeSpritePaletteByTag(TAG_ITEM_ICON);
-                sScrollableMultichoice_ItemSpriteId = AddDecorationIconObject(sFrontierExchangeCorner_Decor1[selection], 33, 88, 0, TAG_ITEM_ICON, TAG_ITEM_ICON);
-            }
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_BUFF_ITEM_VENDOR:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_BuffDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Buff[selection]);
             break;
-        case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_Decor2Descriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
-            if (sFrontierExchangeCorner_Decor2[selection] == ITEM_LIST_END)
-            {
-                ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Decor2[selection]);
-            }
-            else
-            {
-                FreeSpriteTilesByTag(TAG_ITEM_ICON);
-                FreeSpritePaletteByTag(TAG_ITEM_ICON);
-                sScrollableMultichoice_ItemSpriteId = AddDecorationIconObject(sFrontierExchangeCorner_Decor2[selection], 33, 88, 0, TAG_ITEM_ICON, TAG_ITEM_ICON);
-            }
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_DEFENSE_ITEM_VENDOR:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_DefenseDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Defense[selection]);
             break;
-        case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_VitaminsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
-            ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Vitamins[selection]);
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_OFFENSE_ITEM_VENDOR:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_OffenseDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Offense[selection]);
             break;
-        case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
-            ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_HoldItems[selection]);
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_UTILITY_ITEM_VENDOR:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_UtilityDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Utility[selection]);
             break;
         }
     }
@@ -3057,10 +3048,10 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
     {
         switch (menu)
         {
-        case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1:
-        case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
-        case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
-        case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_BUFF_ITEM_VENDOR:
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_DEFENSE_ITEM_VENDOR:
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_OFFENSE_ITEM_VENDOR:
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_UTILITY_ITEM_VENDOR:
             DestroySpriteAndFreeResources(&gSprites[sScrollableMultichoice_ItemSpriteId]);
             break;
         }
