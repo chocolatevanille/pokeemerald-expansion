@@ -166,27 +166,33 @@ static const u8 sFixedIVTable[][2] =
     {31, 31},
 };
 
+// Vanilla game defines frontier Pokémon constants in
+// order of viability, but new definitions use Pokédex
+// order. Bandaid solution to Factory using viability
+// order to limit when player can find Pokémon is to
+// always make all non-banned Pokémon available.
+// Banned Pokémon are handled in GetFactoryMonId.
 static const u16 sInitialRentalMonRanges[][2] =
 {
     // Level 50
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},   // 110 - 199
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3}, // 162 - 266
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3}, // 267 - 371
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},  // 372 - 467
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},  // 468 - 563
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},  // 564 - 659
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},  // 660 - 755
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3}, // 372 - 849
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
 
     // Open level
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3}, // 372 - 467
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3}, // 468 - 563
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3}, // 564 - 659
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3}, // 660 - 755
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},  // 372 - 881
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},  // 372 - 881
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},  // 372 - 881
-    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},  // 372 - 881
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
+    {FRONTIER_MON_VENUSAUR_1, FRONTIER_MON_PECHARUNT_3},
 };
 
 // code
@@ -761,6 +767,7 @@ static u16 GetFactoryMonId(u8 lvlMode, u8 challengeNum, bool8 useBetterRange)
 {
     u16 numMons, monId;
     u16 adder; // Used to skip past early mons for open level
+    u8 rangeIndex;
 
     if (lvlMode == FRONTIER_LVL_50)
         adder = 0;
@@ -769,29 +776,19 @@ static u16 GetFactoryMonId(u8 lvlMode, u8 challengeNum, bool8 useBetterRange)
 
     if (challengeNum < 7)
     {
-        if (useBetterRange)
-        {
-            numMons = (sInitialRentalMonRanges[adder + challengeNum + 1][1] - sInitialRentalMonRanges[adder + challengeNum + 1][0]) + 1;
-            monId = Random() % numMons;
-            monId += sInitialRentalMonRanges[adder + challengeNum + 1][0];
-        }
-        else
-        {
-            numMons = (sInitialRentalMonRanges[adder + challengeNum][1] - sInitialRentalMonRanges[adder + challengeNum][0]) + 1;
-            monId = Random() % numMons;
-            monId += sInitialRentalMonRanges[adder + challengeNum][0];
-        }
+        rangeIndex = useBetterRange ? challengeNum + 1 : challengeNum;
     }
     else
     {
-        u16 challenge = challengeNum;
-        if (challenge != 7)
-            challenge = 7; // why bother assigning it above at all
-
-        numMons = (sInitialRentalMonRanges[adder + challenge][1] - sInitialRentalMonRanges[adder + challenge][0]) + 1;
-        monId = Random() % numMons;
-        monId += sInitialRentalMonRanges[adder + challenge][0];
+        rangeIndex = 7;
     }
+
+    numMons = (sInitialRentalMonRanges[adder + rangeIndex][1] - sInitialRentalMonRanges[adder + rangeIndex][0]) + 1;
+
+    do {
+        monId = Random() % numMons;
+        monId += sInitialRentalMonRanges[adder + rangeIndex][0];
+    } while (gSpeciesInfo[gBattleFrontierMons[monId].species].isFrontierBanned);
 
     return monId;
 }
