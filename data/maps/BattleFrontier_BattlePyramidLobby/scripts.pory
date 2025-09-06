@@ -124,16 +124,9 @@ BattleFrontier_BattlePyramidLobby_EventScript_AskTakeChallenge::
 	case MULTI_B_PRESSED, BattleFrontier_BattlePyramidLobby_EventScript_CancelChallenge
 
 BattleFrontier_BattlePyramidLobby_EventScript_TryEnterChallenge::
-	message BattleFrontier_BattlePyramidLobby_Text_WhichLevelMode
-	waitmessage
-	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
-	switch VAR_RESULT
-	case FRONTIER_LVL_TENT, BattleFrontier_BattlePyramidLobby_EventScript_CancelChallenge
-	case MULTI_B_PRESSED, BattleFrontier_BattlePyramidLobby_EventScript_CancelChallenge
-	frontier_checkineligible
-	goto_if_eq VAR_0x8004, TRUE, BattleFrontier_BattlePyramidLobby_EventScript_NotEnoughValidMons
-	frontier_set FRONTIER_DATA_LVL_MODE, VAR_RESULT
-	msgbox BattleFrontier_BattlePyramidLobby_Text_SelectThreeMons, MSGBOX_DEFAULT
+	frontier_set FRONTIER_DATA_LVL_MODE, FRONTIER_LVL_OPEN
+	frontier_get FRONTIER_DATA_LVL_MODE
+	msgbox BattleFrontier_BattlePyramidLobby_Text_CheckPartyRules, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	callnative RemoveFollowingPokemon
 	call BattleFrontier_EventScript_GetLvlMode
@@ -141,7 +134,7 @@ BattleFrontier_BattlePyramidLobby_EventScript_TryEnterChallenge::
 	setvar VAR_0x8005, FRONTIER_PARTY_SIZE_FULL
 	special ChoosePartyForBattleFrontier6V6
 	waitstate
-	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattlePyramidLobby_EventScript_LoadPartyAndCancelChallenge
+	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattlePyramidLobby_EventScript_NotEnoughValidMonsLvOpen
 	msgbox BattleFrontier_BattlePyramidLobby_Text_OkayToSaveBeforeChallenge, MSGBOX_YESNO
 	switch VAR_RESULT
 	case NO, BattleFrontier_BattlePyramidLobby_EventScript_LoadPartyAndCancelChallenge
@@ -191,7 +184,7 @@ BattleFrontier_BattlePyramidLobby_EventScript_NotEnoughValidMonsLv50::
 
 BattleFrontier_BattlePyramidLobby_EventScript_NotEnoughValidMonsLvOpen::
 	msgbox BattleFrontier_BattlePyramidLobby_Text_NotEnoughValidMonsLvOpen, MSGBOX_DEFAULT
-	goto BattleFrontier_BattlePyramidLobby_EventScript_EndCancelChallenge
+	goto BattleFrontier_BattlePyramidLobby_EventScript_LoadPartyAndCancelChallenge
 
 BattleFrontier_BattlePyramidLobby_EventScript_CancelChallengeSaveFailed::
 	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, 0
@@ -566,17 +559,18 @@ BattleFrontier_BattlePyramidLobby_Text_WhichLevelMode:
 	.string "Level 50 and Open Level.\l"
 	.string "Which will you enter?$"
 
-BattleFrontier_BattlePyramidLobby_Text_SelectThreeMons:
-	.string "Very good. Now, please select the three\n"
-	.string "Pokémon you wish to accompany you.$"
+BattleFrontier_BattlePyramidLobby_Text_CheckPartyRules:
+	.string "Very good. Now, I must check that\n"
+	.string "your party adheres to our rules.$"
 
 BattleFrontier_BattlePyramidLobby_Text_NotEnoughValidMonsLvOpen:
 	.string "A slight problem, adventurer!\p"
-	.string "You seem to not have the three\n"
+	.string "You seem to not have the six\n"
 	.string "Pokémon qualified for the challenge.\p"
-	.string "Please also remember to take all\n"
-	.string "items from your Pokémon.\p"
-	.string "EGGS{STR_VAR_1} ineligible.\p"
+	.string "Eggs and restricted legendary\n"
+	.string "Pokémon are inelibigle.\p"
+	.string "You must also remove all held items\n"
+	.string "from your party before entering.\p"
 	.string "When you are ready, please have\n"
 	.string "a word with me.$"
 
