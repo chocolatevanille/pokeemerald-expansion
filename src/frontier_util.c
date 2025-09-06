@@ -178,23 +178,23 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .ability = ABILITY_INTIMIDATE,
             },
             {
-                .species = SPECIES_RAIKOU,
-                .heldItem = ITEM_AIR_BALLOON,
+                .species = SPECIES_RAGING_BOLT,
+                .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_TIMID,
+                .nature = NATURE_MODEST,
                 .evs = {0, 0, 0, 252, 4, 252},
-                .moves = {MOVE_THUNDERBOLT, MOVE_VOLT_SWITCH, MOVE_AURA_SPHERE, MOVE_THUNDER_WAVE},
+                .moves = {MOVE_THUNDERBOLT, MOVE_THUNDERCLAP, MOVE_DRAGON_PULSE, MOVE_CALM_MIND},
                 .isShiny = FALSE,
                 .ability = ABILITY_PRESSURE,
             },
             {
                 .species = SPECIES_LATIOS,
-                .heldItem = ITEM_LIFE_ORB,
+                .heldItem = ITEM_CHOICE_SPECS,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_TIMID,
                 .evs = {0, 0, 0, 252, 4, 252},
-                .moves = {MOVE_DRACO_METEOR, MOVE_LUSTER_PURGE, MOVE_RECOVER, MOVE_CALM_MIND},
-                .isShiny = FALSE,
+                .moves = {MOVE_DRACO_METEOR, MOVE_LUSTER_PURGE, MOVE_ICE_BEAM, MOVE_THUNDERBOLT},
+                .isShiny = TRUE,
                 .ability = ABILITY_LEVITATE,
             },
             {
@@ -636,7 +636,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .nature = NATURE_TIMID,
                 .evs = {0, 0, 0, 252, 4, 252},
                 .moves = {MOVE_CLANGOROUS_SOUL, MOVE_CLANGING_SCALES, MOVE_BOOMBURST, MOVE_FLAMETHROWER},
-                .isShiny = FALSE,
+                .isShiny = TRUE,
                 .ability = ABILITY_BULLETPROOF,
             },
         },
@@ -2353,23 +2353,31 @@ static void ResetSketchedMoves(void)
 {
     u8 i, j, k;
 
-    for (i = 0; i < MAX_FRONTIER_PARTY_SIZE; i++)
+    for (i = 0; i < FRONTIER_PARTY_SIZE_FULL; i++)
     {
         u16 monId = gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1;
         if (monId < PARTY_SIZE)
         {
             for (j = 0; j < MAX_MON_MOVES; j++)
             {
+                u16 currentMove = GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + j, NULL);
+                if (currentMove == MOVE_NONE)
+                    continue;
+                    
                 for (k = 0; k < MAX_MON_MOVES; k++)
                 {
-                    if (GetMonData(&gSaveBlock1Ptr->playerParty[gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1], MON_DATA_MOVE1 + k, NULL)
-                        == GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + j, NULL))
+                    if (GetMonData(&gSaveBlock1Ptr->playerParty[monId], MON_DATA_MOVE1 + k, NULL) == currentMove)
                         break;
                 }
+                // Only reset to Sketch if the move was actually learned via Sketch
                 if (k == MAX_MON_MOVES)
-                    SetMonMoveSlot(&gPlayerParty[i], MOVE_SKETCH, j);
+                {
+                    u16 originalMove = GetMonData(&gSaveBlock1Ptr->playerParty[monId], MON_DATA_MOVE1 + j, NULL);
+                    if (originalMove == MOVE_SKETCH)
+                        SetMonMoveSlot(&gPlayerParty[i], MOVE_SKETCH, j);
+                }
             }
-            gSaveBlock1Ptr->playerParty[gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1] = gPlayerParty[i];
+            gSaveBlock1Ptr->playerParty[monId] = gPlayerParty[i];
         }
     }
 }
