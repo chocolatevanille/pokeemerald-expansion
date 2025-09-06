@@ -2723,7 +2723,7 @@ void CreateFrontierBrainPokemon(void)
         }
         SetMonData(&gEnemyParty[monPartyId], MON_DATA_FRIENDSHIP, &friendship);
         j = sFrontierBrainsMons[facility][symbol][i].isShiny;
-        SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_IS_SHINY, &j);
+        SetMonData(&gEnemyParty[monPartyId], MON_DATA_IS_SHINY, &j);
         abilitySlot = 0; 
         for (int j = 0; j < NUM_ABILITY_SLOTS; j++)
         {
