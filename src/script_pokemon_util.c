@@ -369,7 +369,7 @@ void ChoosePartyForBattleFrontier6V6(void)
 {
     int i;
 
-    if (gPlayerPartyCount < 6)
+    if (gPlayerPartyCount < FRONTIER_PARTY_SIZE_FULL)
     {
         gSpecialVar_Result = FALSE;
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
