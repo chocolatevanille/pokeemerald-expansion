@@ -2320,7 +2320,7 @@ static const struct RankingHall1P sInGameTrainers[][FRONTIER_LVL_MODE_COUNT][HAL
             {{0}, 6, {CHAR_B, CHAR_R, CHAR_A, CHAR_W, CHAR_L, CHAR_Y, EOS}, GAME_LANGUAGE},
         },
     },
-    [RANKING_HALL_PALACE] = {S
+    [RANKING_HALL_PALACE] = {
         [FRONTIER_LVL_OPEN] = {
             {{0}, 14, {CHAR_W, CHAR_A, CHAR_L, CHAR_L, CHAR_Y, EOS}, GAME_LANGUAGE},
             {{0}, 6, {CHAR_S, CHAR_T, CHAR_E, CHAR_V, CHAR_E, CHAR_N, EOS}, GAME_LANGUAGE},
