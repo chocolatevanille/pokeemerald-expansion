@@ -46,7 +46,7 @@
 #define FLAG_UNUSED_0x020    0x20 // DN_FLAG_SEARCHING
 #define FLAG_UNUSED_0x021    0x21 // DN_FLAG_DEXNAV_GET
 #define FLAG_UNUSED_0x022    0x22 // DN_FLAG_DETECTOR_MODE
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
+#define FLAG_ENTER_GARDENOFBEGINNINGS    0x23 // Garden of Beginnings access flag
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
